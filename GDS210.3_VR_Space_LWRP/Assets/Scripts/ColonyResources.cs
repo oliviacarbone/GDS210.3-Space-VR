@@ -5,8 +5,32 @@ using UnityEngine;
 public class ColonyResources : MonoBehaviour
 {
     // Resource Variables
-    public float energy = 50.0f;
+    [SerializeField]
+    private float energyPrivate;
+    
+    public float energy
+    {
+        set
+        {
+
+            if (value < 0f)
+            {
+                energyPrivate = 0f;
+            }
+            else if (value > 100f)
+            {
+                energyPrivate = 100f;
+            }
+            else
+            {
+                energyPrivate = value;
+            }
+        }
+        get { return energyPrivate; }
+    }
+    [Range(0,100)]
     public float water = 50.0f;
+    [Range(0,100)]
     public float oxygen = 50.0f;
     //the population of the colony 
     public float population = 250f;
@@ -25,6 +49,7 @@ public class ColonyResources : MonoBehaviour
         IncreaseResources();
         PopulationChanger();
         DecayRateChanger();
+        
     }
 
     //if population reaches set levels the decayRate variable will increase/decrease
@@ -38,10 +63,23 @@ public class ColonyResources : MonoBehaviour
         {
             decayRate = 0.02f;
         }
-        if (population > 101f || population < 499f)
+        if (population == 101f || population == 499f)
         {
             decayRate = 0.015f;
         }
+        if(water < 30f)
+        {
+            decayRate = 0.02f;
+        }
+        if(energy < 30f)
+        {
+            decayRate = 0.02f;
+        }
+        if(oxygen < 30f)
+        {
+            decayRate = 0.02f;
+        }
+
     }
 
     void DrainResources()
