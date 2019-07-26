@@ -79,7 +79,7 @@ public class ScoreScript : MonoBehaviour
     void Update()
     {
 
-        highScoreText.text = scoreIntValues[].highScore.ToString();
+        //highScoreText.text = scoreIntValues[i].highScore.ToString();
         currentScoreText.text = highScore.ToString();
         firstPlayerScoreText.text = firstPlayerScore.ToString();
         secondPlayerScoreText.text = secondPlayerScore.ToString();
