@@ -5,12 +5,28 @@ using UnityEngine;
 public class ColonyResources : MonoBehaviour
 {
     // Resource Variables
-    private float Energy;
-
+    [SerializeField]
+    private float energyPrivate;
+    
     public float energy
     {
-        set { Energy = value; }
-        get { return Energy; }
+        set
+        {
+
+            if (value < 0f)
+            {
+                energyPrivate = 0f;
+            }
+            else if (value > 100f)
+            {
+                energyPrivate = 100f;
+            }
+            else
+            {
+                energyPrivate = value;
+            }
+        }
+        get { return energyPrivate; }
     }
     [Range(0,100)]
     public float water = 50.0f;
