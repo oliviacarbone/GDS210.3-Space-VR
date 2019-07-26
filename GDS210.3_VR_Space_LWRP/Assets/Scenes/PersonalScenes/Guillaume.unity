@@ -680,6 +680,7 @@ GameObject:
   - component: {fileID: 1300928635}
   - component: {fileID: 1300928634}
   - component: {fileID: 1300928633}
+  - component: {fileID: 1300928638}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -701,7 +702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   timeText: {fileID: 310254435}
-  minute: 0
+  minute: 1
   second: 2
   tutorialScreen: {fileID: 627046826}
   gameIsOverScreen: {fileID: 0}
@@ -787,6 +788,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1300928638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300928632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f4b99159dfcf52498ee850c89d38bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScore: 10
+  currentScore: 0
+  firstPlayerScore: 0
+  secondPlayerScore: 0
+  thirdPlayerScore: 0
+  fourthPlayerScore: 0
+  fifthPlayerScore: 0
+  highScoreText: {fileID: 0}
+  currentScoreText: {fileID: 0}
+  firstPlayerScoreText: {fileID: 0}
+  secondPlayerScoreText: {fileID: 0}
+  thirdlayerScoreText: {fileID: 0}
+  fourthPlayerScoreText: {fileID: 0}
+  fifthPlayerScoreText: {fileID: 0}
+  gameIsOver: 0
+  sceneNames:
+  - Guillaume
+  - 
+  - 
+  scoreValueNames:
+  - Name: Scene1
+    HighScore: 10
+    CurrentScore: 
+    FirstScore: 
+    SecondScore: 
+    ThirdScore: 
+    FourthScore: 
+    FifthScore: 
+  - Name: 
+    HighScore: 
+    CurrentScore: 
+    FirstScore: 
+    SecondScore: 
+    ThirdScore: 
+    FourthScore: 
+    FifthScore: 
 --- !u!1 &1364283104
 GameObject:
   m_ObjectHideFlags: 0
