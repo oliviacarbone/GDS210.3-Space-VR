@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1956fbc31863ae646ac9ab894ae3d423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energy: 100
+  energyPrivate: 0
   water: 100
   oxygen: 100
   population: 600
@@ -295,20 +295,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - name: 
-    spawnLocal: {fileID: 0}
-    count: 0
-    spawnRate: 0
-  - name: 
-    spawnLocal: {fileID: 0}
-    count: 0
-    spawnRate: 0
-  - name: 
-    spawnLocal: {fileID: 0}
-    count: 0
-    spawnRate: 0
+  - name: 1
+    spawnResource: {fileID: 198945919297574361, guid: a106376d1ddc71b4e8c7a8e2961abf15,
+      type: 3}
+    count: 5
+    spawnRate: 2
+  - name: 2
+    spawnResource: {fileID: 198945919297574361, guid: a106376d1ddc71b4e8c7a8e2961abf15,
+      type: 3}
+    count: 3
+    spawnRate: 2
+  spawnPoints:
+  - {fileID: 864041522}
+  - {fileID: 1238557613}
+  - {fileID: 875209133}
+  - {fileID: 200705150}
+  - {fileID: 1856642459}
+  - {fileID: 119726574}
   timeBetweenWaves: 5
-  waveCountDown: 0
 --- !u!1 &864041521
 GameObject:
   m_ObjectHideFlags: 0

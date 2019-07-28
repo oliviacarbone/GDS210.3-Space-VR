@@ -11,7 +11,7 @@ public class RandomSpawner : MonoBehaviour
     public class Wave
     {
         public string name;
-        public Transform spawnLocal;
+        public Transform spawnResource;
         public int count;
         public float spawnRate;
     }
@@ -19,8 +19,12 @@ public class RandomSpawner : MonoBehaviour
     public Wave[] waves;
     private int nextWave = 0;
 
+    public Transform[] spawnPoints;
+
     public float timeBetweenWaves = 5f;
-    public float waveCountDown = 0f;
+    private float waveCountDown = 0f;
+
+    private float searchCountDown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
 
@@ -28,34 +32,78 @@ public class RandomSpawner : MonoBehaviour
     {
         waveCountDown = timeBetweenWaves;
     }
-
     void Update()
     {
+        
         if (state == SpawnState.WAITING)
         {
-
+            if (!InteractableisAlive())
+            {
+                WaveCompleted();
+                
+            }
+            else
+            {
+                return;
+            }
         }
-        if (waveCountDown <= 0)
+        if (waveCountDown <= 0f)
         {
             if (state != SpawnState.SPAWNING)
             {
                 StartCoroutine(SpawnWave(waves[nextWave]));
             }
-            else
+            
+        }
+        else
+        {
+            waveCountDown -= Time.deltaTime;
+        }
+    }
+
+    void WaveCompleted()
+    {
+        Debug.Log("Wave done");
+        state = SpawnState.COUNTING;
+        waveCountDown = timeBetweenWaves;
+
+        if (nextWave + 1 > waves.Length - 1)
+        {
+            nextWave = 0;
+            Debug.Log("All waves done, Looping");
+        }
+        else
+        {
+            nextWave++;
+        }
+    }
+
+
+
+
+    bool InteractableisAlive()
+    {
+        searchCountDown -= Time.deltaTime;
+        if (searchCountDown <= 0f)
+        {
+            searchCountDown = 1f;
+            if (GameObject.FindGameObjectWithTag("Interactable") == null)
             {
-                waveCountDown -= Time.deltaTime;
+                return false;
             }
         }
+        return true;
     }
 
     IEnumerator SpawnWave(Wave _wave)
     {
+        Debug.Log("Spawning Wave: " + _wave.name);
         state = SpawnState.SPAWNING;
 
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnInteractable(_wave.spawnLocal);
-            yield return new WaitForSeconds(1f/_wave.count);
+            SpawnInteractable(_wave.spawnResource);
+            yield return new WaitForSeconds(1f/_wave.spawnRate);
         }
 
         state = SpawnState.WAITING;
@@ -65,7 +113,10 @@ public class RandomSpawner : MonoBehaviour
 
     void SpawnInteractable(Transform interactable)
     {
-        Debug.Log("spawning enemy: " + interactable);
+        Debug.Log("Spawning Enemy: ");
+        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Instantiate(interactable, _sp.position, _sp.rotation);
+        
     }
 
 
