@@ -21,26 +21,28 @@ public struct ScoreValues
 [System.Serializable]
 public class ScoreIntValues
 {
-    public int highScore;
+    public string name;
+    public int currentTopScores;
     public int currentScore;
-    public List<int> highScoreList = new List<int>();
 
 }
 
 
 public class ScoreScript : MonoBehaviour
 {
-    public int highScore;
     public int currentScore;
+
+    /*
+    public int highScore;
     public int firstPlayerScore;
     public int secondPlayerScore;
     public int thirdPlayerScore;
     public int fourthPlayerScore;
     public int fifthPlayerScore;
+    */
 
-    public Text highScoreText;
     public Text currentScoreText;
-    public Text firstPlayerScoreText;
+    public Text highScoreText;
     public Text secondPlayerScoreText;
     public Text thirdlayerScoreText;
     public Text fourthPlayerScoreText;
@@ -51,7 +53,7 @@ public class ScoreScript : MonoBehaviour
     public string[] sceneNames = new string[3];
 
     public ScoreValues[] scoreValueNames;
-    public ScoreIntValues[] scoreIntValues;
+    public List<ScoreIntValues> scoreIntValuesList;
 
     void Awake()
     {
@@ -64,6 +66,7 @@ public class ScoreScript : MonoBehaviour
             return;]
         }
         */
+
         for(int i = 0; i < sceneNames.Length; i++ )
         {
             if(SceneManager.GetActiveScene().name == sceneNames[i])
@@ -78,69 +81,62 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreIntValuesList[Random.Range(0,5)].currentScore = currentScore;
 
-        //highScoreText.text = scoreIntValues[i].highScore.ToString();
-        currentScoreText.text = highScore.ToString();
-        firstPlayerScoreText.text = firstPlayerScore.ToString();
-        secondPlayerScoreText.text = secondPlayerScore.ToString();
-        thirdlayerScoreText.text = thirdPlayerScore.ToString();
-        fourthPlayerScoreText.text = fourthPlayerScore.ToString();
-        firstPlayerScoreText.text = firstPlayerScore.ToString();
+        //currentScoreText.text = highScore.ToString();
+        highScoreText.text = scoreIntValuesList[0].currentTopScores.ToString();
+        secondPlayerScoreText.text = scoreIntValuesList[1].currentTopScores.ToString();
+        thirdlayerScoreText.text = scoreIntValuesList[2].currentTopScores.ToString();
+        fourthPlayerScoreText.text = scoreIntValuesList[3].currentTopScores.ToString();
+        fifthPlayerScoreText.text = scoreIntValuesList[4].currentTopScores.ToString();
     }
 
     void ScoreSystem(int sceneIndex)
     {
-        int test = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].HighScore, scoreIntValues[sceneIndex].highScore);
+        int test = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].HighScore, scoreIntValuesList[sceneIndex].currentTopScores);
         Debug.Log(test);
         PlayerPrefs.GetInt(scoreValueNames[sceneIndex].CurrentScore, currentScore);
-        PlayerPrefs.GetInt(scoreValueNames[sceneIndex].FirstScore, firstPlayerScore);
+        int test2 = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].FirstScore, scoreIntValuesList[1].currentTopScores);
+        Debug.Log(test2);
+        /*
         PlayerPrefs.GetInt(scoreValueNames[sceneIndex].SecondScore, secondPlayerScore);
         PlayerPrefs.GetInt(scoreValueNames[sceneIndex].ThirdScore, thirdPlayerScore);
         PlayerPrefs.GetInt(scoreValueNames[sceneIndex].FourthScore, fourthPlayerScore);
         PlayerPrefs.GetInt(scoreValueNames[sceneIndex].FifthScore, fifthPlayerScore);
+        */
     }
 
-    void EndOfGameScores(int sceneIndex)
+    public void EndOfGameScores(int sceneIndex)
     {
+        //So this script will go down the list of highscore to see where tht player score should go.
+        for (int i = 0; i < scoreIntValuesList.Count; i++)
+        {
+            if (scoreIntValuesList[i].currentScore > scoreIntValuesList[i].currentTopScores)
+            {
+                scoreIntValuesList[i].currentTopScores = scoreIntValuesList[i].currentScore;
+                return;
+            }
+
+        }
 
 
-        if (currentScore > highScore)
+        /*
+        //So this script will go down the list of highscore to see where tht player score should go.
+        for (int i = 0; i < scoreIntValuesList.Count; i++)
         {
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].HighScore, currentScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FirstScore, highScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].SecondScore, firstPlayerScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].ThirdScore, secondPlayerScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FourthScore, thirdPlayerScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FifthScore, fourthPlayerScore);
+            for (int j = i + 1; j < scoreIntValuesList.Count; j++)
+            {
+                //If the score is greater than the high score, than they will swap.
+                if (scoreIntValuesList[j].currentScore > scoreIntValuesList[i].highScores)
+                {
+                    ScoreIntValues tmp = scoreIntValuesList[i];
+                    scoreIntValuesList[i] = scoreIntValuesList[j];
+                    scoreIntValuesList[j] = tmp;
+                }
+            }
         }
-        else if (currentScore > firstPlayerScore)
-        {
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FirstScore, currentScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].SecondScore, firstPlayerScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].ThirdScore, secondPlayerScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FourthScore, thirdPlayerScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FifthScore, fourthPlayerScore);
-        }
-        else if (currentScore > secondPlayerScore)
-        {
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].SecondScore, currentScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].ThirdScore, secondPlayerScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FourthScore, thirdPlayerScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FifthScore, fourthPlayerScore);
-        }
-        else if (currentScore > thirdPlayerScore)
-        {
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].ThirdScore, currentScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FourthScore, thirdPlayerScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FifthScore, fourthPlayerScore);
-        }
-        else if (currentScore > fourthPlayerScore)
-        {
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FourthScore, currentScore);
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FifthScore, fourthPlayerScore);
-        }
-        else if (currentScore > firstPlayerScore)
-            PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FifthScore, currentScore);
+        */
+
     }
 
 }
