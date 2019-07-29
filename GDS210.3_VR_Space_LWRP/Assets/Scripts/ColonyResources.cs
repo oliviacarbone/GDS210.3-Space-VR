@@ -7,7 +7,6 @@ public class ColonyResources : MonoBehaviour
     // Resource Variables
     [SerializeField]
     private float energyPrivate;
-    
     public float energy
     {
         set
@@ -28,29 +27,74 @@ public class ColonyResources : MonoBehaviour
         }
         get { return energyPrivate; }
     }
-    [Range(0,100)]
-    public float water = 50.0f;
-    [Range(0,100)]
-    public float oxygen = 50.0f;
+    [SerializeField]
+    private float waterPrivate;
+    public float water
+    {
+        set
+        {
+            if (value < 0f)
+            {
+                waterPrivate = 0f;
+            }
+            else if (value > 100f)
+            {
+                waterPrivate = 100f;
+            }
+            else
+            {
+                waterPrivate = value;
+            }
+        }
+        get { return waterPrivate; }
+    }
+    [SerializeField]
+    private float oxygenPrivate;
+    public float oxygen
+    {
+        set
+        {
+            if (value < 0f)
+            {
+                oxygenPrivate = 0f;
+            }
+            else if (value > 100f)
+            {
+                oxygenPrivate = 100f;
+            }
+            else
+            {
+                oxygenPrivate = value;
+            }
+        }
+        get { return oxygenPrivate; }
+    }
     //the population of the colony 
     public float population = 250f;
     //the rate at which the resource variables decay
-    public float decayRate = 0.015f; 
+    public float decayRate = 0.015f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        energy = 50f;
+        water = 50f;
+        oxygen = 50f;
     }
 
     // Update is called once per frame
     void Update()
     {
         DrainResources();
-        IncreaseResources();
+        
         PopulationChanger();
         DecayRateChanger();
-        
+
+       
+
     }
+
+
+
 
     //if population reaches set levels the decayRate variable will increase/decrease
     void DecayRateChanger()
@@ -67,15 +111,15 @@ public class ColonyResources : MonoBehaviour
         {
             decayRate = 0.015f;
         }
-        if(water < 30f)
+        if (water < 30f)
         {
             decayRate = 0.02f;
         }
-        if(energy < 30f)
+        if (energy < 30f)
         {
             decayRate = 0.02f;
         }
-        if(oxygen < 30f)
+        if (oxygen < 30f)
         {
             decayRate = 0.02f;
         }
@@ -89,27 +133,25 @@ public class ColonyResources : MonoBehaviour
         oxygen -= decayRate;
     }
 
-    void IncreaseResources()
+    public void IncreaseEnergy()
     {
-        if (Input.GetKeyUp("1"))
-        {
             energy += 5f;
-            water -= 2f;
-            oxygen -= 1f;
-        }
-        if (Input.GetKeyUp("2"))
-        {
-            water += 6f;
-            energy -= 3f;
-            oxygen -= 2f;
-        }
-        if(Input.GetKeyUp("3"))
-        {
-            oxygen += 4f;
-            water -= 4f;
-            energy -= 1f;
-        }
+            water -= 0f;
+            oxygen -= 0f;
     }
+    public void IncreaseWater()
+    {
+        water += 6f;
+        energy -= 0f;
+        oxygen -= 0f;
+    }
+    public void IncreaseOxygen()
+    {
+        oxygen += 4f;
+        water -= 0f;
+        energy -= 0f;
+    }
+
     //if water goes below/above a set point decrease or increase population respectively
     void PopulationChanger()
     {
@@ -122,5 +164,5 @@ public class ColonyResources : MonoBehaviour
             population += 0.5f;
         }
     }
-    
+
 }

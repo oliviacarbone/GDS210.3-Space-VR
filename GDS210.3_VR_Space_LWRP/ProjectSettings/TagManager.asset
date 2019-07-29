@@ -6,6 +6,9 @@ TagManager:
   tags:
   - projectile
   - FxTemporaire
+  - Water
+  - Energy
+  - Oxygen
   - Interactable
   layers:
   - Default

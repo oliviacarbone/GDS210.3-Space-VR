@@ -19,13 +19,14 @@ public class RandomSpawner : MonoBehaviour
     public Wave[] waves;
     private int nextWave = 0;
 
+    public Transform[] resources;
     public Transform[] spawnPoints;
 
     public float timeBetweenWaves = 5f;
     private float waveCountDown = 0f;
 
     private float searchCountDown = 1f;
-
+         
     private SpawnState state = SpawnState.COUNTING;
 
      void Start()
@@ -87,7 +88,15 @@ public class RandomSpawner : MonoBehaviour
         if (searchCountDown <= 0f)
         {
             searchCountDown = 1f;
-            if (GameObject.FindGameObjectWithTag("Interactable") == null)
+            if (GameObject.FindGameObjectWithTag("Water") == null)
+            {
+                return false;
+            }
+            if (GameObject.FindGameObjectWithTag("Energy") == null)
+            {
+                return false;
+            }
+            if (GameObject.FindGameObjectWithTag("Oxygen") == null)
             {
                 return false;
             }
@@ -102,7 +111,7 @@ public class RandomSpawner : MonoBehaviour
 
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnInteractable(_wave.spawnResource);
+            SpawnInteractable(resources[Random.Range(0, resources.Length)]);
             yield return new WaitForSeconds(1f/_wave.spawnRate);
         }
 
