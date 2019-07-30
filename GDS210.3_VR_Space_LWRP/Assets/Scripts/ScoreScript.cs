@@ -11,7 +11,6 @@ public struct ScoreValues
     public string Name;
     public string HighScore;
     public string CurrentScore;
-    public string FirstScore;
     public string SecondScore;
     public string ThirdScore;
     public string FourthScore;
@@ -78,6 +77,18 @@ public class ScoreScript : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        for (int i = 0; i < sceneNames.Length; i++)
+        {
+            if (SceneManager.GetActiveScene().name == sceneNames[i])
+            {
+                ScoreSystem(i);
+                break;
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -93,11 +104,11 @@ public class ScoreScript : MonoBehaviour
 
     void ScoreSystem(int sceneIndex)
     {
-        int test = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].HighScore, scoreIntValuesList[sceneIndex].currentTopScores);
+        int test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].HighScore, scoreIntValuesList[sceneIndex].currentTopScores);
         Debug.Log(test);
         PlayerPrefs.GetInt(scoreValueNames[sceneIndex].CurrentScore, currentScore);
-        int test2 = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].FirstScore, scoreIntValuesList[1].currentTopScores);
-        Debug.Log(test2);
+        int test2 = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].SecondScore, scoreIntValuesList[1].currentTopScores);
+        //Debug.Log(test2);
         /*
         PlayerPrefs.GetInt(scoreValueNames[sceneIndex].SecondScore, secondPlayerScore);
         PlayerPrefs.GetInt(scoreValueNames[sceneIndex].ThirdScore, thirdPlayerScore);
@@ -114,6 +125,7 @@ public class ScoreScript : MonoBehaviour
             if (scoreIntValuesList[i].currentScore > scoreIntValuesList[i].currentTopScores)
             {
                 scoreIntValuesList[i].currentTopScores = scoreIntValuesList[i].currentScore;
+                PlayerPrefs.SetInt(scoreValueNames[sceneIndex].CurrentScore, scoreIntValuesList[i].currentTopScores);
                 return;
             }
 
