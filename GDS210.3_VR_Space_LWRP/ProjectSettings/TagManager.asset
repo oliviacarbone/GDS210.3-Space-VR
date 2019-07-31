@@ -10,6 +10,7 @@ TagManager:
   - Energy
   - Oxygen
   - Interactable
+  - Resource
   layers:
   - Default
   - TransparentFX
