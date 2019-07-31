@@ -2,15 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MemoryBeyondLogic : MonoBehaviour
 {
     public MemoryBeyondButtons[] buttons;
     public List<int> colorList;
 
-    public float hLTime = 0.5f; //highLightTime, the time a block stays on the secondary material
-    public float delayTime = 0.2f; //the time before the next block changes material
+    public GameObject VRController;
+
+    private float hLTime; //highLightTime, the time a block stays on the secondary material
+    
+    public float HLTime
+    {
+        get { return hLTime; }
+
+        set
+        {
+            //value = 0.5f;
+
+            if (value < 0.1f)
+            {
+                hLTime = 0.1f;
+            }
+            else
+            {
+                hLTime = value;
+            }
+        }
+
+    }
+
+    private float delayTime; //the time before the next block changes material
+
+    public float DelayTime
+    {
+        get { return delayTime; }
+
+        set
+        {
+            //value = 0.2f;
+
+            if (value < 0.05f)
+            {
+                delayTime = 0.05f;
+            }
+            else
+            {
+                delayTime = value;
+            }
+        }
+    }
 
     public int level = 2; //the beginning number of cubes to change material 
     public int playerLevel = 0;
@@ -28,6 +69,9 @@ public class MemoryBeyondLogic : MonoBehaviour
 
     private void Awake()
     {
+        hLTime = 0.75f;
+        delayTime = 0.5f;
+
         startButton.interactable = true;
         startButtonText.text = "Start";
 
@@ -72,6 +116,10 @@ public class MemoryBeyondLogic : MonoBehaviour
                 level += 1;
                 playerLevel = 0;
                 player = false;
+                colorList.Clear();
+                TimeDecrease();
+                Debug.Log(hLTime);
+                Debug.Log(delayTime);
                 logic = true;
             }
         }
@@ -90,10 +138,10 @@ public class MemoryBeyondLogic : MonoBehaviour
             }
             
             buttons[colorList[i]].ClickedColor();
-            yield return new WaitForSeconds(hLTime);
+            yield return new WaitForSeconds(HLTime);
 
             buttons[colorList[i]].UnclickedColor();
-            yield return new WaitForSeconds(delayTime);
+            yield return new WaitForSeconds(DelayTime);  
         }
         player = true;
     }
@@ -121,5 +169,19 @@ public class MemoryBeyondLogic : MonoBehaviour
         startButtonText.text = "Start";
         restartButton.interactable = false;
         restartButtonText.text = "";
+    }
+
+    private void TimeDecrease()
+    {
+        hLTime = hLTime - 0.05f;
+        delayTime = delayTime - 0.03f;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == VRController)
+        {
+            StartGame();
+        }
     }
 }
