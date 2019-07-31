@@ -1307,26 +1307,26 @@ MonoBehaviour:
   - ScoreTest2
   scoreValueNames:
   - Name: Guillaume
-    HighScore: 
-    CurrentScore: 
-    SecondScore: 
-    ThirdScore: 
-    FourthScore: 
-    FifthScore: 
+    HighScore: High Score G
+    CurrentScore: Current Score G
+    SecondScore: Second Score G
+    ThirdScore: Third Score G
+    FourthScore: Fourth Score G
+    FifthScore: Fifth Score G
   - Name: ScoreTest1
-    HighScore: 
-    CurrentScore: 
-    SecondScore: 
+    HighScore: High Score 1
+    CurrentScore: Current Score 1
+    SecondScore: S
     ThirdScore: 
     FourthScore: 
     FifthScore: 
   - Name: ScoreTest2
-    HighScore: 
-    CurrentScore: 
-    SecondScore: 
-    ThirdScore: 
-    FourthScore: 
-    FifthScore: 
+    HighScore: High Score 2
+    CurrentScore: Current Score 2
+    SecondScore: Second Score 2
+    ThirdScore: Third Score 2
+    FourthScore: Fourth Score 2
+    FifthScore: Fifth Score 2
   scoreIntValuesList:
   - name: HighScore
     currentTopScores: 200

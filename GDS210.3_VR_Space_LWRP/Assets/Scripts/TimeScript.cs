@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TimeScript : MonoBehaviour
 {
-
+    //Seperating them into different state to make the timer work properly
     public enum TimeState { Tutorial, Countdown, Wait, TimeIsUp, DoNothing};
     public TimeState state = TimeState.Tutorial;
 
