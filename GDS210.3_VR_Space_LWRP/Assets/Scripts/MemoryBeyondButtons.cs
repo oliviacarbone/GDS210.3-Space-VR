@@ -42,6 +42,11 @@ public class MemoryBeyondButtons : MonoBehaviour
                 }
             }
         }
+
+        if (grabAction.GetLastStateUp(handType))
+        {
+            UnclickedColor();
+        }
     }
 
     private void OnMouseDown()

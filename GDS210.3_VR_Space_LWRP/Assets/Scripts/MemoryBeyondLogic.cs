@@ -8,6 +8,8 @@ public class MemoryBeyondLogic : MonoBehaviour
     public MemoryBeyondButtons[] buttons;
     public List<int> colorList;
 
+    public GameObject VRController;
+
     private float hLTime; //highLightTime, the time a block stays on the secondary material
     
     public float HLTime
@@ -173,5 +175,13 @@ public class MemoryBeyondLogic : MonoBehaviour
     {
         hLTime = hLTime - 0.05f;
         delayTime = delayTime - 0.03f;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == VRController)
+        {
+            StartGame();
+        }
     }
 }
