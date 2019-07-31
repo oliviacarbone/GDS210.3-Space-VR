@@ -70,7 +70,7 @@ public class ScoreScript : MonoBehaviour
         {
             if(SceneManager.GetActiveScene().name == sceneNames[i])
             {
-                ScoreSystem(i);
+                GetScoreSystem(i);
                 break;
             }
         }
@@ -83,7 +83,7 @@ public class ScoreScript : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == sceneNames[i])
             {
-                ScoreSystem(i);
+                GetScoreSystem(i);
                 break;
             }
         }
@@ -102,7 +102,7 @@ public class ScoreScript : MonoBehaviour
         fifthPlayerScoreText.text = scoreIntValuesList[4].currentTopScores.ToString();
     }
 
-    void ScoreSystem(int sceneIndex)
+    void GetScoreSystem(int sceneIndex)
     {
         int test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].HighScore, scoreIntValuesList[sceneIndex].currentTopScores);
         Debug.Log(test);
@@ -117,18 +117,33 @@ public class ScoreScript : MonoBehaviour
         */
     }
 
-    public void EndOfGameScores(int sceneIndex)
+    public void EndOfGameScores()
     {
         //So this script will go down the list of highscore to see where tht player score should go.
-        for (int i = 0; i < scoreIntValuesList.Count; i++)
+
+        for (int i = 0; i < sceneNames.Length; i++)
         {
-            if (scoreIntValuesList[i].currentScore > scoreIntValuesList[i].currentTopScores)
+            if (SceneManager.GetActiveScene().name == sceneNames[i])
             {
-                scoreIntValuesList[i].currentTopScores = scoreIntValuesList[i].currentScore;
-                PlayerPrefs.SetInt(scoreValueNames[sceneIndex].CurrentScore, scoreIntValuesList[i].currentTopScores);
-                return;
+
+                SaveScoreSystem(i);
+                break;
+
             }
 
+        }
+
+        void SaveScoreSystem(int sceneindex)
+        {
+            for (int i = 0; i < scoreIntValuesList.Count; i++)
+            {
+                if (scoreIntValuesList[i].currentScore > scoreIntValuesList[i].currentTopScores)
+                {
+                    scoreIntValuesList[i].currentTopScores = scoreIntValuesList[i].currentScore;
+                    PlayerPrefs.SetInt(scoreValueNames[sceneindex].HighScore, scoreIntValuesList[i].currentTopScores);
+                    return;
+                }
+            }
         }
 
 

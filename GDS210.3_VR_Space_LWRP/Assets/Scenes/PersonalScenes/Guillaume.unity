@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1377,10 +1377,23 @@ MonoBehaviour:
   - Test1
   - Tes2
   scoreValueNames:
-  - Name: GuillaumeScene
+  - Name: Guillaume
     HighScore: 
     CurrentScore: 
-    FirstScore: 
+    SecondScore: 
+    ThirdScore: 
+    FourthScore: 
+    FifthScore: 
+  - Name: Testscore1
+    HighScore: 
+    CurrentScore: 
+    SecondScore: 
+    ThirdScore: 
+    FourthScore: 
+    FifthScore: 
+  - Name: TestScore2
+    HighScore: 
+    CurrentScore: 
     SecondScore: 
     ThirdScore: 
     FourthScore: 
