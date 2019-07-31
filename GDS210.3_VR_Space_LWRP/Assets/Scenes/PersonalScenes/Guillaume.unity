@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4b99159dfcf52498ee850c89d38bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: 20
+  currentScore: 70
   currentScoreText: {fileID: 1040327800}
   highScoreText: {fileID: 1155055687}
   secondPlayerScoreText: {fileID: 312417688}
@@ -1378,42 +1378,42 @@ MonoBehaviour:
   - Tes2
   scoreValueNames:
   - Name: Guillaume
-    HighScore: 
-    CurrentScore: 
-    SecondScore: 
-    ThirdScore: 
-    FourthScore: 
-    FifthScore: 
+    HighScore: High Score G
+    CurrentScore: Current Score G
+    SecondScore: 'Second Score G '
+    ThirdScore: Third Score G
+    FourthScore: Fourth Score G
+    FifthScore: Fifth Score G
   - Name: Testscore1
-    HighScore: 
-    CurrentScore: 
-    SecondScore: 
-    ThirdScore: 
-    FourthScore: 
-    FifthScore: 
+    HighScore: High Score 1
+    CurrentScore: Current Score 1
+    SecondScore: Second Score 1
+    ThirdScore: Third Score 1
+    FourthScore: Fourth Score 1
+    FifthScore: Fifth Score 1
   - Name: TestScore2
-    HighScore: 
-    CurrentScore: 
-    SecondScore: 
-    ThirdScore: 
-    FourthScore: 
-    FifthScore: 
+    HighScore: High Score 2
+    CurrentScore: Current Score 2
+    SecondScore: Second Score 2
+    ThirdScore: Third Score 2
+    FourthScore: Fourth Score 2
+    FifthScore: Fifth Socre 2
   scoreIntValuesList:
   - name: HighScore
     currentTopScores: 60
-    currentScore: 0
+    oldCurrentTopScores: 0
   - name: Second Place
     currentTopScores: 50
-    currentScore: 0
+    oldCurrentTopScores: 0
   - name: Third Place
     currentTopScores: 40
-    currentScore: 0
+    oldCurrentTopScores: 0
   - name: Fourth Place
     currentTopScores: 30
-    currentScore: 0
+    oldCurrentTopScores: 0
   - name: Fifth Place
     currentTopScores: 20
-    currentScore: 0
+    oldCurrentTopScores: 0
 --- !u!114 &1300928639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2274,7 +2274,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1300928638}
         m_MethodName: EndOfGameScores
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -52,5 +52,23 @@ public class BackUp : MonoBehaviour
         else if (currentScore > firstPlayerScore)
             PlayerPrefs.SetInt(scoreValueNames[sceneIndex].FifthScore, currentScore);
             */
+
+        /*
+//So this script will go down the list of highscore to see where tht player score should go.
+for (int i = 0; i < scoreIntValuesList.Count; i++)
+{
+    for (int j = i + 1; j < scoreIntValuesList.Count; j++)
+    {
+        //If the score is greater than the high score, than they will swap.
+        if (scoreIntValuesList[j].currentScore > scoreIntValuesList[i].highScores)
+        {
+            ScoreIntValues tmp = scoreIntValuesList[i];
+            scoreIntValuesList[i] = scoreIntValuesList[j];
+            scoreIntValuesList[j] = tmp;
+        }
+    }
+}
+*/
+
     }
 }

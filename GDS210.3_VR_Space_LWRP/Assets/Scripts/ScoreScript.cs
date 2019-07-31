@@ -22,23 +22,13 @@ public class ScoreIntValues
 {
     public string name;
     public int currentTopScores;
-    public int currentScore;
-
+    public int oldCurrentTopScores;
 }
 
 
 public class ScoreScript : MonoBehaviour
 {
     public int currentScore;
-
-    /*
-    public int highScore;
-    public int firstPlayerScore;
-    public int secondPlayerScore;
-    public int thirdPlayerScore;
-    public int fourthPlayerScore;
-    public int fifthPlayerScore;
-    */
 
     public Text currentScoreText;
     public Text highScoreText;
@@ -51,7 +41,7 @@ public class ScoreScript : MonoBehaviour
 
     public string[] sceneNames = new string[3];
 
-    public ScoreValues[] scoreValueNames;
+    public List<ScoreValues> scoreValueNames;
     public List<ScoreIntValues> scoreIntValuesList;
 
     void Awake()
@@ -77,24 +67,11 @@ public class ScoreScript : MonoBehaviour
 
     }
 
-    void Start()
-    {
-        for (int i = 0; i < sceneNames.Length; i++)
-        {
-            if (SceneManager.GetActiveScene().name == sceneNames[i])
-            {
-                GetScoreSystem(i);
-                break;
-            }
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
-        scoreIntValuesList[Random.Range(0,5)].currentScore = currentScore;
 
-        //currentScoreText.text = highScore.ToString();
+        currentScoreText.text = currentScore.ToString();
         highScoreText.text = scoreIntValuesList[0].currentTopScores.ToString();
         secondPlayerScoreText.text = scoreIntValuesList[1].currentTopScores.ToString();
         thirdlayerScoreText.text = scoreIntValuesList[2].currentTopScores.ToString();
@@ -104,17 +81,68 @@ public class ScoreScript : MonoBehaviour
 
     void GetScoreSystem(int sceneIndex)
     {
-        int test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].HighScore, scoreIntValuesList[sceneIndex].currentTopScores);
-        Debug.Log(test);
-        PlayerPrefs.GetInt(scoreValueNames[sceneIndex].CurrentScore, currentScore);
-        int test2 = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].SecondScore, scoreIntValuesList[1].currentTopScores);
-        //Debug.Log(test2);
-        /*
-        PlayerPrefs.GetInt(scoreValueNames[sceneIndex].SecondScore, secondPlayerScore);
-        PlayerPrefs.GetInt(scoreValueNames[sceneIndex].ThirdScore, thirdPlayerScore);
-        PlayerPrefs.GetInt(scoreValueNames[sceneIndex].FourthScore, fourthPlayerScore);
-        PlayerPrefs.GetInt(scoreValueNames[sceneIndex].FifthScore, fifthPlayerScore);
-        */
+
+        if (SceneManager.GetActiveScene().name == "Guillaume")
+        {
+            int test = 0;
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].HighScore))
+            {
+                test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].HighScore);
+            }
+            else
+            {
+                Debug.LogWarning("HighScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].SecondScore))
+            {
+                scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].SecondScore);
+            }
+            else
+            {
+                Debug.LogError("SecondScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].ThirdScore))
+            {
+                scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].ThirdScore);
+            }
+            else
+            {
+                Debug.LogError("ThirdScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].FourthScore))
+            {
+                test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].FourthScore);
+            }
+            else
+            {
+                Debug.LogError("FourthScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].FifthScore))
+            {
+                test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].FifthScore);
+            }
+            else
+            {
+                Debug.LogError("FifthScore not found!!");
+            }
+            Debug.Log(test);
+        }
+        else if (SceneManager.GetActiveScene().name == "TestScore1")
+        {
+            int test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].HighScore, scoreIntValuesList[sceneIndex].currentTopScores);
+            Debug.Log(test);
+        }
+        else if (SceneManager.GetActiveScene().name == "TestScore2")
+        {
+            int test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].HighScore, scoreIntValuesList[sceneIndex].currentTopScores);
+            Debug.Log(test);
+        }
+
     }
 
     public void EndOfGameScores()
@@ -125,45 +153,112 @@ public class ScoreScript : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == sceneNames[i])
             {
+                for (int j = 0; j < scoreIntValuesList.Count; j++)
+                {
+                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    {
+                        scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
+                        scoreIntValuesList[j].currentTopScores = currentScore;
+                        PlayerPrefs.SetInt(scoreValueNames[i].HighScore, scoreIntValuesList[j].currentTopScores);
+                        print (PlayerPrefs.GetInt(scoreValueNames[i].HighScore, scoreIntValuesList[j].currentTopScores));
+                        currentScore = scoreIntValuesList[j].oldCurrentTopScores;
+                    }
+                }
 
-                SaveScoreSystem(i);
-                break;
+                SecondScoreSystem();
 
             }
 
         }
 
-        void SaveScoreSystem(int sceneindex)
+    }
+
+    void SecondScoreSystem()
+    {
+        for (int i = 0; i < sceneNames.Length; i++)
         {
-            for (int i = 0; i < scoreIntValuesList.Count; i++)
+            if (SceneManager.GetActiveScene().name == sceneNames[i])
             {
-                if (scoreIntValuesList[i].currentScore > scoreIntValuesList[i].currentTopScores)
+                for (int j = 0; j < scoreIntValuesList.Count; j++)
                 {
-                    scoreIntValuesList[i].currentTopScores = scoreIntValuesList[i].currentScore;
-                    PlayerPrefs.SetInt(scoreValueNames[sceneindex].HighScore, scoreIntValuesList[i].currentTopScores);
-                    return;
+                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    {
+                        scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
+                        PlayerPrefs.SetInt(scoreValueNames[i].SecondScore, scoreIntValuesList[j].currentTopScores);
+                        print(PlayerPrefs.GetInt(scoreValueNames[i].SecondScore, scoreIntValuesList[j].currentTopScores));
+                        currentScore = scoreIntValuesList[j].oldCurrentTopScores;
+                    }
+
                 }
             }
+            ThirdScoreSystem();
+
         }
+    }
 
-
-        /*
-        //So this script will go down the list of highscore to see where tht player score should go.
-        for (int i = 0; i < scoreIntValuesList.Count; i++)
+    void ThirdScoreSystem()
+    {
+        for (int i = 0; i < sceneNames.Length; i++)
         {
-            for (int j = i + 1; j < scoreIntValuesList.Count; j++)
+            if (SceneManager.GetActiveScene().name == sceneNames[i])
             {
-                //If the score is greater than the high score, than they will swap.
-                if (scoreIntValuesList[j].currentScore > scoreIntValuesList[i].highScores)
+                for (int j = 0; j < scoreIntValuesList.Count; j++)
                 {
-                    ScoreIntValues tmp = scoreIntValuesList[i];
-                    scoreIntValuesList[i] = scoreIntValuesList[j];
-                    scoreIntValuesList[j] = tmp;
+                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    {
+                        scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
+                        PlayerPrefs.SetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[j].currentTopScores);
+                        print(PlayerPrefs.GetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[j].currentTopScores));
+                        currentScore = scoreIntValuesList[j].oldCurrentTopScores;
+                    }
                 }
             }
-        }
-        */
+            FourthScoreSystem();
 
+        }
+    }
+
+    void FourthScoreSystem()
+    {
+        for (int i = 0; i < sceneNames.Length; i++)
+        {
+            if (SceneManager.GetActiveScene().name == sceneNames[i])
+            {
+                for (int j = 0; j < scoreIntValuesList.Count; j++)
+                {
+                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    {
+                        scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
+                        PlayerPrefs.SetInt(scoreValueNames[i].FourthScore, scoreIntValuesList[j].currentTopScores);
+                        print(PlayerPrefs.GetInt(scoreValueNames[i].FourthScore, scoreIntValuesList[j].currentTopScores));
+                        currentScore = scoreIntValuesList[j].oldCurrentTopScores;
+                    }
+                }
+            }
+            FifthScoreSystem();
+
+        }
+    }
+
+    void FifthScoreSystem()
+    {
+        for (int i = 0; i < sceneNames.Length; i++)
+        {
+            if (SceneManager.GetActiveScene().name == sceneNames[i])
+            {
+                for (int j = 0; j < scoreIntValuesList.Count; j++)
+                {
+                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    {
+                        scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
+                        PlayerPrefs.SetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[j].currentTopScores);
+                        print(PlayerPrefs.GetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[j].currentTopScores));
+                        return;
+                    }
+                }
+            }
+
+        }
     }
 
 }

@@ -33,6 +33,7 @@ public class RandomSpawner : MonoBehaviour
     {
         waveCountDown = timeBetweenWaves;
     }
+
     void Update()
     {
         
@@ -48,6 +49,7 @@ public class RandomSpawner : MonoBehaviour
                 return;
             }
         }
+
         if (waveCountDown <= 0f)
         {
             if (state != SpawnState.SPAWNING)
@@ -56,6 +58,7 @@ public class RandomSpawner : MonoBehaviour
             }
             
         }
+
         else
         {
             waveCountDown -= Time.deltaTime;
