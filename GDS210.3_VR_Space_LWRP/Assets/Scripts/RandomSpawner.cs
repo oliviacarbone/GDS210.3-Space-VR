@@ -28,6 +28,8 @@ public class RandomSpawner : MonoBehaviour
     public float waveCountDown = 0f;
 
     private float searchCountDown = 1f;
+
+    public float failSafeCountDown = 1f;
          
     private SpawnState state = SpawnState.COUNTING;
 
@@ -37,6 +39,7 @@ public class RandomSpawner : MonoBehaviour
     }
     void Update()
     {
+        failSafeCountDown -= Time.deltaTime;
         
         if (state == SpawnState.WAITING)
         {
@@ -62,25 +65,33 @@ public class RandomSpawner : MonoBehaviour
         {
             waveCountDown -= Time.deltaTime;
         }
-       // FailSafeSpawn();
+     //   FailSafeSpawn();
     }
-   /* public void FailSafeSpawn()
+   /*public void FailSafeSpawn()
     {
         Transform spawnPointFailSafe = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        if (colResSpawner.energy < 25f)
-        {
-            Debug.Log("Failsafe energy");
-            Instantiate(resources[2], spawnPointFailSafe.position, spawnPointFailSafe.rotation);
+        if (failSafeCountDown <= 0f) {
+            if (colResSpawner.energy < 25f)
+            {
+                Debug.Log("Failsafe energy");
+
+
+                Instantiate(resources[2], spawnPointFailSafe.position, spawnPointFailSafe.rotation);
+            }
         }
-        if (colResSpawner.water < 25f)
-        {
-            Debug.Log("Failsafe water");
-            Instantiate(resources[0], spawnPointFailSafe.position, spawnPointFailSafe.rotation);
+        if () {
+            if (colResSpawner.water < 25f)
+            {
+                Debug.Log("Failsafe water");
+                Instantiate(resources[0], spawnPointFailSafe.position, spawnPointFailSafe.rotation);
+            }
         }
-        if (colResSpawner.oxygen < 25f)
-        {
-            Debug.Log("Failsafe oxygen");
-            Instantiate(resources[1], spawnPointFailSafe.position, spawnPointFailSafe.rotation);
+        if () {
+            if (colResSpawner.oxygen < 25f)
+            {
+                Debug.Log("Failsafe oxygen");
+                Instantiate(resources[1], spawnPointFailSafe.position, spawnPointFailSafe.rotation);
+            }
         }
 
 
@@ -105,7 +116,7 @@ public class RandomSpawner : MonoBehaviour
 
 
 
-
+    //modified bool to put a slight second between starting a new wave
     bool InteractableisAlive()
     {
         searchCountDown -= Time.deltaTime;

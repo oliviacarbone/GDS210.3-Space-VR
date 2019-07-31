@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ResourceScript : MonoBehaviour
 {
+    public float thrust = 3f;
+    public Rigidbody rb;
     public float countDown = 20f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,12 @@ public class ResourceScript : MonoBehaviour
             Destroy(gameObject);
         }
         
+    }
+
+
+    void FixedUpdate()
+    {
+        rb.AddForce(transform.forward * thrust);
     }
 
 
