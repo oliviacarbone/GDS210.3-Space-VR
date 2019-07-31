@@ -62,9 +62,9 @@ public class RandomSpawner : MonoBehaviour
         {
             waveCountDown -= Time.deltaTime;
         }
-        FailSafeSpawn();
+       // FailSafeSpawn();
     }
-    public void FailSafeSpawn()
+   /* public void FailSafeSpawn()
     {
         Transform spawnPointFailSafe = spawnPoints[Random.Range(0, spawnPoints.Length)];
         if (colResSpawner.energy < 25f)
@@ -84,7 +84,7 @@ public class RandomSpawner : MonoBehaviour
         }
 
 
-    }
+    }*/
 
     void WaveCompleted()
     {
