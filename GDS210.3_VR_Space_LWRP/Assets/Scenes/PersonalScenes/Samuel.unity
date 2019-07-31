@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668aa134e7a08594ebd0e905b89a5bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colResSpawner: {fileID: 0}
+  colResSpawner: {fileID: 53961768}
   waves:
   - name: 1
     spawnResource: {fileID: 6912607447115507927, guid: ebed7e11b7697bd4e9a873dd7874b79a,
