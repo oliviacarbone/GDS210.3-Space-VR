@@ -88,7 +88,7 @@ public class ScoreScript : MonoBehaviour
 
             if (PlayerPrefs.HasKey(scoreValueNames[0].HighScore))
             {
-                test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].HighScore);
+                test = scoreIntValuesList[0].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].HighScore);
             }
             else
             {
@@ -97,7 +97,7 @@ public class ScoreScript : MonoBehaviour
 
             if (PlayerPrefs.HasKey(scoreValueNames[0].SecondScore))
             {
-                scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].SecondScore);
+                scoreIntValuesList[1].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].SecondScore);
             }
             else
             {
@@ -106,7 +106,7 @@ public class ScoreScript : MonoBehaviour
 
             if (PlayerPrefs.HasKey(scoreValueNames[0].ThirdScore))
             {
-                scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].ThirdScore);
+                scoreIntValuesList[2].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].ThirdScore);
             }
             else
             {
@@ -115,7 +115,7 @@ public class ScoreScript : MonoBehaviour
 
             if (PlayerPrefs.HasKey(scoreValueNames[0].FourthScore))
             {
-                test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].FourthScore);
+                test = scoreIntValuesList[3].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].FourthScore);
             }
             else
             {
@@ -124,7 +124,7 @@ public class ScoreScript : MonoBehaviour
 
             if (PlayerPrefs.HasKey(scoreValueNames[0].FifthScore))
             {
-                test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].FifthScore);
+                test = scoreIntValuesList[4].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].FifthScore);
             }
             else
             {
@@ -162,6 +162,7 @@ public class ScoreScript : MonoBehaviour
                         PlayerPrefs.SetInt(scoreValueNames[i].HighScore, scoreIntValuesList[j].currentTopScores);
                         print (PlayerPrefs.GetInt(scoreValueNames[i].HighScore, scoreIntValuesList[j].currentTopScores));
                         currentScore = scoreIntValuesList[j].oldCurrentTopScores;
+                        break;
                     }
                 }
 
@@ -184,9 +185,11 @@ public class ScoreScript : MonoBehaviour
                     if (currentScore > scoreIntValuesList[j].currentTopScores)
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
+                        scoreIntValuesList[j].currentTopScores = currentScore;
                         PlayerPrefs.SetInt(scoreValueNames[i].SecondScore, scoreIntValuesList[j].currentTopScores);
                         print(PlayerPrefs.GetInt(scoreValueNames[i].SecondScore, scoreIntValuesList[j].currentTopScores));
                         currentScore = scoreIntValuesList[j].oldCurrentTopScores;
+                        break;
                     }
 
                 }
@@ -207,9 +210,11 @@ public class ScoreScript : MonoBehaviour
                     if (currentScore > scoreIntValuesList[j].currentTopScores)
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
+                        scoreIntValuesList[j].currentTopScores = currentScore;
                         PlayerPrefs.SetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[j].currentTopScores);
                         print(PlayerPrefs.GetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[j].currentTopScores));
                         currentScore = scoreIntValuesList[j].oldCurrentTopScores;
+                        break;
                     }
                 }
             }
@@ -229,9 +234,11 @@ public class ScoreScript : MonoBehaviour
                     if (currentScore > scoreIntValuesList[j].currentTopScores)
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
+                        scoreIntValuesList[j].currentTopScores = currentScore;
                         PlayerPrefs.SetInt(scoreValueNames[i].FourthScore, scoreIntValuesList[j].currentTopScores);
                         print(PlayerPrefs.GetInt(scoreValueNames[i].FourthScore, scoreIntValuesList[j].currentTopScores));
                         currentScore = scoreIntValuesList[j].oldCurrentTopScores;
+                        break;
                     }
                 }
             }
@@ -251,6 +258,7 @@ public class ScoreScript : MonoBehaviour
                     if (currentScore > scoreIntValuesList[j].currentTopScores)
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
+                        scoreIntValuesList[j].currentTopScores = currentScore;
                         PlayerPrefs.SetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[j].currentTopScores);
                         print(PlayerPrefs.GetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[j].currentTopScores));
                         return;
