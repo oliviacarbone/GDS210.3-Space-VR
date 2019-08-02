@@ -25,11 +25,15 @@ public class Teleport : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Spawn the aiming laser.
         laser = Instantiate(laserPrefab);
+
+        laser.transform.parent = gameObject.transform;
 
         laserTransform = laser.transform;
 
         reticle = Instantiate(teleportReticlePrefab);
+        reticle.transform.parent = gameObject.transform;
 
         teleportReticleTransform = reticle.transform;
     }

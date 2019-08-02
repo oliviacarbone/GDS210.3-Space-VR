@@ -11,6 +11,7 @@ TagManager:
   - Oxygen
   - Interactable
   - Resource
+  - GunTarget
   layers:
   - Default
   - TransparentFX
