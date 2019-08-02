@@ -26,6 +26,7 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        //Raycast for shooting
         RaycastHit hit;
         if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))
         {
@@ -39,12 +40,13 @@ public class Gun : MonoBehaviour
 
     void Laser()
     {
-
+        //Raycast for laser sights
         RaycastHit hit;
         if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))  
         {
             if (hit.collider.CompareTag("GunTarget"))
             {
+                //Changes colour of laser to red when on a target
                 laserColor.color = withTarget;
                 laserColor.color = withTarget;
                 laser.SetPosition(1, hit.point);
@@ -52,6 +54,7 @@ public class Gun : MonoBehaviour
         }
         else
         {
+            //Sets default laser colour to green
             laserColor.color = noTarget;
             laserColor.color = noTarget;
             laser.SetPosition(1, transform.forward * 5000);
@@ -59,10 +62,12 @@ public class Gun : MonoBehaviour
 
         if (!hit.collider)
         {
+            //Sets laser distance 
             laser.SetPosition(1, transform.forward * 5000);
             Debug.Log("No Hit");
         }
 
+        //Sets laser start location
         laser.SetPosition(0, muzzle.transform.position);
         
     }
