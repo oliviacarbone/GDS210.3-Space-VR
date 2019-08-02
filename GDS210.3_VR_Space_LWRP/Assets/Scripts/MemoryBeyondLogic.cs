@@ -8,7 +8,7 @@ public class MemoryBeyondLogic : MonoBehaviour
     public MemoryBeyondButtons[] buttons;
     public List<int> colorList;
 
-    public GameObject VRController;
+    //public GameObject VRController;
 
     private float hLTime; //highLightTime, the time a block stays on the secondary material
     
@@ -77,6 +77,8 @@ public class MemoryBeyondLogic : MonoBehaviour
 
         restartButton.interactable = false;
         restartButtonText.text = "";
+
+        StartDelay();
     }
 
     // Start is called before the first frame update
@@ -146,6 +148,13 @@ public class MemoryBeyondLogic : MonoBehaviour
         player = true;
     }
 
+    private IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(3);
+
+        StartGame();
+    }
+
     public void StartGame() //the button for the start of the game, turns on the logic and turns off the start button
     {
         logic = true;
@@ -177,11 +186,11 @@ public class MemoryBeyondLogic : MonoBehaviour
         delayTime = delayTime - 0.03f;
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == VRController)
         {
             StartGame();
         }
-    }
+    }*/
 }
