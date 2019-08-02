@@ -8,18 +8,13 @@ public class MemoryBeyondLogic : MonoBehaviour
     public MemoryBeyondButtons[] buttons;
     public List<int> colorList;
 
-    //public GameObject VRController;
-
     private float hLTime; //highLightTime, the time a block stays on the secondary material
-    
     public float HLTime
     {
         get { return hLTime; }
 
         set
         {
-            //value = 0.5f;
-
             if (value < 0.1f)
             {
                 hLTime = 0.1f;
@@ -33,15 +28,12 @@ public class MemoryBeyondLogic : MonoBehaviour
     }
 
     private float delayTime; //the time before the next block changes material
-
     public float DelayTime
     {
         get { return delayTime; }
 
         set
         {
-            //value = 0.2f;
-
             if (value < 0.05f)
             {
                 delayTime = 0.05f;
@@ -67,16 +59,13 @@ public class MemoryBeyondLogic : MonoBehaviour
     public Button restartButton;
     public Text restartButtonText;
 
+    public GameObject gameOverScreen;
+
     private void Awake()
     {
         hLTime = 0.75f;
         delayTime = 0.5f;
-
-        startButton.interactable = true;
-        startButtonText.text = "Start";
-
-        restartButton.interactable = false;
-        restartButtonText.text = "";
+        gameOverScreen.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -94,16 +83,12 @@ public class MemoryBeyondLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (logic)
-        {
-            logic = false;
-            StartCoroutine(GameLogic()); //starts the random button functions
-        }
+        LogicCheck();
     }
 
     void ButtonClicked(int number)
     {
-        if (player)
+        if (player == true)
         {
             if (number == colorList[playerLevel]) //checks if the player has followed the pattern, adding to the pattern if true or running game over if false
             {
@@ -120,8 +105,6 @@ public class MemoryBeyondLogic : MonoBehaviour
                 player = false;
                 colorList.Clear();
                 TimeDecrease();
-                Debug.Log(hLTime);
-                Debug.Log(delayTime);
                 logic = true;
             }
         }
@@ -152,9 +135,16 @@ public class MemoryBeyondLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
 
-        Debug.Log("Hey");
-
         StartGame();
+    }
+
+    private void LogicCheck()
+    {
+        if (logic == true)
+        {
+            logic = false;
+            StartCoroutine(GameLogic());
+        }
     }
 
     public void StartGame() //the button for the start of the game, turns on the logic and turns off the start button
@@ -162,24 +152,13 @@ public class MemoryBeyondLogic : MonoBehaviour
         logic = true;
         playerLevel = 0;
         level = 2;
-        //startButton.interactable = false;
-        //startButtonText.text = "";
     }
 
     void GameOver()
     {
         player = false;
-        restartButton.interactable = true;
-        restartButtonText.text = "Restart";
         colorList.Clear();
-    }
-
-    public void RestartButton()
-    {
-        startButton.interactable = true;
-        startButtonText.text = "Start";
-        restartButton.interactable = false;
-        restartButtonText.text = "";
+        gameOverScreen.SetActive(true);
     }
 
     private void TimeDecrease()

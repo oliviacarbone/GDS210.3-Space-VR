@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PersonalScenes/ScoreTest2.unity
     guid: 17aac2cdce312ab4abdb468458e286bb
+  - enabled: 1
+    path: Assets/Scenes/VR TEST SCENE WILLIAM.unity
+    guid: 1710a589425056343a5fed25141e99da
+  - enabled: 1
+    path: Assets/Scenes/PersonalScenes/William.unity
+    guid: f709ac9eb7fdfd84e93d26b92377dcf8
   m_configObjects: {}
