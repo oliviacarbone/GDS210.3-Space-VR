@@ -46,7 +46,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  sceneManagement: {fileID: 0}
+  sceneManagement: {fileID: 5444597092766719105, guid: 357c100adf3456a4687bf274bb9a7525,
+    type: 3}
 --- !u!114 &4198028152926926567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +186,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  sceneManagement: {fileID: 0}
+  sceneManagement: {fileID: 5444597092766719105, guid: 357c100adf3456a4687bf274bb9a7525,
+    type: 3}
 --- !u!1001 &4712116564190925169
 PrefabInstance:
   m_ObjectHideFlags: 0
