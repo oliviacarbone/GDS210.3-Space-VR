@@ -1,6 +1,6 @@
 ﻿
 using UnityEngine;
-
+using Valve.VR;
 public class Gun : MonoBehaviour
 {
     public float range = 100f;
@@ -13,12 +13,11 @@ public class Gun : MonoBehaviour
     Color noTarget = Color.green;
     Color withTarget = Color.red;
 
-    void Awake()
-    {
-        // laser = gameObject.GetComponent<LineRenderer>();
-        laserColor.color = noTarget;
-        laserColor.color = noTarget;
-    }
+    public ShootingTest shootingTest;
+
+    public SteamVR_Input_Sources handType;
+    public SteamVR_Behaviour_Pose controllerPose;
+    public SteamVR_Action_Boolean shootAction;
 
     void Update()
     {
@@ -27,29 +26,44 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
+        
+        if(shootAction.GetLastStateUp(handType))
+        {
+            Shoot();
+        }
     }
 
     void Shoot()
     {
+        //Raycast for shooting
         RaycastHit hit;
         if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))
         {
-            Debug.Log("HIT!!!");
+            if (hit.collider.CompareTag("GunTarget"))
+            {
+                Debug.Log("HIT!!!");
+                shootingTest.Hit();
+            }
         }
     }
 
     void Laser()
     {
-
+        //Raycast for laser sights
         RaycastHit hit;
-        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))
+        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))  
         {
-            laserColor.color = withTarget;
-            laserColor.color = withTarget;
-            laser.SetPosition(1, hit.point);
+            if (hit.collider.CompareTag("GunTarget"))
+            {
+                //Changes colour of laser to red when on a target
+                laserColor.color = withTarget;
+                laserColor.color = withTarget;
+                laser.SetPosition(1, hit.point);
+            }
         }
         else
         {
+            //Sets default laser colour to green
             laserColor.color = noTarget;
             laserColor.color = noTarget;
             laser.SetPosition(1, transform.forward * 5000);
@@ -57,10 +71,12 @@ public class Gun : MonoBehaviour
 
         if (!hit.collider)
         {
+            //Sets laser distance 
             laser.SetPosition(1, transform.forward * 5000);
             Debug.Log("No Hit");
         }
 
+        //Sets laser start location
         laser.SetPosition(0, muzzle.transform.position);
         
     }

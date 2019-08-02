@@ -10,6 +10,7 @@ public class TimeScript : MonoBehaviour
     public TimeState state = TimeState.Tutorial;
 
     public Text timeText;
+    //Setting up the timer.
     public int minute;
     public int second;
 
@@ -19,6 +20,13 @@ public class TimeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //To prevent anyone to make the seconds go over 60 seconds.
+        if (second >= 60)
+        {
+            second = 59;
+        }
+
+        //To make sure that everything is working as intended to.
         switch(state)
         {
             case (TimeState.Tutorial):
@@ -36,6 +44,7 @@ public class TimeScript : MonoBehaviour
                 }
                 else if (minute == 0 && second == 0)
                 {
+                    //Once the timer is done, it stops everthing. 
                     StopCoroutine("LoseTime");
                     state = TimeState.TimeIsUp;
                 }
@@ -45,6 +54,7 @@ public class TimeScript : MonoBehaviour
                 break;
         }
 
+        //combining it together to make it work.
         timeText.text = minute.ToString("00") + ":" + second.ToString("00");
 
     }
