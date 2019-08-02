@@ -28,7 +28,6 @@ public class MemoryBeyondLogic : MonoBehaviour
     }
 
     private float delayTime; //the time before the next block changes material
-
     public float DelayTime
     {
         get { return delayTime; }
@@ -60,10 +59,13 @@ public class MemoryBeyondLogic : MonoBehaviour
     public Button restartButton;
     public Text restartButtonText;
 
+    public GameObject gameOverScreen;
+
     private void Awake()
     {
         hLTime = 0.75f;
         delayTime = 0.5f;
+        gameOverScreen.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -156,13 +158,12 @@ public class MemoryBeyondLogic : MonoBehaviour
     {
         player = false;
         colorList.Clear();
+        gameOverScreen.SetActive(true);
     }
 
     private void TimeDecrease()
     {
         hLTime = hLTime - 0.05f;
         delayTime = delayTime - 0.03f;
-        //Debug.Log(hLTime);
-        //Debug.Log(delayTime);
     }
 }
