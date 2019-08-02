@@ -1,6 +1,6 @@
 ﻿
 using UnityEngine;
-
+using Valve.VR;
 public class Gun : MonoBehaviour
 {
     public float range = 100f;
@@ -15,10 +15,19 @@ public class Gun : MonoBehaviour
 
     public ShootingTest shootingTest;
 
+    public SteamVR_Input_Sources handType;
+    public SteamVR_Behaviour_Pose controllerPose;
+    public SteamVR_Action_Boolean shootAction;
+
     void Update()
     {
         Laser();
         if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+        
+        if(shootAction.GetLastStateUp(handType))
         {
             Shoot();
         }
