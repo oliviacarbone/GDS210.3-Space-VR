@@ -13,12 +13,7 @@ public class Gun : MonoBehaviour
     Color noTarget = Color.green;
     Color withTarget = Color.red;
 
-    void Awake()
-    {
-        // laser = gameObject.GetComponent<LineRenderer>();
-        laserColor.color = noTarget;
-        laserColor.color = noTarget;
-    }
+    public ShootingTest shootingTest;
 
     void Update()
     {
@@ -34,7 +29,11 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))
         {
-            Debug.Log("HIT!!!");
+            if (hit.collider.CompareTag("GunTarget"))
+            {
+                Debug.Log("HIT!!!");
+                shootingTest.Hit();
+            }
         }
     }
 
@@ -42,11 +41,14 @@ public class Gun : MonoBehaviour
     {
 
         RaycastHit hit;
-        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))
+        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))  
         {
-            laserColor.color = withTarget;
-            laserColor.color = withTarget;
-            laser.SetPosition(1, hit.point);
+            if (hit.collider.CompareTag("GunTarget"))
+            {
+                laserColor.color = withTarget;
+                laserColor.color = withTarget;
+                laser.SetPosition(1, hit.point);
+            }
         }
         else
         {
