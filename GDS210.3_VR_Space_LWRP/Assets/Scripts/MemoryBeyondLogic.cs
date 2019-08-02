@@ -77,13 +77,13 @@ public class MemoryBeyondLogic : MonoBehaviour
 
         restartButton.interactable = false;
         restartButtonText.text = "";
-
-        StartDelay();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(StartDelay());
+
         for (int i = 0; i < buttons.Length; i++) //loops through the available buttons
         {
             buttons[i].OnClick += ButtonClicked;
@@ -152,6 +152,8 @@ public class MemoryBeyondLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
 
+        Debug.Log("Hey");
+
         StartGame();
     }
 
@@ -160,8 +162,8 @@ public class MemoryBeyondLogic : MonoBehaviour
         logic = true;
         playerLevel = 0;
         level = 2;
-        startButton.interactable = false;
-        startButtonText.text = "";
+        //startButton.interactable = false;
+        //startButtonText.text = "";
     }
 
     void GameOver()
@@ -185,12 +187,4 @@ public class MemoryBeyondLogic : MonoBehaviour
         hLTime = hLTime - 0.05f;
         delayTime = delayTime - 0.03f;
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == VRController)
-        {
-            StartGame();
-        }
-    }*/
 }
