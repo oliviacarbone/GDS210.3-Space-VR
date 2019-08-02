@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ColonyResources : MonoBehaviour
 {
+    
+    public StartColonyGame startColGame;
+    public bool gameOver = false;
+    
     // Resource Variables
     [SerializeField]
     private float energyPrivate;
@@ -70,7 +74,23 @@ public class ColonyResources : MonoBehaviour
         get { return oxygenPrivate; }
     }
     //the population of the colony 
-    public float population = 250f;
+    [SerializeField]
+    private float populationPrivate;
+    public float population
+    {
+        set
+        {
+            if (value < 0f)
+            {
+                populationPrivate = 0f;
+            }
+            else
+            {
+                populationPrivate = value;
+            }
+        }
+        get { return populationPrivate; }
+    }
     //the rate at which the resource variables decay
     public float decayRate = 0.015f;
     // Start is called before the first frame update
@@ -84,13 +104,25 @@ public class ColonyResources : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DrainResources();
-        
-        PopulationChanger();
-        DecayRateChanger();
+        if (gameOver == false && startColGame.startGame == true)
+        {
+            DrainResources();
+
+
+            PopulationChanger();
+            DecayRateChanger();
+        }
+
+        if (energy == 0f || water == 0f || oxygen == 0f)
+        {
+
+            gameOver = true;
+            Time.timeScale = 0.0f;
+        }
+        else { Time.timeScale = 1.0f; gameOver = false; }
     }
 
-
+  
 
 
     //if population reaches set levels the decayRate variable will increase/decrease

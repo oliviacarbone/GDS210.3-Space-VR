@@ -9,7 +9,7 @@ public class WaterColony : MonoBehaviour
     {
         if (col.gameObject.tag == "Water")
         {
-            Debug.Log("Water");
+
             colResWater.IncreaseWater();
             Destroy(col.gameObject);
         }

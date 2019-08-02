@@ -11,7 +11,7 @@ public class EnergyColony : MonoBehaviour
     {
         if (col.gameObject.tag == "Energy")
         {
-            Debug.Log("Energy");
+            
             colResEnergy.IncreaseEnergy();
              Destroy(col.gameObject);
         }

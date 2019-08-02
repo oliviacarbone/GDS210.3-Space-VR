@@ -10,7 +10,7 @@ public class OxygenColony : MonoBehaviour
     {
         if (col.gameObject.tag == "Oxygen")
         {
-            Debug.Log("Oxygen");
+            
             colResOxy.IncreaseOxygen();
             Destroy(col.gameObject);
         }

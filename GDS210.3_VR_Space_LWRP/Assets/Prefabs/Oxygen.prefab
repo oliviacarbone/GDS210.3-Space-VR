@@ -121,4 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a6013ae70dbd54ebe1f6b832a01413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 3
+  rb: {fileID: 1765375906259711540}
   countDown: 5

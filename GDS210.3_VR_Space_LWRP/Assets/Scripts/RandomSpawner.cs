@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
-
+    //startColGame is required for the defense game aswell, it just puts in a button mechanic to start the game
+    public StartColonyGame startColGame;
     public ColonyResources colResSpawner;
 
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
@@ -25,12 +26,15 @@ public class RandomSpawner : MonoBehaviour
     public Transform[] spawnPoints;
 
     public float timeBetweenWaves = 0.5f;
-    public float waveCountDown = 0f;
+    private float waveCountDown = 0f;
 
     private float searchCountDown = 1f;
 
-    public float failSafeCountDown = 1f;
-         
+    private float failSafeCountDownEnergy = 2f;
+    private float failSafeCountDownOxygen = 2f;
+    private float failSafeCountDownWater = 2f;
+
+
     private SpawnState state = SpawnState.COUNTING;
 
      void Start()
@@ -40,65 +44,84 @@ public class RandomSpawner : MonoBehaviour
 
     void Update()
     {
-        failSafeCountDown -= Time.deltaTime;
-        
-        if (state == SpawnState.WAITING)
+        if (startColGame.startGame == true)
         {
-            if (!InteractableisAlive())
+            failSafeCountDownWater -= Time.deltaTime;
+            failSafeCountDownOxygen -= Time.deltaTime;
+            failSafeCountDownEnergy -= Time.deltaTime;
+
+            if (state == SpawnState.WAITING)
             {
-                WaveCompleted();
-                
+                if (!InteractableisAlive())
+                {
+
+                    WaveCompleted();
+                    FailSafeSpawnEnergy();
+                    FailSafeSpawnOxygen();
+                    FailSafeSpawnWater();
+                }
+                else
+                {
+                    return;
+                }
             }
+
+            if (waveCountDown <= 0f)
+            {
+                if (state != SpawnState.SPAWNING)
+                {
+                    StartCoroutine(SpawnWave(waves[nextWave]));
+                }
+
+            }
+
             else
             {
-                return;
+                waveCountDown -= Time.deltaTime;
             }
         }
-
-        if (waveCountDown <= 0f)
-        {
-            if (state != SpawnState.SPAWNING)
-            {
-                StartCoroutine(SpawnWave(waves[nextWave]));
-            }
-            
-        }
-
-        else
-        {
-            waveCountDown -= Time.deltaTime;
-        }
-     //   FailSafeSpawn();
     }
-   /*public void FailSafeSpawn()
+   public void FailSafeSpawnEnergy()
     {
-        Transform spawnPointFailSafe = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        if (failSafeCountDown <= 0f) {
+        Transform spawnPointFailSafeEnergy = spawnPoints[1];
+        if (failSafeCountDownEnergy <= 0f) {
             if (colResSpawner.energy < 25f)
             {
-                Debug.Log("Failsafe energy");
+                
 
 
-                Instantiate(resources[2], spawnPointFailSafe.position, spawnPointFailSafe.rotation);
+                Instantiate(resources[2], spawnPointFailSafeEnergy.position, spawnPointFailSafeEnergy.rotation);
             }
+            failSafeCountDownEnergy = 2f;
         }
-        if () {
-            if (colResSpawner.water < 25f)
-            {
-                Debug.Log("Failsafe water");
-                Instantiate(resources[0], spawnPointFailSafe.position, spawnPointFailSafe.rotation);
-            }
-        }
-        if () {
+        
+    }
+    public void FailSafeSpawnOxygen()
+    {
+        Transform spawnPointFailSafeOxygen = spawnPoints[2];
+        if (failSafeCountDownOxygen <= 0f)
+        {
             if (colResSpawner.oxygen < 25f)
             {
-                Debug.Log("Failsafe oxygen");
-                Instantiate(resources[1], spawnPointFailSafe.position, spawnPointFailSafe.rotation);
+                
+                Instantiate(resources[1], spawnPointFailSafeOxygen.position, spawnPointFailSafeOxygen.rotation);
             }
+            failSafeCountDownOxygen = 2f;
         }
-
-
-    }*/
+    }
+    public void FailSafeSpawnWater()
+    {
+        Transform spawnPointFailSafeWater = spawnPoints[3];
+        if (failSafeCountDownWater <= 0f)
+        {
+            if (colResSpawner.water < 25f)
+            {
+                
+                Instantiate(resources[0], spawnPointFailSafeWater.position, spawnPointFailSafeWater.rotation);
+            }
+            failSafeCountDownWater = 2f;
+        }
+    }
 
     void WaveCompleted()
     {
@@ -125,32 +148,36 @@ public class RandomSpawner : MonoBehaviour
         searchCountDown -= Time.deltaTime;
         if (searchCountDown <= 0f)
         {
-            searchCountDown = 1f;
-           
+            searchCountDown = 0.5f;
+            if (GameObject.FindGameObjectWithTag("Interactable") == null)
+            {
+               
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 
     IEnumerator SpawnWave(Wave _wave)
     {
-        
+        if (startColGame.startGame == true) { 
         state = SpawnState.SPAWNING;
 
         for (int i = 0; i < _wave.count; i++)
         {
             SpawnInteractable(resources[Random.Range(0, resources.Length)]);
-            yield return new WaitForSeconds(1f/_wave.spawnRate);
+            yield return new WaitForSeconds(1f / _wave.spawnRate);
         }
 
         state = SpawnState.WAITING;
-
+    }
         yield break;
     }
 
     void SpawnInteractable(Transform interactable)
     {
         
-        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform _sp = spawnPoints[0];
         Instantiate(interactable, _sp.position, _sp.rotation);
         
     }
