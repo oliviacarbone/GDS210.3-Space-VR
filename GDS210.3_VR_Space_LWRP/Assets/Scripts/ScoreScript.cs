@@ -17,6 +17,7 @@ public struct ScoreValues
     public string FifthScore;
 }
 
+//Setting up the tier list for the leaderboard
 [System.Serializable]
 public class ScoreIntValues
 {
@@ -46,19 +47,9 @@ public class ScoreScript : MonoBehaviour
 
     void Awake()
     {
-
-        //scoreIntValues[0].highScoreList.ins
-
-        /*
-        if (!PlayerPrefs.HasKey(scoreValueNames[0].HighScore))
-        {
-            return;]
-        }
-        */
-
         for(int i = 0; i < sceneNames.Length; i++ )
         {
-            if(SceneManager.GetActiveScene().name == sceneNames[i])
+            if(SceneManager.GetActiveScene().name == sceneNames[i]) 
             {
                 GetScoreSystem(i);
                 break;
@@ -81,7 +72,7 @@ public class ScoreScript : MonoBehaviour
 
     void GetScoreSystem(int sceneIndex)
     {
-
+        #region Scene.Guillaume
         if (SceneManager.GetActiveScene().name == "Guillaume")
         {
             int test = 0;
@@ -132,19 +123,109 @@ public class ScoreScript : MonoBehaviour
             }
             Debug.Log(test);
         }
+        #endregion
+        #region Scene.TestScore1
         else if (SceneManager.GetActiveScene().name == "TestScore1")
         {
-            int test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].HighScore, scoreIntValuesList[sceneIndex].currentTopScores);
-            Debug.Log(test);
+            if (PlayerPrefs.HasKey(scoreValueNames[0].HighScore))
+            {
+                scoreIntValuesList[0].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[1].HighScore);
+            }
+            else
+            {
+                Debug.LogWarning("HighScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].SecondScore))
+            {
+                scoreIntValuesList[1].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[1].SecondScore);
+            }
+            else
+            {
+                Debug.LogError("SecondScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].ThirdScore))
+            {
+                scoreIntValuesList[2].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[1].ThirdScore);
+            }
+            else
+            {
+                Debug.LogError("ThirdScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].FourthScore))
+            {
+                scoreIntValuesList[3].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[1].FourthScore);
+            }
+            else
+            {
+                Debug.LogError("FourthScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].FifthScore))
+            {
+                scoreIntValuesList[4].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[1].FifthScore);
+            }
+            else
+            {
+                Debug.LogError("FifthScore not found!!");
+            }
         }
+        #endregion
+        #region Scene.TestScore2
         else if (SceneManager.GetActiveScene().name == "TestScore2")
         {
-            int test = scoreIntValuesList[sceneIndex].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].HighScore, scoreIntValuesList[sceneIndex].currentTopScores);
-            Debug.Log(test);
+            if (PlayerPrefs.HasKey(scoreValueNames[0].HighScore))
+            {
+                scoreIntValuesList[0].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[2].HighScore);
+            }
+            else
+            {
+                Debug.LogWarning("HighScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].SecondScore))
+            {
+                scoreIntValuesList[1].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[2].SecondScore);
+            }
+            else
+            {
+                Debug.LogError("SecondScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].ThirdScore))
+            {
+                scoreIntValuesList[2].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[2].ThirdScore);
+            }
+            else
+            {
+                Debug.LogError("ThirdScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].FourthScore))
+            {
+                scoreIntValuesList[3].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[2].FourthScore);
+            }
+            else
+            {
+                Debug.LogError("FourthScore not found!!");
+            }
+
+            if (PlayerPrefs.HasKey(scoreValueNames[0].FifthScore))
+            {
+                scoreIntValuesList[4].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[2].FifthScore);
+            }
+            else
+            {
+                Debug.LogError("FifthScore not found!!");
+            }
         }
+        #endregion
 
     }
 
+    #region EndOFGameScoringSystem
     public void EndOfGameScores()
     {
         //So this script will go down the list of highscore to see where tht player score should go.
@@ -268,5 +349,6 @@ public class ScoreScript : MonoBehaviour
 
         }
     }
+    #endregion
 
 }
