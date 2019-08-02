@@ -10,7 +10,13 @@ public class PickupTest : MonoBehaviour
 
     private GameObject collidingObject;
     private GameObject objectInHand;
+    private GameObject sceneChanger;
+    public SceneManagement sceneManagement;
 
+    private void Start()
+    {
+        sceneManagement = FindObjectOfType<SceneManagement>();
+    }
     private void SetCollidingObject(Collider col)
     {
         if (collidingObject || !col.GetComponent<Rigidbody>())
@@ -20,23 +26,44 @@ public class PickupTest : MonoBehaviour
         collidingObject = col.gameObject;
     }
 
+    private void SetSceneChanger(Collider col)
+    {
+        if (sceneChanger || !col.GetComponent<Rigidbody>())
+        {
+            return;
+        }
+        sceneChanger = col.gameObject;
+    }
     public void OnTriggerEnter(Collider other)
     {
-        SetCollidingObject(other);
+        //SetCollidingObject(other);
+        if (other.tag == "SceneChange")
+        {
+            SetSceneChanger(other);
+        }
+        else
+            SetCollidingObject(other);
     }
     public void OnTriggerStay(Collider other)
     {
-        SetCollidingObject(other);
+        //SetCollidingObject(other);
+        if (other.tag == "SceneChange")
+        {
+            SetSceneChanger(other);
+        }
+        else
+            SetCollidingObject(other);
     }
     public void OnTriggerExit(Collider other)
     {
-        if(!collidingObject)
+        if(!collidingObject || !sceneChanger)
         {
             return;
         }
         collidingObject = null;
+        sceneChanger = null;
     }
-
+    //This function sets the colliding object to be the object in the player's hand.
     private void GrabObject()
     {
         objectInHand = collidingObject;
@@ -45,6 +72,8 @@ public class PickupTest : MonoBehaviour
         var joint = AddFixedJoint();
         joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
     }
+    //This creates a fixed joint between the controller and the grabbed object to connect them
+    //and allow them to be picked up.
    private FixedJoint AddFixedJoint()
     {
         FixedJoint fx = gameObject.AddComponent<FixedJoint>();
@@ -68,20 +97,27 @@ public class PickupTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //grabAction.GetLastStateDown is triggered when the Grab Action button (the trigger on the controller)
+        //Is pushed all the way down, so a click is heard.
         if (grabAction.GetLastStateDown(handType))
         {
             if (collidingObject)
             {
                 GrabObject();
             }
+        
         }
 
-        
+        //grabAction.GetLastStateUp is triggered when the Grab Action button is released.
         if (grabAction.GetLastStateUp(handType))
         {
             if (objectInHand)
             {
                 ReleaseObject();
+            }
+            else if (sceneChanger)
+            {
+                sceneManagement.ChangeScene(4);
             }
         }
     }
