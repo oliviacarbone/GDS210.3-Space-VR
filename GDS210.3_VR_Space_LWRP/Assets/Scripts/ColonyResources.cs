@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColonyResources : MonoBehaviour
 {
     
     public StartColonyGame startColGame;
     public bool gameOver = false;
+    public GameObject gameOverText;
     
     // Resource Variables
     [SerializeField]
@@ -96,6 +98,7 @@ public class ColonyResources : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameOverText.SetActive(false);
         energy = 50f;
         water = 50f;
         oxygen = 50f;
@@ -115,11 +118,11 @@ public class ColonyResources : MonoBehaviour
 
         if (energy == 0f || water == 0f || oxygen == 0f)
         {
-
+            gameOverText.SetActive(true);
             gameOver = true;
-            Time.timeScale = 0.0f;
+            
         }
-        else { Time.timeScale = 1.0f; gameOver = false; }
+        else { gameOver = false; }
     }
 
   

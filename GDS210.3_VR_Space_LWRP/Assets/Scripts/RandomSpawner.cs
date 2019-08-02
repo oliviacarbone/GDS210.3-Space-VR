@@ -44,7 +44,7 @@ public class RandomSpawner : MonoBehaviour
 
     void Update()
     {
-        if (startColGame.startGame == true)
+        if (startColGame.startGame == true && colResSpawner.gameOver == false)
         {
             failSafeCountDownWater -= Time.deltaTime;
             failSafeCountDownOxygen -= Time.deltaTime;

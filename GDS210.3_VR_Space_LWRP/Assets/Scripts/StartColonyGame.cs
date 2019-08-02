@@ -1,28 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Valve.VR;
 
 public class StartColonyGame : MonoBehaviour
 {
-    public float thrust = 3000000f;
-    public Rigidbody rb;
+    public SteamVR_Input_Sources handType;
+    public SteamVR_Behaviour_Pose controllerPose;
+    public SteamVR_Action_Boolean grabAction;
+    public GameObject startGameButton;
+   
     public bool startGame = false;
+    
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0.0f;
+        startGame = true;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        if (grabAction.GetLastStateDown(handType))
+        {
+            if (startGameButton)
+            {
+                startGame = true;
+
+            }
+        }
+        
+
     }
 
-    public void GameStart()
-    {
-        Time.timeScale = 1.0f;
-        startGame = true;
-        rb.AddForce(transform.forward * thrust);
-    }
+  
 }
