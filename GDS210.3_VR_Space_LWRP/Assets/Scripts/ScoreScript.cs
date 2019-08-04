@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//In this script, you will need to be specific on what you put down in the inpector.
+//Make sure that as well everything is in order so that it can work properly as well.
+
 //Setting up the structure of the score in order to call it easy.
 [System.Serializable]
 public struct ScoreValues
@@ -47,6 +50,7 @@ public class ScoreScript : MonoBehaviour
 
     void Awake()
     {
+        //When the game starts, it will try and find what scene we are in before start the game.
         for(int i = 0; i < sceneNames.Length; i++ )
         {
             if(SceneManager.GetActiveScene().name == sceneNames[i]) 
@@ -61,7 +65,6 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         currentScoreText.text = currentScore.ToString();
         highScoreText.text = scoreIntValuesList[0].currentTopScores.ToString();
         secondPlayerScoreText.text = scoreIntValuesList[1].currentTopScores.ToString();
@@ -72,6 +75,9 @@ public class ScoreScript : MonoBehaviour
 
     void GetScoreSystem(int sceneIndex)
     {
+        //Reminder that we need to change some of the names in order to get this work on certain scenes.
+        //This right here is the way to call each leaderboard script in our game.
+        //Make sure that you write the right scene name properly otherwise this won't work.
         #region Scene.Guillaume
         if (SceneManager.GetActiveScene().name == "Guillaume")
         {
@@ -125,7 +131,7 @@ public class ScoreScript : MonoBehaviour
         }
         #endregion
         #region Scene.TestScore1
-        else if (SceneManager.GetActiveScene().name == "TestScore1")
+        else if (SceneManager.GetActiveScene().name == "ScoreTest1")
         {
             if (PlayerPrefs.HasKey(scoreValueNames[0].HighScore))
             {
@@ -174,7 +180,7 @@ public class ScoreScript : MonoBehaviour
         }
         #endregion
         #region Scene.TestScore2
-        else if (SceneManager.GetActiveScene().name == "TestScore2")
+        else if (SceneManager.GetActiveScene().name == "ScoreTest2")
         {
             if (PlayerPrefs.HasKey(scoreValueNames[0].HighScore))
             {
@@ -225,6 +231,8 @@ public class ScoreScript : MonoBehaviour
 
     }
 
+    //This is where we place the player score onto the leader board.
+    //It also makes sure that it is place in the right spot.
     #region EndOFGameScoringSystem
     public void EndOfGameScores()
     {
@@ -274,9 +282,10 @@ public class ScoreScript : MonoBehaviour
                     }
 
                 }
-            }
-            ThirdScoreSystem();
 
+                ThirdScoreSystem();
+
+            }
         }
     }
 
@@ -298,8 +307,10 @@ public class ScoreScript : MonoBehaviour
                         break;
                     }
                 }
+
+                FourthScoreSystem();
+
             }
-            FourthScoreSystem();
 
         }
     }
@@ -322,8 +333,10 @@ public class ScoreScript : MonoBehaviour
                         break;
                     }
                 }
+
+                FifthScoreSystem();
+
             }
-            FifthScoreSystem();
 
         }
     }
