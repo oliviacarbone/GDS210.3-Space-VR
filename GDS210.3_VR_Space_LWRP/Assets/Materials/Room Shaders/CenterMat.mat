@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glass Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 0bcb2aaa619f56847b5206959c8d3fce,
+  m_Name: CenterMat
+  m_Shader: {fileID: -6465566751694194690, guid: 261f9d3504feb974abc1068f74d4480a,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,6 +20,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_4EAC8CE8:
+        m_Texture: {fileID: 2800000, guid: 9e682706408994c40af679b2629b83f6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_A7AB0DA6:
+        m_Texture: {fileID: 2800000, guid: 83da62f3564dcb9409aab26917672df7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_E5CB00DA:
+        m_Texture: {fileID: 2800000, guid: bd0fa69d68ef6234eaa1db36da942241, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -48,9 +60,17 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_3437D443_Out:
+        m_Texture: {fileID: 2800000, guid: 9e682706408994c40af679b2629b83f6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_3B86439_Out:
+        m_Texture: {fileID: 2800000, guid: 9e682706408994c40af679b2629b83f6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_25D84A5B: 5
-    - Vector1_ABC7BD67: 0
+    - Vector1_2689080A: -0.5
+    - Vector1_D5FC856C: 0.1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -73,12 +93,17 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_C2309D08: {r: 0, g: 1, b: 0.8282523, a: 0}
+    - Color_C2309D08: {r: 1, g: 1, b: 1, a: 0.94509804}
+    - Color_D9137116: {r: 0, g: 0.0871942, b: 1, a: 0}
+    - Vector2_128EC3E9: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_4557C912: {r: 0, g: 30, b: 0, a: 0}
+    - Vector2_59F21A17: {r: 1, g: -1, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &3207891219294799082
+    - _Vector2_5877B89: {r: 1, g: 0.49, b: 0, a: 0}
+--- !u!114 &6096534090041901566
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
