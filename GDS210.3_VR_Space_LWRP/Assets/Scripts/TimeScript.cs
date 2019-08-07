@@ -14,7 +14,6 @@ public class TimeScript : MonoBehaviour
     public int minute;
     public int second;
 
-    public GameObject tutorialScreen;
     public GameObject gameIsOverScreen;
 
     // Update is called once per frame
@@ -70,14 +69,12 @@ public class TimeScript : MonoBehaviour
 
     void TutorialScreen()
     {
-        Time.timeScale = 0;
-        tutorialScreen.SetActive(true);
+        //Time.timeScale = 0;
     }
 
     public void StartTheGame()
     {
-        Time.timeScale = 1;
-        tutorialScreen.SetActive(false);
+        //Time.timeScale = 1;
         state = TimeState.Countdown;
     }
 
