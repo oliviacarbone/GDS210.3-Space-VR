@@ -116,7 +116,7 @@ public class ColonyResources : MonoBehaviour
             DecayRateChanger();
         }
 
-        if (energy == 0f || water == 0f || oxygen == 0f)
+        if (energy <= 0f || water <= 0f || oxygen <= 0f)
         {
             gameOverText.SetActive(true);
             gameOver = true;

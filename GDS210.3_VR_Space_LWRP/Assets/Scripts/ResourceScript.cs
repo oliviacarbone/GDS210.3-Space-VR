@@ -5,7 +5,7 @@ using UnityEngine;
 public class ResourceScript : MonoBehaviour
 {
     //moves the resource after spawning
-    public float thrust = 3f;
+    public float thrust;
     public Rigidbody rb;
     //a count down to ensure the object is deleted if it flies away
     public float countDown = 20f;
@@ -13,7 +13,7 @@ public class ResourceScript : MonoBehaviour
     void Start()
     {
         countDown = 20f;
-        thrust = 30f;
+        thrust = 150f;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * thrust);
     }
