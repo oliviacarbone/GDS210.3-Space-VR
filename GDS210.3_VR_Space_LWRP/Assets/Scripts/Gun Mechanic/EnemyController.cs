@@ -1,43 +1,47 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
-
-    public GameObject[] posPoints;
+    private ECList posList;
     private GameObject currentPoint;
     private int index;
     public NavMeshAgent agent;
-    public bool positioning;
-    public bool positioned;
+    public int waitTime = 10;
+
+    void Awake()
+    {
+        posList = FindObjectOfType<ECList>();    
+    }
 
     void Start()
     {
-        InvokeRepeating("RandomPoint", 2, 10);
+        //Start after 2 seconds and repeat every waitTime value
+        InvokeRepeating("RandomPoint", 2, waitTime);
     }
 
     void RandomPoint()
     {
-        string destination;
+        //Picks a random value from the list's range
+        index = Random.Range(0, posList.posPoints.Count);
 
-        index = Random.Range(0, posPoints.Length);
-        currentPoint = posPoints[index];
+        //Stops repoicking from the list
+        if (currentPoint != null)
+        {
+            posList.posPoints.Add(currentPoint);
+        }
+
+        //Assigns the chosen index to currentPoint
+        currentPoint = posList.posPoints[index];
         print (currentPoint.name);
 
-        destination = currentPoint.name;
+        //Stops other enemies from picking the same point
+        posList.posPoints.RemoveAt(index);
          
-        agent.SetDestination(currentPoint.transform.position);
-
-        positioning = true;
+        //Moves the enemy to the chosen point
+        agent.SetDestination(currentPoint.transform.position);        
     }
 
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "PositionPoint")
-    //    {
-    //        positioned = true;
-    //        positioning = false;
-    //        print("Positioned!");
-    //    }
-    //}
+    
 }
