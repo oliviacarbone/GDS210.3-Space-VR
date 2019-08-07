@@ -53,12 +53,6 @@ public class MemoryBeyondLogic : MonoBehaviour
 
     private int randomInt;
 
-    public Button startButton;
-    public Text startButtonText;
-
-    public Button restartButton;
-    public Text restartButtonText;
-
     public GameObject gameOverScreen;
 
     private void Awake()

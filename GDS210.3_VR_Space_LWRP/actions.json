@@ -30,6 +30,10 @@
       "type": "pose"
     },
     {
+      "name": "/actions/default/in/Menu",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },

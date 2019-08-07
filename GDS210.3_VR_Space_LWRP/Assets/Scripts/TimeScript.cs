@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeScript : MonoBehaviour
 {
@@ -14,9 +15,16 @@ public class TimeScript : MonoBehaviour
     public int minute;
     public int second;
 
-    public GameObject tutorialScreen;
     public GameObject gameIsOverScreen;
 
+    ColonyResources colRes;
+    RandomSpawner ranSpa;
+
+    private void Start()
+    {
+        colRes = FindObjectOfType<ColonyResources>();
+        ranSpa = FindObjectOfType<RandomSpawner>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -70,14 +78,12 @@ public class TimeScript : MonoBehaviour
 
     void TutorialScreen()
     {
-        Time.timeScale = 0;
-        tutorialScreen.SetActive(true);
+        //Time.timeScale = 0;
     }
 
     public void StartTheGame()
     {
-        Time.timeScale = 1;
-        tutorialScreen.SetActive(false);
+        //Time.timeScale = 1;
         state = TimeState.Countdown;
     }
 
@@ -85,5 +91,13 @@ public class TimeScript : MonoBehaviour
     {
         Debug.Log("Game is done.");
         state = TimeState.DoNothing;
+
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                //logic goes here!!
+                break;
+
+        }
     }
 }

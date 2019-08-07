@@ -15,21 +15,18 @@ public class MemoryBeyondButtons : MonoBehaviour
     public Material lightMat;
     public Material darkMat;
 
-    private Renderer rend;
-    private Renderer[] testRend;
+    private Renderer[] rend;
 
     public MemoryBeyondLogic mBL;
 
     public int buttonNumber;
+
     public delegate void ClickEv(int number);
     public event ClickEv OnClick;
 
     void Awake()
     {
-        testRend = GetComponentsInChildren<Renderer>();
-
-        //rend = GetComponent<Renderer>();
-        //rend.enabled = true;
+        rend = GetComponentsInChildren<Renderer>();
     }
 
     void Update()
@@ -68,13 +65,7 @@ public class MemoryBeyondButtons : MonoBehaviour
 
     public void ClickedColor()
     {
-        //rend.sharedMaterial = lightMat;
-        foreach (Renderer r in testRend)
-        {
-            r.enabled = true;
-            r.sharedMaterial = lightMat;
-        }
-        foreach (Renderer r in testRend)
+        foreach (Renderer r in rend)
         {
             r.enabled = true;
             r.sharedMaterial = lightMat;
@@ -83,8 +74,7 @@ public class MemoryBeyondButtons : MonoBehaviour
 
     public void UnclickedColor()
     {
-        //rend.sharedMaterial = darkMat;
-        foreach (Renderer r in testRend)
+        foreach (Renderer r in rend)
         {
             r.enabled = true;
             r.sharedMaterial = darkMat;

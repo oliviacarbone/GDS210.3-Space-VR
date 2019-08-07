@@ -7,6 +7,7 @@ public class ColonyResources : MonoBehaviour
 {
     
     public StartColonyGame startColGame;
+    public bool restartGame = false;
     public bool gameOver = false;
     public GameObject gameOverText;
     
@@ -98,16 +99,22 @@ public class ColonyResources : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameOverText.SetActive(false);
-        energy = 50f;
-        water = 50f;
-        oxygen = 50f;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameOver == false && startColGame.startGame == true)
+        if (startColGame.startGame == true)
+        {
+            gameOverText.SetActive(false);
+            energy = 50f;
+            water = 50f;
+            oxygen = 50f;
+            restartGame = true;
+            startColGame.startGame = false;
+        }
+        if (gameOver == false && restartGame == true)
         {
             DrainResources();
 
@@ -116,10 +123,11 @@ public class ColonyResources : MonoBehaviour
             DecayRateChanger();
         }
 
-        if (energy == 0f || water == 0f || oxygen == 0f)
+        if (energy <= 0f || water <= 0f || oxygen <= 0f)
         {
             gameOverText.SetActive(true);
             gameOver = true;
+            restartGame = false;
             
         }
         else { gameOver = false; }
