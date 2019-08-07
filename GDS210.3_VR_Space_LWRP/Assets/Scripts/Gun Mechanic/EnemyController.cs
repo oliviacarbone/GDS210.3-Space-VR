@@ -13,17 +13,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        positioning = false;    
-    }
-
-    void Update()
-    {
-        //InvokeRepeating("RandomPoint", 2, 10);
-
-        if (positioning == false)
-        {
-            RandomPoint();
-        }      
+        InvokeRepeating("RandomPoint", 2, 10);
     }
 
     void RandomPoint()
@@ -41,13 +31,13 @@ public class EnemyController : MonoBehaviour
         positioning = true;
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "PositionPoint")
-        {
-            positioned = true;
-            positioning = false;
-            print("Positioned!");
-        }
-    }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "PositionPoint")
+    //    {
+    //        positioned = true;
+    //        positioning = false;
+    //        print("Positioned!");
+    //    }
+    //}
 }
