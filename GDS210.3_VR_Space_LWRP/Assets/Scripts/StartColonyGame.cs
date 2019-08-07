@@ -16,7 +16,7 @@ public class StartColonyGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startGame = true;
+        //startGame = true;
     }
 
     // Update is called once per frame
