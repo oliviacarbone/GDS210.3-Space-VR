@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HoloMat1
-  m_Shader: {fileID: -6465566751694194690, guid: 4feb8ca3d61bdb645a79d9d5f9f78e99,
+  m_Name: DarkHoloMat6
+  m_Shader: {fileID: -6465566751694194690, guid: 93500bf9ea9da32458d89bbd34f9b94b,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -66,8 +66,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_3396F0ED: -0.5
+    - Vector1_A2B66D76: -0.1
     - Vector1_D5FC856C: 0.1
+    - Vector1_F1FA3A9D: 7
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -90,8 +91,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_C2309D08: {r: 0.15384603, g: 1, b: 0, a: 0.09803922}
-    - Vector2_E7D17242: {r: 0, g: 30, b: 0, a: 0}
+    - Color_C2309D08: {r: 0, g: 0, b: 0, a: 0.09803922}
+    - Vector2_5A9AE5D1: {r: 0, g: 0.1, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
