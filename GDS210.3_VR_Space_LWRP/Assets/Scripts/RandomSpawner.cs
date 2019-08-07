@@ -44,7 +44,7 @@ public class RandomSpawner : MonoBehaviour
 
     void Update()
     {
-        if (startColGame.startGame == true && colResSpawner.gameOver == false)
+        if (colResSpawner.restartGame == true && colResSpawner.gameOver == false)
         {
             failSafeCountDownWater -= Time.deltaTime;
             failSafeCountDownOxygen -= Time.deltaTime;
@@ -160,7 +160,7 @@ public class RandomSpawner : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _wave)
     {
-        if (startColGame.startGame == true) { 
+        if (colResSpawner.restartGame == true) { 
         state = SpawnState.SPAWNING;
 
         for (int i = 0; i < _wave.count; i++)
