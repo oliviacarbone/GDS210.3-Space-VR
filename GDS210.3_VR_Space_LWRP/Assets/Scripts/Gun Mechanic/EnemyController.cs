@@ -4,11 +4,13 @@ using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
+    //This script is made for Battery Defence
     private ECList posList;
     private GameObject currentPoint;
     private int index;
     public NavMeshAgent agent;
     public int waitTime = 10;
+    public GameObject battery;
 
     void Awake()
     {
@@ -19,6 +21,17 @@ public class EnemyController : MonoBehaviour
     {
         //Start after 2 seconds and repeat every waitTime value
         InvokeRepeating("RandomPoint", 2, waitTime);
+    }
+
+    void Update()
+    {
+        LookTowards();    
+    }
+
+    void LookTowards()
+    {
+        //Makes the enemies always look at the battery
+        transform.LookAt(battery.transform.position);
     }
 
     void RandomPoint()
