@@ -94,7 +94,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_C2309D08: {r: 1, g: 1, b: 1, a: 0.94509804}
-    - Color_D9137116: {r: 0, g: 0.0871942, b: 1, a: 0}
+    - Color_D9137116: {r: 0.010691517, g: 0.6037736, b: 0, a: 0}
     - Vector2_128EC3E9: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_4557C912: {r: 0, g: 30, b: 0, a: 0}
     - Vector2_59F21A17: {r: 1, g: -1, b: 0, a: 0}
