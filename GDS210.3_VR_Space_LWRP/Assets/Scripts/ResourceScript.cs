@@ -8,11 +8,14 @@ public class ResourceScript : MonoBehaviour
     public float thrust = 3f;
     public Rigidbody rb;
     //a count down to ensure the object is deleted if it flies away
-    public float countDown = 9f;
+    public float countDown = 20f;
     // Start is called before the first frame update
     void Start()
     {
+        countDown = 20f;
+        thrust = 30f;
         rb = GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * thrust);
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class ResourceScript : MonoBehaviour
     //moves the resource after spawning
     void FixedUpdate()
     {
-        rb.AddForce(transform.forward * thrust);
+      //  rb.AddForce(transform.forward * thrust);
     }
 
 
