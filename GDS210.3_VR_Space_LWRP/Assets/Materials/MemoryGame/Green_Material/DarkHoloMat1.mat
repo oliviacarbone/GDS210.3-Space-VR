@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HoloMat1
+  m_Name: DarkHoloMat1
   m_Shader: {fileID: -6465566751694194690, guid: 4feb8ca3d61bdb645a79d9d5f9f78e99,
     type: 3}
   m_ShaderKeywords: 
@@ -90,7 +90,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_C2309D08: {r: 0.15384603, g: 1, b: 0, a: 0.09803922}
+    - Color_C2309D08: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 0.09803922}
     - Vector2_E7D17242: {r: 0, g: 30, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
