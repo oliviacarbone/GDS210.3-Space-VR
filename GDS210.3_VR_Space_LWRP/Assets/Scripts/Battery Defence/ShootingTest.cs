@@ -14,11 +14,13 @@ public class ShootingTest : MonoBehaviour
 
         //Calls ChangeColor() after 2 seconds
         Invoke("ChangeColor", 2);
+
+        //Destroy(gameObject);
     }
 
     void ChangeColor()
     {
-        //Turns Test drone green
+        //Turns Test drone back to white
         renderColor.material.color = Color.white;
     }
 
