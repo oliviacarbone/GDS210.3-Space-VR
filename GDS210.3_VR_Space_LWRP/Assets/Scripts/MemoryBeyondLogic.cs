@@ -53,13 +53,13 @@ public class MemoryBeyondLogic : MonoBehaviour
 
     private int randomInt;
 
-    public GameObject gameOverScreen;
+    //public GameObject gameOverScreen;
 
     private void Awake()
     {
         hLTime = 0.75f;
         delayTime = 0.5f;
-        gameOverScreen.SetActive(false);
+        //gameOverScreen.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -152,7 +152,7 @@ public class MemoryBeyondLogic : MonoBehaviour
     {
         player = false;
         colorList.Clear();
-        gameOverScreen.SetActive(true);
+        //gameOverScreen.SetActive(true);
     }
 
     private void TimeDecrease()

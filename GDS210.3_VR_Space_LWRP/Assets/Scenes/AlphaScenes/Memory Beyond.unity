@@ -1002,7 +1002,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 2c383136d76a7764e87b99aeb9b1333d, type: 2}
   darkMat: {fileID: 2100000, guid: 9450de9f5f7f4ee4aa8d178921aa5cc6, type: 2}
@@ -1139,7 +1139,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 68b3fae4c34eaeb42b2d04dd53ac4bcc, type: 2}
   darkMat: {fileID: 2100000, guid: 9f67efdd438cf434fabb364e4f105345, type: 2}
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 68b3fae4c34eaeb42b2d04dd53ac4bcc, type: 2}
   darkMat: {fileID: 2100000, guid: 9f67efdd438cf434fabb364e4f105345, type: 2}
@@ -1321,7 +1321,6 @@ MonoBehaviour:
   playerLevel: 0
   logic: 0
   player: 0
-  gameOverScreen: {fileID: 0}
 --- !u!43 &870404207
 Mesh:
   m_ObjectHideFlags: 0
@@ -1755,7 +1754,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 2c383136d76a7764e87b99aeb9b1333d, type: 2}
   darkMat: {fileID: 2100000, guid: 9450de9f5f7f4ee4aa8d178921aa5cc6, type: 2}
@@ -1809,7 +1808,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 35259dac6a2c98f44bb174eef764e2e4, type: 2}
   darkMat: {fileID: 2100000, guid: da0fe2e59ff918f4f8ff676e9224dc9a, type: 2}
@@ -1922,7 +1921,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: d320fd0fe1fdb6c4981c3df571fc64e6, type: 2}
   darkMat: {fileID: 2100000, guid: c3ecb2db8032cc546bdd1e5928d005ca, type: 2}
@@ -2035,7 +2034,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 35259dac6a2c98f44bb174eef764e2e4, type: 2}
   darkMat: {fileID: 2100000, guid: da0fe2e59ff918f4f8ff676e9224dc9a, type: 2}
@@ -2510,7 +2509,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 76055c7fabb288341b78fda8baa77a60, type: 2}
   darkMat: {fileID: 2100000, guid: 1991266e4e56ff34f8ff9e99df01bb8e, type: 2}
@@ -2623,7 +2622,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: d320fd0fe1fdb6c4981c3df571fc64e6, type: 2}
   darkMat: {fileID: 2100000, guid: c3ecb2db8032cc546bdd1e5928d005ca, type: 2}
@@ -3062,7 +3061,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 68b3fae4c34eaeb42b2d04dd53ac4bcc, type: 2}
   darkMat: {fileID: 2100000, guid: 9f67efdd438cf434fabb364e4f105345, type: 2}
@@ -3116,7 +3115,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 16f65884e9f7c5f4aaa585ce2df2457f, type: 2}
   darkMat: {fileID: 2100000, guid: bce2243bcce3e4742bfe8ef3201a712f, type: 2}
@@ -3392,7 +3391,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 2c383136d76a7764e87b99aeb9b1333d, type: 2}
   darkMat: {fileID: 2100000, guid: 9450de9f5f7f4ee4aa8d178921aa5cc6, type: 2}
@@ -3772,7 +3771,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: d320fd0fe1fdb6c4981c3df571fc64e6, type: 2}
   darkMat: {fileID: 2100000, guid: c3ecb2db8032cc546bdd1e5928d005ca, type: 2}
@@ -3885,7 +3884,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 35259dac6a2c98f44bb174eef764e2e4, type: 2}
   darkMat: {fileID: 2100000, guid: da0fe2e59ff918f4f8ff676e9224dc9a, type: 2}
@@ -3998,7 +3997,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 76055c7fabb288341b78fda8baa77a60, type: 2}
   darkMat: {fileID: 2100000, guid: 1991266e4e56ff34f8ff9e99df01bb8e, type: 2}
@@ -4111,7 +4110,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 16f65884e9f7c5f4aaa585ce2df2457f, type: 2}
   darkMat: {fileID: 2100000, guid: bce2243bcce3e4742bfe8ef3201a712f, type: 2}
@@ -4315,10 +4314,10 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 0}
-  darkMat: {fileID: 0}
+  lightMat: {fileID: 2100000, guid: 16f65884e9f7c5f4aaa585ce2df2457f, type: 2}
+  darkMat: {fileID: 2100000, guid: bce2243bcce3e4742bfe8ef3201a712f, type: 2}
   mBL: {fileID: 849945445}
   buttonNumber: 0
 --- !u!1 &2088587695
@@ -4369,7 +4368,7 @@ MonoBehaviour:
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 76055c7fabb288341b78fda8baa77a60, type: 2}
   darkMat: {fileID: 2100000, guid: 1991266e4e56ff34f8ff9e99df01bb8e, type: 2}
