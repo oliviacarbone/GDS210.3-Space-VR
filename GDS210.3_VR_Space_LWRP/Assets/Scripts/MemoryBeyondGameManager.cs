@@ -10,14 +10,12 @@ public class MemoryBeyondGameManager : MonoBehaviour
     public SteamVR_Action_Boolean grabAction;
 
     public GameObject startButton;
-    public GameObject restartButton;
 
-    private MemoryBeyondLogic mBL;
+    public MemoryBeyondLogic mBL;
 
     private void Awake()
     {
         startButton.SetActive(true);
-        restartButton.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
@@ -28,12 +26,8 @@ public class MemoryBeyondGameManager : MonoBehaviour
             {
                 if (startButton)
                 {
+                    Debug.Log("test");
                     mBL.StartGame();
-                }
-
-                if (restartButton)
-                {
-                    mBL.RestartGame();
                 }
             }
         }
