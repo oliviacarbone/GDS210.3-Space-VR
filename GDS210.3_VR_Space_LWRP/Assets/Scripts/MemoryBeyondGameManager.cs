@@ -12,7 +12,7 @@ public class MemoryBeyondGameManager : MonoBehaviour
     public GameObject startButton;
     public GameObject restartButton;
 
-    private MemoryBeyondLogic mBL;
+    public MemoryBeyondLogic mBL;
 
     private void Awake()
     {
@@ -28,6 +28,7 @@ public class MemoryBeyondGameManager : MonoBehaviour
             {
                 if (startButton)
                 {
+                    Debug.Log("fuck");
                     mBL.StartGame();
                 }
 
