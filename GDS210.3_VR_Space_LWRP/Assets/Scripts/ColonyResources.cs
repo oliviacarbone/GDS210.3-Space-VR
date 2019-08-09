@@ -10,7 +10,15 @@ public class ColonyResources : MonoBehaviour
     public bool restartGame = false;
     public bool gameOver = false;
     public GameObject gameOverText;
-    
+    public Slider energySlider;
+    public Slider waterSlider;
+    public Slider oxygenSlider;
+    public Text populationCount;
+    public GameObject energyText;
+    public GameObject waterText;
+    public GameObject oxygenText;
+    public GameObject populationText1;
+    public GameObject populationText2;
     // Resource Variables
     [SerializeField]
     private float energyPrivate;
@@ -99,7 +107,7 @@ public class ColonyResources : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameOverText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -113,6 +121,15 @@ public class ColonyResources : MonoBehaviour
             oxygen = 50f;
             restartGame = true;
             startColGame.startGame = false;
+            energySlider.gameObject.SetActive(true);
+            waterSlider.gameObject.SetActive(true);
+            oxygenSlider.gameObject.SetActive(true);
+            populationCount.gameObject.SetActive(true);
+            energyText.SetActive(true);
+            waterText.SetActive(true);
+            oxygenText.SetActive(true);
+            populationText1.SetActive(true);
+            populationText2.SetActive(true);
         }
         if (gameOver == false && restartGame == true)
         {
@@ -128,9 +145,23 @@ public class ColonyResources : MonoBehaviour
             gameOverText.SetActive(true);
             gameOver = true;
             restartGame = false;
-            
+            energySlider.gameObject.SetActive(false);
+            waterSlider.gameObject.SetActive(false);
+            oxygenSlider.gameObject.SetActive(false);
+            populationCount.gameObject.SetActive(false);
+            energyText.SetActive(false);
+            waterText.SetActive(false);
+            oxygenText.SetActive(false);
+            populationText1.SetActive(false);
+            populationText2.SetActive(false);
+
         }
         else { gameOver = false; }
+
+        energySlider.value = energy;
+        waterSlider.value = water;
+        oxygenSlider.value = oxygen;
+        populationCount.text = population.ToString("00");
     }
 
   
@@ -203,6 +234,11 @@ public class ColonyResources : MonoBehaviour
         {
             population += 0.5f;
         }
+    }
+
+    public void AdjustSlider()
+    {
+
     }
 
 }
