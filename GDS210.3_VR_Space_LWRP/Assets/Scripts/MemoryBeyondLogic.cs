@@ -11,7 +11,7 @@ public class MemoryBeyondLogic : MonoBehaviour
     public MemoryBeyondButtons[] buttons;
     public List<int> colorList;
 
-    public MemoryBeyondGameManager mBGM;
+    public TimeScript timer;
 
     private float hLTime; //highLightTime, the time a block stays on the secondary material
     public float HLTime
@@ -83,6 +83,10 @@ public class MemoryBeyondLogic : MonoBehaviour
     void Update()
     {
         LogicCheck();
+        if(timer.minute == 0 && timer.second == 0)
+        {
+            GameOver();
+        }
     }
 
     void ButtonClicked(int number)
@@ -154,6 +158,7 @@ public class MemoryBeyondLogic : MonoBehaviour
             logic = true;
             playerLevel = 0;
             level = 2;
+            timer.state = TimeScript.TimeState.Countdown;
 
             state = StartTheGameState.DoNothing;
         }

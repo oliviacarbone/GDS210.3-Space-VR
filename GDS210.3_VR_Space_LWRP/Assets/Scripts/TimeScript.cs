@@ -15,16 +15,6 @@ public class TimeScript : MonoBehaviour
     public int minute;
     public int second;
 
-    public GameObject gameIsOverScreen;
-
-    ColonyResources colRes;
-    RandomSpawner ranSpa;
-
-    private void Start()
-    {
-        colRes = FindObjectOfType<ColonyResources>();
-        ranSpa = FindObjectOfType<RandomSpawner>();
-    }
     // Update is called once per frame
     void Update()
     {
@@ -60,6 +50,9 @@ public class TimeScript : MonoBehaviour
             case (TimeState.TimeIsUp):
                 GameIsOver();
                 break;
+            case (TimeState.DoNothing):
+                minute = 2;
+                break;
         }
 
         //combining it together to make it work.
@@ -91,14 +84,5 @@ public class TimeScript : MonoBehaviour
     {
         Debug.Log("Game is done.");
         state = TimeState.DoNothing;
-   
-        switch (SceneManager.GetActiveScene().buildIndex)
-        {
-            case 0:
-                colRes.gameOver = true;
-                
-                break;
-
-        }
     }
 }

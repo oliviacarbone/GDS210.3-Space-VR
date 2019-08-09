@@ -19,6 +19,10 @@ public class ColonyResources : MonoBehaviour
     public GameObject oxygenText;
     public GameObject populationText1;
     public GameObject populationText2;
+
+    //To call the time script in order to end the game once the games 0
+    public TimeScript timer;
+
     // Resource Variables
     [SerializeField]
     private float energyPrivate;
@@ -157,6 +161,27 @@ public class ColonyResources : MonoBehaviour
 
         }
         else { gameOver = false; }
+
+        if (timer.minute == 0 && timer.second == 0)
+        {
+            gameOverText.SetActive(true);
+            gameOver = true;
+            restartGame = false;
+            energySlider.gameObject.SetActive(false);
+            waterSlider.gameObject.SetActive(false);
+            oxygenSlider.gameObject.SetActive(false);
+            populationCount.gameObject.SetActive(false);
+            energyText.SetActive(false);
+            waterText.SetActive(false);
+            oxygenText.SetActive(false);
+            populationText1.SetActive(false);
+            populationText2.SetActive(false);
+            timer.state = TimeScript.TimeState.DoNothing;
+        }
+        else
+        {
+            gameOver = false;
+        }
 
         energySlider.value = energy;
         waterSlider.value = water;
