@@ -91,11 +91,12 @@ public class TimeScript : MonoBehaviour
     {
         Debug.Log("Game is done.");
         state = TimeState.DoNothing;
-
+   
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
-                //logic goes here!!
+                colRes.gameOver = true;
+                
                 break;
 
         }
