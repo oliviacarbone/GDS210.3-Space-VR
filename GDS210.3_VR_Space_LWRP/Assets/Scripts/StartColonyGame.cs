@@ -34,7 +34,7 @@ public class StartColonyGame : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Fuck");
+            
             if (grabAction.GetLastStateDown(handType))
             {
                 if (startGameButton)
