@@ -2189,12 +2189,12 @@ PrefabInstance:
     - target: {fileID: 4712116564190821725, guid: 530514a4b651b804cad5fd2ef2d533d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 4712116564190821725, guid: 530514a4b651b804cad5fd2ef2d533d7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.28
+      value: -3.45
       objectReference: {fileID: 0}
     - target: {fileID: 4712116564190821725, guid: 530514a4b651b804cad5fd2ef2d533d7,
         type: 3}
@@ -2782,21 +2782,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
-  - {fileID: 1228711681}
-  - {fileID: 165718775}
-  - {fileID: 1399702777}
-  - {fileID: 1697077462}
-  - {fileID: 134799420}
-  - {fileID: 601776769}
+  - {fileID: 0}
   colorList: 
   level: 2
   playerLevel: 0
   logic: 0
   player: 0
-  startButton: {fileID: 1404073562}
-  startButtonText: {fileID: 881223005}
-  restartButton: {fileID: 1298789277}
-  restartButtonText: {fileID: 677286353}
   gameOverScreen: {fileID: 818253741}
 --- !u!4 &1835575510
 Transform:
