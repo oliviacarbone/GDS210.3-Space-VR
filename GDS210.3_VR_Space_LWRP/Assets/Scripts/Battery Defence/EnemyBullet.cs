@@ -2,16 +2,11 @@
 
 public class EnemyBullet : MonoBehaviour
 {
-    public BatteryHealth bHealth;
+    private BatteryHealth bHealth;
 
-    void Start()
+    void Awake()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        bHealth = FindObjectOfType<BatteryHealth>();
     }
 
     //Destroys the bullet when it hits the battery

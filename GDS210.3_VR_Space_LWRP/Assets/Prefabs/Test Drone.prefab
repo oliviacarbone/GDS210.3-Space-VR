@@ -483,6 +483,7 @@ MonoBehaviour:
   agent: {fileID: 7678428006093647426}
   waitTime: 10
   battery: {fileID: 6736243212783232868, guid: 86c5ae0ec8ba67941910cbbb089d4b03, type: 3}
+  enemyDamage: 5
 --- !u!114 &6301510409353039416
 MonoBehaviour:
   m_ObjectHideFlags: 0
