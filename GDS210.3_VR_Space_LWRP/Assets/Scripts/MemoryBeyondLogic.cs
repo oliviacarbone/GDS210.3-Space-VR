@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class MemoryBeyondLogic : MonoBehaviour
 {
+    //to prevent the player to spam the button
+    public enum StartTheGameState { Start, DoNothing};
+    public StartTheGameState state = StartTheGameState.Start;
     public MemoryBeyondButtons[] buttons;
     public List<int> colorList;
 
@@ -145,24 +148,25 @@ public class MemoryBeyondLogic : MonoBehaviour
 
     public void StartGame() //the button for the start of the game, turns on the logic and turns off the start button
     {
-        logic = true;
-        playerLevel = 0;
-        level = 2;
-        mBGM.startButton.SetActive(false);
-    }
+        if (state == StartTheGameState.Start)
+        {
+            gameOverScreen.SetActive(false);
+            logic = true;
+            playerLevel = 0;
+            level = 2;
 
-    public void RestartGame()
-    {
-        gameOverScreen.SetActive(false);
-        mBGM.startButton.SetActive(true);
+            state = StartTheGameState.DoNothing;
+        }
     }
 
     void GameOver()
     {
         player = false;
+        logic = false;
         colorList.Clear();
         gameOverScreen.SetActive(true);
-        mBGM.restartButton.SetActive(true);
+
+        state = StartTheGameState.Start;
     }
 
     private void TimeDecrease()
