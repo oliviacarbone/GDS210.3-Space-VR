@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
-using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
@@ -11,6 +10,8 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent agent;
     public int waitTime = 10;
     public GameObject battery;
+
+    public float enemyDamage;
 
     void Awake()
     {
@@ -55,6 +56,4 @@ public class EnemyController : MonoBehaviour
         //Moves the enemy to the chosen point
         agent.SetDestination(currentPoint.transform.position);        
     }
-
-    
 }
