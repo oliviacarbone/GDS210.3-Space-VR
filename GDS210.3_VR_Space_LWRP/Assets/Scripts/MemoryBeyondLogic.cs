@@ -8,6 +8,8 @@ public class MemoryBeyondLogic : MonoBehaviour
     public MemoryBeyondButtons[] buttons;
     public List<int> colorList;
 
+    public MemoryBeyondGameManager mBGM;
+
     private float hLTime; //highLightTime, the time a block stays on the secondary material
     public float HLTime
     {
@@ -53,19 +55,19 @@ public class MemoryBeyondLogic : MonoBehaviour
 
     private int randomInt;
 
-    //public GameObject gameOverScreen;
+    public GameObject gameOverScreen;
 
     private void Awake()
     {
         hLTime = 0.75f;
         delayTime = 0.5f;
-        //gameOverScreen.SetActive(false);
+        gameOverScreen.SetActive(false);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(StartDelay());
+        //StartCoroutine(StartDelay());
 
         for (int i = 0; i < buttons.Length; i++) //loops through the available buttons
         {
@@ -146,13 +148,21 @@ public class MemoryBeyondLogic : MonoBehaviour
         logic = true;
         playerLevel = 0;
         level = 2;
+        mBGM.startButton.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+        gameOverScreen.SetActive(false);
+        mBGM.startButton.SetActive(true);
     }
 
     void GameOver()
     {
         player = false;
         colorList.Clear();
-        //gameOverScreen.SetActive(true);
+        gameOverScreen.SetActive(true);
+        mBGM.restartButton.SetActive(true);
     }
 
     private void TimeDecrease()

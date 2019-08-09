@@ -15,6 +15,7 @@ public class MemoryBeyondButtons : MonoBehaviour
     public Material lightMat;
     public Material darkMat;
 
+    [SerializeField]
     private Renderer[] rend;
 
     public MemoryBeyondLogic mBL;
@@ -26,7 +27,7 @@ public class MemoryBeyondButtons : MonoBehaviour
 
     void Awake()
     {
-        rend = GetComponentsInChildren<Renderer>();
+        rend = transform.parent.GetComponentsInChildren<Renderer>();
     }
 
     void Update()
