@@ -13392,7 +13392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7747729355693655949
 Transform:
   m_ObjectHideFlags: 0
@@ -22467,11 +22467,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7747729354947110984}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 91c43c0a92adeb245a05858849899342,
-        type: 3}
-      propertyPath: m_Name
-      value: BatteryDefenceMeterBoxCabinet
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 91c43c0a92adeb245a05858849899342,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22526,6 +22521,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 91c43c0a92adeb245a05858849899342,
+        type: 3}
+      propertyPath: m_Name
+      value: BatteryDefenceMeterBoxCabinet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91c43c0a92adeb245a05858849899342, type: 3}

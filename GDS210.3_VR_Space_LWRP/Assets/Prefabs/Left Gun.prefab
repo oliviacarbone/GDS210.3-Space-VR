@@ -50,7 +50,13 @@ MonoBehaviour:
   laser: {fileID: 4421705547749666135}
   muzzle: {fileID: 4421705548222984675}
   laserColor: {fileID: 2100000, guid: 048ffa76a8b0f954cadcafa43807d4de, type: 2}
-  shootingTest: {fileID: 0}
+  enemyDeath: {fileID: 4899012445584455100, guid: 0588f69bbc2960d4aa5e869edf4070f4,
+    type: 3}
+  handType: 0
+  controllerPose: {fileID: 0}
+  shootAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!120 &4421705547749666135
 LineRenderer:
   m_ObjectHideFlags: 0

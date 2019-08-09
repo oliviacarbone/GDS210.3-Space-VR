@@ -13,7 +13,8 @@ public class Gun : MonoBehaviour
     Color noTarget = Color.green;
     Color withTarget = Color.red;
 
-    public ShootingTest shootingTest;
+    public EnemyDeath enemyDeath;
+    public float playerDamage = 50f;
 
     public SteamVR_Input_Sources handType;
     public SteamVR_Behaviour_Pose controllerPose;
@@ -42,7 +43,7 @@ public class Gun : MonoBehaviour
             if (hit.collider.CompareTag("GunTarget"))
             {
                 Debug.Log("HIT!!!");
-                shootingTest.Hit();
+                enemyDeath.Hit();
             }
         }
     }
