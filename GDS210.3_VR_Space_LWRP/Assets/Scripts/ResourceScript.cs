@@ -28,14 +28,23 @@ public class ResourceScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
         
     }
 
     //moves the resource after spawning
     void FixedUpdate()
     {
-      //  rb.AddForce(transform.forward * thrust);
+     
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            rb.useGravity = true;
+        }
+    }
 
 }
