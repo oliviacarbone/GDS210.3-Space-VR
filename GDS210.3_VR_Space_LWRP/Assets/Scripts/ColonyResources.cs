@@ -9,7 +9,9 @@ public class ColonyResources : MonoBehaviour
     public StartColonyGame startColGame;
     public bool restartGame = false;
     public bool gameOver = false;
-    public GameObject gameOverText;
+    public GameObject youLoseText;
+    public GameObject youWinText;
+    public GameObject startGameText;
     public Slider energySlider;
     public Slider waterSlider;
     public Slider oxygenSlider;
@@ -111,7 +113,21 @@ public class ColonyResources : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameOverText.SetActive(false);
+        youLoseText.SetActive(false);
+        youWinText.SetActive(false);
+        startGameText.SetActive(true);
+        energySlider.gameObject.SetActive(false);
+        waterSlider.gameObject.SetActive(false);
+        oxygenSlider.gameObject.SetActive(false);
+        populationCount.gameObject.SetActive(false);
+        energyText.SetActive(false);
+        waterText.SetActive(false);
+        oxygenText.SetActive(false);
+        populationText1.SetActive(false);
+        populationText2.SetActive(false);
+        energy = 50f;
+        water = 50f;
+        oxygen = 50f;
     }
 
     // Update is called once per frame
@@ -119,7 +135,9 @@ public class ColonyResources : MonoBehaviour
     {
         if (startColGame.startGame == true)
         {
-            gameOverText.SetActive(false);
+            youLoseText.SetActive(false);
+            youWinText.SetActive(false);
+            startGameText.SetActive(false);
             energy = 50f;
             water = 50f;
             oxygen = 50f;
@@ -146,7 +164,9 @@ public class ColonyResources : MonoBehaviour
 
         if (energy <= 0f || water <= 0f || oxygen <= 0f)
         {
-            gameOverText.SetActive(true);
+            youLoseText.SetActive(true);
+            youWinText.SetActive(false);
+            startGameText.SetActive(false);
             gameOver = true;
             restartGame = false;
             energySlider.gameObject.SetActive(false);
@@ -164,7 +184,9 @@ public class ColonyResources : MonoBehaviour
 
         if (timer.minute == 0 && timer.second == 0)
         {
-            gameOverText.SetActive(true);
+            youLoseText.SetActive(false);
+            youWinText.SetActive(true);
+            startGameText.SetActive(false);
             gameOver = true;
             restartGame = false;
             energySlider.gameObject.SetActive(false);
@@ -261,9 +283,6 @@ public class ColonyResources : MonoBehaviour
         }
     }
 
-    public void AdjustSlider()
-    {
-
-    }
+   
 
 }
