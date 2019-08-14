@@ -193,7 +193,7 @@ public class MemoryBeyondLogic : MonoBehaviour
         playerLevel = 0;
         colorList.Clear();
         //TimeDecrease();
-        round++;
+        round = round + 1;
         state = StartTheGameState.RoundScreen;
         RoundChange();
     }
