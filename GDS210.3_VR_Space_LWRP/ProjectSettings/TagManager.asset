@@ -15,6 +15,7 @@ TagManager:
   - PositionPoint
   - SceneChange
   - Battery
+  - EnemyShip
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyRandomSpawn : MonoBehaviour
 {
     //Setting up the function to control the enemy spawning.
-    public enum SpawnState { Spawning, Waiting, Countdown };
+    public enum SpawnState { Spawning, Waiting, Countdown, GameIsOver };
     public SpawnState state = SpawnState.Countdown;
 
     //Setting up how each wave will work and how many we will spawn.
@@ -43,28 +43,36 @@ public class EnemyRandomSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(state)
+        if (state == SpawnState.GameIsOver)
         {
-            case (SpawnState.Countdown):
+            GameIsCompleted();
+        }
+
+        if (state == SpawnState.Waiting)
+        {
+            if (!EnemyIsAlive())
+            {
                 NewWave();
-                break;
-            case (SpawnState.Spawning):
-                if (enemySpawnCountDown <= 0)
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        if (state == SpawnState.Countdown)
+        {
+            if (enemySpawnCountDown <= 0)
+            {
+                if (state != SpawnState.Spawning)
                 {
                     StartCoroutine(SpawningEnemyShip(waves[nextWave]));
                 }
-                else
-                {
-                    enemySpawnCountDown -= Time.deltaTime;
-                }
-                break;
-            case (SpawnState.Waiting):
-                if (!EnemyIsAlive())
-                {
-                    state = SpawnState.Countdown;
-                    return;
-                }
-                break;
+            }
+            else
+            {
+                enemySpawnCountDown -= Time.deltaTime;
+            }
         }
 
         waveText.text = waveNumber.ToString();
@@ -92,22 +100,27 @@ public class EnemyRandomSpawn : MonoBehaviour
     {
         enemySpawnCountDown = enemySpawnDelay;
 
+        state = SpawnState.Countdown;
+
         if (nextWave + 1 > waves.Length - 1)
         {
             //This is where the game will end. Need help for this please.
             Debug.Log("All enemy have been defeated. Game is done!");
+            GameIsCompleted();
         }
         else
         {
+            Debug.Log("NextWave");
             nextWave++;
             waveNumber++;
-            state = SpawnState.Spawning;
         }
     }
 
     //To setup the position and how many we will be spawning.
     IEnumerator SpawningEnemyShip(EnemyWave wave)
     {
+        state = SpawnState.Spawning;
+
         for (int i = 0; i < wave.count; i++)
         {
             EnemyWave enemyShip = waves[i];
@@ -115,14 +128,17 @@ public class EnemyRandomSpawn : MonoBehaviour
             SpawnEnemyShip(enemyShip.spawnEnemyShip[Random.Range(0, enemyShip.spawnEnemyShip.Length)]);
             yield return new WaitForSeconds(1f / wave.rate);
             SpawnEnemyShip(enemyShip.spawnEnemyShip[Random.Range(0, enemyShip.spawnEnemyShip.Length)]);
+            yield return new WaitForSeconds(1.5f / wave.rate);
+            SpawnEnemyShip(enemyShip.spawnEnemyShip[Random.Range(0, enemyShip.spawnEnemyShip.Length)]);
             yield return new WaitForSeconds(2f / wave.rate);
             SpawnEnemyShip(enemyShip.spawnEnemyShip[Random.Range(0, enemyShip.spawnEnemyShip.Length)]);
-            yield return new WaitForSeconds(3f / wave.rate);
-            SpawnEnemyShip(enemyShip.spawnEnemyShip[Random.Range(0, enemyShip.spawnEnemyShip.Length)]);
-            yield return new WaitForSeconds(4f / wave.rate);
+            yield return new WaitForSeconds(2.5f / wave.rate);
         }
 
+        Debug.Log("Done Spawning");
+
         state = SpawnState.Waiting;
+
         yield break;
     }
 
@@ -131,5 +147,10 @@ public class EnemyRandomSpawn : MonoBehaviour
     {
         Transform spawnPoint = enemyShipSpawnPoint[Random.Range(0, enemyShipSpawnPoint.Length)];
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+    }
+
+    void GameIsCompleted()
+    {
+        state = SpawnState.GameIsOver;
     }
 }
