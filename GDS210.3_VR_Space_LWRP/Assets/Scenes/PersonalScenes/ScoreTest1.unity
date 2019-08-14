@@ -752,15 +752,6 @@ MonoBehaviour:
     - {fileID: 7646212930033039415, guid: f2754f5c7fe63e64ab77a77c43f8c60c, type: 3}
     count: 1
     rate: 3
-  - name: Wave 3
-    spawnEnemyShip:
-    - {fileID: 3488834757705907018, guid: 5b1e9c3ba24c2f0419d4ba501628a9ee, type: 3}
-    - {fileID: 4977336887785041147, guid: 9db4abd048cb2b24689e2c8643dfd2e9, type: 3}
-    - {fileID: 5127471387647099820, guid: e4fe9f116b2aeed48b8aba455f0c5529, type: 3}
-    - {fileID: 7646212930033039415, guid: f2754f5c7fe63e64ab77a77c43f8c60c, type: 3}
-    - {fileID: 7646212930033039415, guid: f2754f5c7fe63e64ab77a77c43f8c60c, type: 3}
-    count: 1
-    rate: 4
   waveNumber: 0
   enemySpawnDelay: 0
   enemySpawnCountDown: 0
