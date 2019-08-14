@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class ResourceScript : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class ResourceScript : MonoBehaviour
     public Rigidbody rb;
     //a count down to ensure the object is deleted if it flies away
     public float countDown = 20f;
+
+    public SteamVR_Input_Sources handType;
+    public SteamVR_Behaviour_Pose controllerPose;
+    public SteamVR_Action_Boolean grabAction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +49,11 @@ public class ResourceScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            rb.useGravity = true;
+            if (grabAction.GetLastStateDown(handType))
+            {
+                rb.useGravity = true;
+            }
+           
         }
     }
 

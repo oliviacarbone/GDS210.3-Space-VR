@@ -124,3 +124,8 @@ MonoBehaviour:
   thrust: 3
   rb: {fileID: 7545469017547801233}
   countDown: 5
+  handType: 0
+  controllerPose: {fileID: 0}
+  grabAction:
+    actionPath: /actions/default/in/Grab
+    needsReinit: 0
