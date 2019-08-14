@@ -11,11 +11,12 @@ public class EnemyController : MonoBehaviour
     public int waitTime = 10;
     public GameObject battery;
 
-    public float enemyDamage;
+    public float enemyDamage = 0.01f;
 
     void Awake()
     {
-        posList = FindObjectOfType<ECList>();    
+        posList = FindObjectOfType<ECList>();
+        battery = GameObject.FindGameObjectWithTag("Battery");
     }
 
     void Start()
