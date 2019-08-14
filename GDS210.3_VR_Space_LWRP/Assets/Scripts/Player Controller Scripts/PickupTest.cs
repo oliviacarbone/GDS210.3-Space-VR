@@ -12,11 +12,12 @@ public class PickupTest : MonoBehaviour
     private GameObject objectInHand;
     private GameObject sceneChanger;
     public SceneManagement sceneManagement;
-
+    //public int sceneNumber;
     private void Start()
     {
         sceneManagement = FindObjectOfType<SceneManagement>();
     }
+    //Sets what the colliding object is, if it can be picked up.
     private void SetCollidingObject(Collider col)
     {
         if (collidingObject || !col.GetComponent<Rigidbody>())
@@ -25,7 +26,7 @@ public class PickupTest : MonoBehaviour
         }
         collidingObject = col.gameObject;
     }
-
+    //If interacting with a scene changer, sets what object the scene changer is.
     private void SetSceneChanger(Collider col)
     {
         if (sceneChanger || !col.GetComponent<Rigidbody>())
@@ -34,6 +35,7 @@ public class PickupTest : MonoBehaviour
         }
         sceneChanger = col.gameObject;
     }
+    //Gets what the colliding object is; checking whether or not it's a Scene Changer.
     public void OnTriggerEnter(Collider other)
     {
         //SetCollidingObject(other);
@@ -117,7 +119,8 @@ public class PickupTest : MonoBehaviour
             }
             else if (sceneChanger)
             {
-                sceneManagement.ChangeScene(4);
+                //sceneChanger.GetComponent<SceneSetter>() ;
+                sceneManagement.ChangeScene(sceneChanger.GetComponent<SceneSetter>().sceneIndexSetter);
             }
         }
     }
