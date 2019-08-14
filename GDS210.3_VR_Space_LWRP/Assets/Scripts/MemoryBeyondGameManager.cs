@@ -18,6 +18,13 @@ public class MemoryBeyondGameManager : MonoBehaviour
         startButton.SetActive(true);
     }
 
+    private void OnMouseDown()
+    {
+        mBL.StartGame();
+        gameObject.SetActive(false);
+        Debug.Log("Deleted");
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")

@@ -11,8 +11,13 @@ public class MemoryBeyondLogic : MonoBehaviour
     public MemoryBeyondButtons[] buttons;
     public List<int> colorList;
 
+    public GameObject gameOverScreen;
+    public GameObject roundScreen;
+    public GameObject startButton;
+
     public TimeScript timer;
 
+    #region HLT
     private float hLTime; //highLightTime, the time a block stays on the secondary material
     public float HLTime
     {
@@ -31,7 +36,8 @@ public class MemoryBeyondLogic : MonoBehaviour
         }
 
     }
-
+    #endregion
+    #region DT
     private float delayTime; //the time before the next block changes material
     public float DelayTime
     {
@@ -49,18 +55,16 @@ public class MemoryBeyondLogic : MonoBehaviour
             }
         }
     }
+    #endregion
 
     public int level = 2; //the beginning number of cubes to change material 
     public int playerLevel = 0;
-    public int round = 1;
+    public int round;
 
     public bool logic = false;
     public bool player = false;
 
     private int randomInt;
-
-    public GameObject gameOverScreen;
-    public GameObject roundScreen;
 
     private void Awake()
     {
@@ -90,6 +94,51 @@ public class MemoryBeyondLogic : MonoBehaviour
         }
     }
 
+    #region Functions
+    public void StartGame() //the button for the start of the game, turns on the logic and turns off the start button
+    {
+        if (state == StartTheGameState.Start)
+        {
+            gameOverScreen.SetActive(false);
+            roundScreen.SetActive(true);
+            StartCoroutine(FirstStart());
+        }
+    }
+
+    public void RoundChange()
+    {
+        if (state == StartTheGameState.RoundScreen)
+        {
+            roundScreen.SetActive(true);
+            player = false;
+            logic = false;
+            StartCoroutine(RoundScreenManager());
+        }
+    }
+
+    private void NextRound()
+    {
+        level += 1;
+        playerLevel = 0;
+        colorList.Clear();
+        round++;
+        state = StartTheGameState.RoundScreen;
+        RoundChange();
+    }
+
+    void GameOver()
+    {
+        player = false;
+        logic = false;
+        colorList.Clear();
+        gameOverScreen.SetActive(true);
+        round = 1;
+        startButton.SetActive(true);
+
+
+        state = StartTheGameState.Start;
+    }
+
     void ButtonClicked(int number)
     {
         if (player == true)
@@ -109,25 +158,29 @@ public class MemoryBeyondLogic : MonoBehaviour
         }
     }
 
-    private IEnumerator GameLogic()
+    private void LogicCheck()
     {
-        yield return new WaitForSeconds(0.5f); //adds to the pattern if the player is keeping track, and highlights the next cube
-
-        for (int i = 0; i < level; i++)
+        if (logic == true)
         {
-            if (colorList.Count < level)
-            {
-                randomInt = Random.Range(0, buttons.Length);
-                colorList.Add(randomInt);
-            }
-            
-            buttons[colorList[i]].ClickedColor();
-            yield return new WaitForSeconds(HLTime);
-
-            buttons[colorList[i]].UnclickedColor();
-            yield return new WaitForSeconds(DelayTime);  
+            logic = false;
+            StartCoroutine(GameLogic());
         }
-        player = true;
+    }
+    #endregion
+
+    #region IEnums
+
+    public IEnumerator FirstStart()
+    {
+        yield return new WaitForSeconds(2f);
+
+        roundScreen.SetActive(false);
+        logic = true;
+        playerLevel = 0;
+        level = 2;
+        timer.state = TimeScript.TimeState.Countdown;
+
+        state = StartTheGameState.DoNothing;
     }
 
     private IEnumerator RoundScreenManager()
@@ -142,65 +195,25 @@ public class MemoryBeyondLogic : MonoBehaviour
         }
     }
 
-    private void LogicCheck()
+    private IEnumerator GameLogic()
     {
-        if (logic == true)
+        yield return new WaitForSeconds(0.5f); //adds to the pattern if the player is keeping track, and highlights the next cube
+
+        for (int i = 0; i < level; i++)
         {
-            logic = false;
-            StartCoroutine(GameLogic());
+            if (colorList.Count < level)
+            {
+                randomInt = Random.Range(0, buttons.Length);
+                colorList.Add(randomInt);
+            }
+
+            buttons[colorList[i]].ClickedColor();
+            yield return new WaitForSeconds(HLTime);
+
+            buttons[colorList[i]].UnclickedColor();
+            yield return new WaitForSeconds(DelayTime);
         }
+        player = true;
     }
-
-    public void StartGame() //the button for the start of the game, turns on the logic and turns off the start button
-    {
-        if (state == StartTheGameState.Start)
-        {
-            gameOverScreen.SetActive(false);
-            roundScreen.SetActive(false);
-            logic = true;
-            playerLevel = 0;
-            level = 2;
-            timer.state = TimeScript.TimeState.Countdown;
-
-            state = StartTheGameState.DoNothing;
-        }
-    }
-
-    void GameOver()
-    {
-        player = false;
-        logic = false;
-        colorList.Clear();
-        gameOverScreen.SetActive(true);
-
-        state = StartTheGameState.Start;
-    }
-
-    public void RoundChange()
-    {
-        if (state == StartTheGameState.RoundScreen)
-        {
-            roundScreen.SetActive(true);
-            player = false;
-            logic = false;
-            StartCoroutine(RoundScreenManager());
-        }
-    }
-
-    private void NextRound()
-    {
-        level += 1;
-        playerLevel = 0;
-        colorList.Clear();
-        //TimeDecrease();
-        round = round + 1;
-        state = StartTheGameState.RoundScreen;
-        RoundChange();
-    }
-
-    private void TimeDecrease()
-    {
-        hLTime = hLTime - 0.05f;
-        delayTime = delayTime - 0.03f;
-    }
+    #endregion
 }
