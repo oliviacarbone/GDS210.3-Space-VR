@@ -6,26 +6,29 @@ public class EnemyDeath : MonoBehaviour
     Renderer renderColor;
 
     public Gun playerGun;
+    public EnemyController enemyController;
     public float enemyHealth;
+
 
     void Start()
     {
         enemyHealth = 100;
     }
 
-    void Update()
+    private void Update()
     {
-        Damage();
         Death();
     }
 
     public void Hit()
     {
         //Turns test drown red if hit 
-        renderColor.material.color = Color.red;
+        //renderColor.material.color = Color.red;
 
         //Calls ChangeColor() after 2 seconds
-        Invoke("ChangeColor", 2);
+       // Invoke("ChangeColor", 2);
+        Debug.Log("Hit Registered");
+        Damage();
     }
 
     void ChangeColor()
@@ -36,15 +39,25 @@ public class EnemyDeath : MonoBehaviour
 
     void Damage()
     {
+        
         //Damages enemy 
-        enemyHealth = enemyHealth - playerGun.playerDamage;
+        enemyHealth = enemyHealth - 50f; //playerGun.playerDamage;
+
+        Debug.Log("Target Damaged");
     }
 
 
     void Death()
     {
         //Destroys the enemy when health reaches 0
+
+        
         if(enemyHealth <= 0f)
+        {
+            enemyController.ReturnPoint();
+            Debug.Log("Destroyed");
             Destroy(gameObject);
+        }
+            
     }
 }
