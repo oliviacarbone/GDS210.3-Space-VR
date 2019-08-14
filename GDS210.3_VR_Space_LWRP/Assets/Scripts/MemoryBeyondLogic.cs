@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MemoryBeyondLogic : MonoBehaviour
 {
     //to prevent the player to spam the button
-    public enum StartTheGameState { Start, DoNothing};
+    public enum StartTheGameState { Start, RoundScreen, DoNothing};
     public StartTheGameState state = StartTheGameState.Start;
     public MemoryBeyondButtons[] buttons;
     public List<int> colorList;
@@ -52,6 +52,7 @@ public class MemoryBeyondLogic : MonoBehaviour
 
     public int level = 2; //the beginning number of cubes to change material 
     public int playerLevel = 0;
+    public int round = 1;
 
     public bool logic = false;
     public bool player = false;
@@ -59,19 +60,19 @@ public class MemoryBeyondLogic : MonoBehaviour
     private int randomInt;
 
     public GameObject gameOverScreen;
+    public GameObject roundScreen;
 
     private void Awake()
     {
-        hLTime = 0.75f;
-        delayTime = 0.5f;
+        hLTime = 1f;
+        delayTime = 0.75f;
         gameOverScreen.SetActive(false);
+        roundScreen.SetActive(false);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(StartDelay());
-
         for (int i = 0; i < buttons.Length; i++) //loops through the available buttons
         {
             buttons[i].OnClick += ButtonClicked;
@@ -103,12 +104,7 @@ public class MemoryBeyondLogic : MonoBehaviour
             }
             if (playerLevel == level)
             {
-                level += 1;
-                playerLevel = 0;
-                player = false;
-                colorList.Clear();
-                TimeDecrease();
-                logic = true;
+                NextRound();
             }
         }
     }
@@ -134,11 +130,16 @@ public class MemoryBeyondLogic : MonoBehaviour
         player = true;
     }
 
-    private IEnumerator StartDelay()
+    private IEnumerator RoundScreenManager()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2f);
 
-        StartGame();
+        if (roundScreen == true)
+        {
+            state = StartTheGameState.DoNothing;
+            roundScreen.SetActive(false);
+            logic = true;
+        }
     }
 
     private void LogicCheck()
@@ -155,6 +156,7 @@ public class MemoryBeyondLogic : MonoBehaviour
         if (state == StartTheGameState.Start)
         {
             gameOverScreen.SetActive(false);
+            roundScreen.SetActive(false);
             logic = true;
             playerLevel = 0;
             level = 2;
@@ -172,6 +174,28 @@ public class MemoryBeyondLogic : MonoBehaviour
         gameOverScreen.SetActive(true);
 
         state = StartTheGameState.Start;
+    }
+
+    public void RoundChange()
+    {
+        if (state == StartTheGameState.RoundScreen)
+        {
+            roundScreen.SetActive(true);
+            player = false;
+            logic = false;
+            StartCoroutine(RoundScreenManager());
+        }
+    }
+
+    private void NextRound()
+    {
+        level += 1;
+        playerLevel = 0;
+        colorList.Clear();
+        //TimeDecrease();
+        round++;
+        state = StartTheGameState.RoundScreen;
+        RoundChange();
     }
 
     private void TimeDecrease()
