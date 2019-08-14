@@ -83,6 +83,7 @@ MonoBehaviour:
   renderColor: {fileID: 0}
   playerGun: {fileID: 3362869261881301378, guid: 4a8ab0041332fc04a88003a6deada5b4,
     type: 3}
+  enemyController: {fileID: 7206820612926392037}
   enemyHealth: 100
 --- !u!114 &7206820612926392037
 MonoBehaviour:

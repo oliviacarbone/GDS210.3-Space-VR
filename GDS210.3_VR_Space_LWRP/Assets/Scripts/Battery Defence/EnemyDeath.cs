@@ -6,6 +6,7 @@ public class EnemyDeath : MonoBehaviour
     Renderer renderColor;
 
     public Gun playerGun;
+    public EnemyController enemyController;
     public float enemyHealth;
 
 
@@ -16,8 +17,6 @@ public class EnemyDeath : MonoBehaviour
 
     private void Update()
     {
-        //enemyHealth = enemyHealth - 1f;
-
         Death();
     }
 
@@ -55,6 +54,7 @@ public class EnemyDeath : MonoBehaviour
         
         if(enemyHealth <= 0f)
         {
+            enemyController.ReturnPoint();
             Debug.Log("Destroyed");
             Destroy(gameObject);
         }

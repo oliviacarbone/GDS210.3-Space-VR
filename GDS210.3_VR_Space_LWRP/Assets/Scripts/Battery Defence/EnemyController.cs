@@ -21,8 +21,8 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        //Start after 2 seconds and repeat every waitTime value
-        InvokeRepeating("RandomPoint", 2, waitTime);
+        //Start and repeat every waitTime value
+        InvokeRepeating("RandomPoint", 0, waitTime);
     }
 
     void Update()
@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
         //Stops repoicking from the list
         if (currentPoint != null)
         {
-            posList.posPoints.Add(currentPoint);
+            ReturnPoint();
         }
 
         //Assigns the chosen index to currentPoint
@@ -53,8 +53,13 @@ public class EnemyController : MonoBehaviour
 
         //Stops other enemies from picking the same point
         posList.posPoints.RemoveAt(index);
-         
+
         //Moves the enemy to the chosen point
-        agent.SetDestination(currentPoint.transform.position);        
+        agent.SetDestination(currentPoint.transform.position);
+    }
+
+    public void ReturnPoint()
+    {
+        posList.posPoints.Add(currentPoint);
     }
 }
