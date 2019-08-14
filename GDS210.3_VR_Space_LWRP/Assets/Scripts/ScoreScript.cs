@@ -79,7 +79,7 @@ public class ScoreScript : MonoBehaviour
         //This right here is the way to call each leaderboard script in our game.
         //Make sure that you write the right scene name properly otherwise this won't work.
         #region Scene.Guillaume
-        if (SceneManager.GetActiveScene().name == "Guillaume")
+        if (SceneManager.GetActiveScene().name == "ColonyManager")
         {
             int test = 0;
 

@@ -128,6 +128,9 @@ public class ColonyResources : MonoBehaviour
         energy = 50f;
         water = 50f;
         oxygen = 50f;
+        population = 0f;
+        timer.second = 0;
+        timer.minute = 2;
     }
 
     // Update is called once per frame
@@ -141,6 +144,7 @@ public class ColonyResources : MonoBehaviour
             energy = 50f;
             water = 50f;
             oxygen = 50f;
+            population = 0f;
             restartGame = true;
             startColGame.startGame = false;
             energySlider.gameObject.SetActive(true);
@@ -152,6 +156,7 @@ public class ColonyResources : MonoBehaviour
             oxygenText.SetActive(true);
             populationText1.SetActive(true);
             populationText2.SetActive(true);
+            
         }
         if (gameOver == false && restartGame == true)
         {
@@ -178,6 +183,8 @@ public class ColonyResources : MonoBehaviour
             oxygenText.SetActive(false);
             populationText1.SetActive(false);
             populationText2.SetActive(false);
+            timer.state = TimeScript.TimeState.DoNothing;
+            startColGame.state = StartColonyGame.ButtonState.Start;
 
         }
         else { gameOver = false; }
@@ -199,6 +206,7 @@ public class ColonyResources : MonoBehaviour
             populationText1.SetActive(false);
             populationText2.SetActive(false);
             timer.state = TimeScript.TimeState.DoNothing;
+            startColGame.state = StartColonyGame.ButtonState.Start;
         }
         else
         {

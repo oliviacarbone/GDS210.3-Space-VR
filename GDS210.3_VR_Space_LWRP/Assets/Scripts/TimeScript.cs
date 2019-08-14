@@ -51,7 +51,7 @@ public class TimeScript : MonoBehaviour
                 GameIsOver();
                 break;
             case (TimeState.DoNothing):
-                minute = 2;
+                StopCoroutine("LoseTime");
                 break;
         }
 
@@ -77,6 +77,8 @@ public class TimeScript : MonoBehaviour
     public void StartTheGame()
     {
         //Time.timeScale = 1;
+        minute = 2;
+        second = 0;
         state = TimeState.Countdown;
     }
 

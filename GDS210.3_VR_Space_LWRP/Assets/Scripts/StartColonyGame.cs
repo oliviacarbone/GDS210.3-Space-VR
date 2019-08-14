@@ -6,6 +6,10 @@ using Valve.VR;
 
 public class StartColonyGame : MonoBehaviour
 {
+    //To prevent spamming the start button.
+    public enum ButtonState { Start, DoNothing };
+    public ButtonState state = ButtonState.Start;
+
     public SteamVR_Input_Sources handType;
     public SteamVR_Behaviour_Pose controllerPose;
     public SteamVR_Action_Boolean grabAction;
@@ -32,16 +36,19 @@ public class StartColonyGame : MonoBehaviour
 
     private void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if (state == ButtonState.Start)
         {
-            
-            if (grabAction.GetLastStateDown(handType))
+            if (col.gameObject.tag == "Player")
             {
-                if (startGameButton)
-                {
-                    time.StartTheGame();
-                    startGame = true;
 
+                if (grabAction.GetLastStateDown(handType))
+                {
+                    if (startGameButton)
+                    {
+                        time.StartTheGame();
+                        startGame = true;
+                        state = ButtonState.DoNothing;
+                    }
                 }
             }
         }

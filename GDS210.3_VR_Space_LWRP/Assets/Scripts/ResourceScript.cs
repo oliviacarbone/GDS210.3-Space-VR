@@ -52,6 +52,7 @@ public class ResourceScript : MonoBehaviour
             if (grabAction.GetLastStateDown(handType))
             {
                 rb.useGravity = true;
+                rb.freezeRotation = false;
             }
            
         }
