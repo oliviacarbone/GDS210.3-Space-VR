@@ -40,7 +40,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))
         {
-            if (hit.collider.CompareTag("GunTarget"))
+            if (hit.collider.CompareTag("EnemyShip"))
             {
                 Debug.Log("HIT!!!");
                 enemyDeath.Hit();
@@ -54,7 +54,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))  
         {
-            if (hit.collider.CompareTag("GunTarget"))
+            if (hit.collider.CompareTag("EnemyShip"))
             {
                 //Changes colour of laser to red when on a target
                 laserColor.color = withTarget;
