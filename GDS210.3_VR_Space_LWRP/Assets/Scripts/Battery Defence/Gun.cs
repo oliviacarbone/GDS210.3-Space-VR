@@ -43,7 +43,7 @@ public class Gun : MonoBehaviour
             if (hit.collider.CompareTag("EnemyShip"))
             {
                 Debug.Log("HIT!!!");
-                enemyDeath.Hit();
+                hit.collider.GetComponent<EnemyDeath>().Hit();
             }
         }
     }
