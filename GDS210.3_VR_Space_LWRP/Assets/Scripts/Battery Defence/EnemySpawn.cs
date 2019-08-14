@@ -12,11 +12,6 @@ public class EnemySpawn : MonoBehaviour
         Spawn();
     }
 
-    void Update()
-    {
-        
-    }
-
     void Spawn()
     {
         for (int i = 0; i < 6; i++)
