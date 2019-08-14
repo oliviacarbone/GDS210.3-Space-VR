@@ -466,7 +466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderColor: {fileID: 4899012444486809038}
-  playerGun: {fileID: 0}
+  playerGun: {fileID: 3362869261881301378, guid: 4a8ab0041332fc04a88003a6deada5b4,
+    type: 3}
   enemyHealth: 100
 --- !u!114 &7206820612926392037
 MonoBehaviour:
@@ -483,7 +484,7 @@ MonoBehaviour:
   agent: {fileID: 7678428006093647426}
   waitTime: 10
   battery: {fileID: 6736243212783232868, guid: 86c5ae0ec8ba67941910cbbb089d4b03, type: 3}
-  enemyDamage: 5
+  enemyDamage: 0.1
 --- !u!114 &6301510409353039416
 MonoBehaviour:
   m_ObjectHideFlags: 0

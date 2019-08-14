@@ -3,11 +3,11 @@
 public class BatteryHealth : MonoBehaviour
 {
     public float batteryHealth;
-    private EnemyController enemy;
+    public EnemyController enemy;
 
     void Awake()
     {
-        enemy = FindObjectOfType<EnemyController>();    
+        //enemy = FindObjectOfType<EnemyController>();    
     }
 
     void Start()
@@ -15,9 +15,15 @@ public class BatteryHealth : MonoBehaviour
         batteryHealth = 100f;
     }
 
+    void Update()
+    {
+        Lose();    
+    }
+
     public void Damage()
     {
         batteryHealth = batteryHealth - enemy.enemyDamage;
+        print(enemy.enemyDamage);
     }
 
     void Lose()

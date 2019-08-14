@@ -8,15 +8,14 @@ public class EnemyDeath : MonoBehaviour
     public Gun playerGun;
     public float enemyHealth;
 
+    void Awake()
+    {
+
+    }
+
     void Start()
     {
         enemyHealth = 100;
-    }
-
-    void Update()
-    {
-        Damage();
-        Death();
     }
 
     public void Hit()
@@ -26,6 +25,8 @@ public class EnemyDeath : MonoBehaviour
 
         //Calls ChangeColor() after 2 seconds
         Invoke("ChangeColor", 2);
+
+        Damage();
     }
 
     void ChangeColor()
