@@ -24,10 +24,10 @@ public class EnemyDeath : MonoBehaviour
     public void Hit()
     {
         //Turns test drown red if hit 
-        renderColor.material.color = Color.red;
+        //renderColor.material.color = Color.red;
 
         //Calls ChangeColor() after 2 seconds
-        Invoke("ChangeColor", 2);
+       // Invoke("ChangeColor", 2);
         Debug.Log("Hit Registered");
         Damage();
     }
