@@ -11,12 +11,20 @@ public class MemoryBeyondRoundScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        roundText.text = "Round " + mBL.round;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Round();
+    }
+
+    public void Round()
+    {
+        if (mBL.roundScreen == true)
+        {
+            roundText.text = "Round: " + mBL.round;
+        }
     }
 }
