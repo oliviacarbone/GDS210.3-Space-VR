@@ -261,19 +261,19 @@ public class ColonyResources : MonoBehaviour
 
     public void IncreaseEnergy()
     {
-            energy += 5f;
+            energy += 10f;
             water -= 0f;
             oxygen -= 0f;
     }
     public void IncreaseWater()
     {
-        water += 6f;
+        water += 10f;
         energy -= 0f;
         oxygen -= 0f;
     }
     public void IncreaseOxygen()
     {
-        oxygen += 4f;
+        oxygen += 10f;
         water -= 0f;
         energy -= 0f;
     }
