@@ -7,10 +7,17 @@ public class EnemyShooting : MonoBehaviour
     public GameObject enemyBullet;
     public GameObject muzzle1;
     public GameObject muzzle2;
+    private GameObject target;
+    public float range;
     public float speed = 100;
     private float fireRate = 0.5f;
     public float nextFire;
-    public bool leftCannon;
+    private bool leftCannon;
+
+    private void Awake()
+    {
+        target = GameObject.FindGameObjectWithTag("Battery");
+    }
 
     void Start()
     {
@@ -19,7 +26,10 @@ public class EnemyShooting : MonoBehaviour
 
     void Update()
     {
-        Shoot();
+        if (Vector3.Distance(target.transform.position, transform.position) <= range)
+        {
+            Shoot();
+        }
     }
 
     void Shoot()
