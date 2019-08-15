@@ -4643,12 +4643,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 0
-  rb: {fileID: 0}
+  rb: {fileID: 671158481}
   countDown: 20
   handType: 0
   controllerPose: {fileID: 0}
   grabAction:
-    actionPath: 
+    actionPath: /actions/default/in/Grab
     needsReinit: 0
 --- !u!65 &671158480
 BoxCollider:
