@@ -3,30 +3,32 @@
 public class EnemyDeath : MonoBehaviour
 {
     [SerializeField]
-    Renderer renderColor;
+    Material droneColour;
 
     public Gun playerGun;
     public EnemyController enemyController;
+    public EnemyShooting enemyShooting;
     public float enemyHealth;
 
 
     void Start()
     {
         enemyHealth = 100;
+        droneColour.color = Color.white;
     }
 
-    private void Update()
+    void Update()
     {
-        Death();
+        Fall();
     }
 
     public void Hit()
     {
         //Turns test drown red if hit 
-        //renderColor.material.color = Color.red;
+        droneColour.color = Color.red;
 
         //Calls ChangeColor() after 2 seconds
-       // Invoke("ChangeColor", 2);
+        Invoke("ChangeColor", 2);
         Debug.Log("Hit Registered");
         Damage();
     }
@@ -34,30 +36,32 @@ public class EnemyDeath : MonoBehaviour
     void ChangeColor()
     {
         //Turns Test drone back to white
-        renderColor.material.color = Color.white;
+        droneColour.color = Color.white;
     }
 
     void Damage()
-    {
-        
+    {        
         //Damages enemy 
         enemyHealth = enemyHealth - 50f; //playerGun.playerDamage;
-
         Debug.Log("Target Damaged");
     }
 
 
-    void Death()
+    void Fall()
     {
-        //Destroys the enemy when health reaches 0
-
-        
+        //Destroys the enemy when health reaches 0        
         if(enemyHealth <= 0f)
         {
+            enemyController.agent.enabled = false;
             enemyController.ReturnPoint();
-            Debug.Log("Destroyed");
-            Destroy(gameObject);
-        }
-            
+            enemyShooting.shooting = false;
+            Invoke("Death", 5);
+        }            
+    }
+
+    void Death()
+    {
+        Debug.Log("Destroyed");
+        Destroy(gameObject);
     }
 }

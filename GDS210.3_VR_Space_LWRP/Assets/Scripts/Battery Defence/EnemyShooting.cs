@@ -13,6 +13,7 @@ public class EnemyShooting : MonoBehaviour
     private float fireRate = 0.5f;
     public float nextFire;
     private bool leftCannon;
+    public bool shooting;
 
     private void Awake()
     {
@@ -21,12 +22,13 @@ public class EnemyShooting : MonoBehaviour
 
     void Start()
     {
+        shooting = true;
         nextFire = 0f;
     }
 
     void Update()
     {
-        if (Vector3.Distance(target.transform.position, transform.position) <= range)
+        if (Vector3.Distance(target.transform.position, transform.position) <= range && shooting == true)
         {
             Shoot();
         }

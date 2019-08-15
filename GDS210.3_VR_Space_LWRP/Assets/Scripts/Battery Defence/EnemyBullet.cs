@@ -12,7 +12,6 @@ public class EnemyBullet : MonoBehaviour
     //Destroys the bullet when it hits the battery
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.CompareTag("Battery"))
         {
             bHealth.Damage();
