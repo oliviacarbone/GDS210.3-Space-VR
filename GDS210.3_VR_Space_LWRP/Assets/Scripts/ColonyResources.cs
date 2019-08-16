@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ColonyResources : MonoBehaviour
 {
-    
+    public ScoreScript colonyScore;
     public StartColonyGame startColGame;
     public bool restartGame = false;
     public bool gameOver = false;
@@ -132,10 +132,13 @@ public class ColonyResources : MonoBehaviour
         timer.second = 0;
         timer.minute = 2;
     }
+    public int newPop;
 
     // Update is called once per frame
     void Update()
     {
+        newPop = (int)population;
+        colonyScore.currentScore = newPop;
         if (startColGame.startGame == true)
         {
             youLoseText.SetActive(false);
