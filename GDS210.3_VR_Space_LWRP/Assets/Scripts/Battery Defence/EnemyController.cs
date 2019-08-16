@@ -27,7 +27,8 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        LookTowards();    
+        LookTowards();
+        DroneSpeed();
     }
 
     void LookTowards()
@@ -56,6 +57,11 @@ public class EnemyController : MonoBehaviour
 
         //Moves the enemy to the chosen point
         agent.SetDestination(currentPoint.transform.position);
+    }
+
+    void DroneSpeed()
+    {
+        agent.speed = Vector3.Distance(transform.position, currentPoint.transform.position);
     }
 
     public void ReturnPoint()

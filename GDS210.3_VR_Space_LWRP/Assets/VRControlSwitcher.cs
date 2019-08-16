@@ -15,6 +15,7 @@ public class VRControlSwitcher : MonoBehaviour
     public SteamVR_Behaviour_Pose controllerPose;
     public SteamVR_Action_Boolean handheldSwitch;
 
+    bool gunsActive;
     
      
     void Awake()
@@ -27,13 +28,14 @@ public class VRControlSwitcher : MonoBehaviour
 
         leftGun.SetActive(false);
         rightGun.SetActive(false);
+        gunsActive = false;
     }
   
 
     // Update is called once per frame
     void Update()
     {
-        if (handheldSwitch.GetLastStateUp(handType) && SceneManager.GetActiveScene().name == "BatteryDefence")
+        if (handheldSwitch.GetState(handType) && SceneManager.GetActiveScene().name == "BatteryDefence")
         {
             EquipSwitch();
         }
@@ -41,7 +43,21 @@ public class VRControlSwitcher : MonoBehaviour
 
     void EquipSwitch()
     {
-        if(!leftGun || !rightGun)
+        if(gunsActive == false)
+        {
+
+            leftGun.SetActive(false);
+            rightGun.SetActive(false);
+
+            leftController.GetComponent<PickupTest>().enabled = true;
+            leftController.GetComponent<Teleport>().enabled = true;
+
+            rightController.GetComponent<PickupTest>().enabled = true;
+            rightController.GetComponent<Teleport>().enabled = true;
+
+            gunsActive = true;
+        }
+        else if(gunsActive == true)
         {
             leftGun.SetActive(true);
             rightGun.SetActive(true);
@@ -51,17 +67,8 @@ public class VRControlSwitcher : MonoBehaviour
 
             rightController.GetComponent<PickupTest>().enabled = false;
             rightController.GetComponent<Teleport>().enabled = false;
-        }
-        else
-        {
-            leftGun.SetActive(false);
-            rightGun.SetActive(false);
 
-            leftController.GetComponent<PickupTest>().enabled = true;
-            leftController.GetComponent<Teleport>().enabled = true;
-
-            rightController.GetComponent<PickupTest>().enabled = true;
-            rightController.GetComponent<Teleport>().enabled = true;
+            gunsActive = false;
         }
     }
 }

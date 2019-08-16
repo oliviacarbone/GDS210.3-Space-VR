@@ -158,6 +158,9 @@
                "inputs" : {
                   "click" : {
                      "output" : "/actions/default/in/teleport"
+                  },
+                  "double" : {
+                     "output" : "/actions/default/in/menu"
                   }
                },
                "mode" : "button",
@@ -167,6 +170,9 @@
                "inputs" : {
                   "click" : {
                      "output" : "/actions/default/in/teleport"
+                  },
+                  "double" : {
+                     "output" : "/actions/default/in/menu"
                   }
                },
                "mode" : "button",
