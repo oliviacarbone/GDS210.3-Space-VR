@@ -18,7 +18,7 @@ public class ResourceScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countDown = 15f;
+        countDown = 25f;
         thrust = 125f;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * thrust);
