@@ -14,7 +14,8 @@ public class EnemyDeath : MonoBehaviour
     void Start()
     {
         enemyHealth = 100;
-        droneColour.color = Color.white;
+        //droneColour.color = Color.white;
+        ChangeColor();             
     }
 
     void Update()
@@ -25,7 +26,7 @@ public class EnemyDeath : MonoBehaviour
     public void Hit()
     {
         //Turns test drown red if hit 
-        droneColour.color = Color.red;
+        //droneColour.color = Color.red;
 
         //Calls ChangeColor() after 2 seconds
         Invoke("ChangeColor", 2);
@@ -36,7 +37,12 @@ public class EnemyDeath : MonoBehaviour
     void ChangeColor()
     {
         //Turns Test drone back to white
-        droneColour.color = Color.white;
+
+        droneColour.color = Color.red;
+
+        //foreach(Material m in )
+    
+        
     }
 
     void Damage()
