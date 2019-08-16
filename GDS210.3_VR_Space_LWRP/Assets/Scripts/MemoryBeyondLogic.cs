@@ -103,6 +103,8 @@ public class MemoryBeyondLogic : MonoBehaviour
     {
         if (state == StartTheGameState.Start)
         {
+            score.gameIsOver = false;
+            round = 1;
             gameOverScreen.SetActive(false);
             roundScreen.SetActive(true);
             StartCoroutine(FirstStart());
@@ -136,10 +138,9 @@ public class MemoryBeyondLogic : MonoBehaviour
         logic = false;
         colorList.Clear();
         gameOverScreen.SetActive(true);
-        round = 1;
         startButton.SetActive(true);
 
-
+        score.gameIsOver = true;
         state = StartTheGameState.Start;
     }
 

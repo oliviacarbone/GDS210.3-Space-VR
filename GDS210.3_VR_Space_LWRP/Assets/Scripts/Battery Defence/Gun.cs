@@ -40,6 +40,13 @@ public class Gun : MonoBehaviour
         Debug.DrawRay(muzzle.transform.position, muzzle.transform.forward);
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Vector3 direction = transform.TransformDirection(Vector3.forward) * 10;
+        Gizmos.DrawRay(transform.position, direction);
+    }
+
     void Shoot()
     {
         //Raycast for shooting
