@@ -15,7 +15,8 @@ public class MemoryBeyondLogic : MonoBehaviour
     public GameObject roundScreen;
     public GameObject startButton;
 
-    public TimeScript timer;
+    //public TimeScript timer;
+    public ScoreScript score;
 
     #region HLT
     private float hLTime; //highLightTime, the time a block stays on the secondary material
@@ -88,10 +89,13 @@ public class MemoryBeyondLogic : MonoBehaviour
     void Update()
     {
         LogicCheck();
+        score.currentScore = round;
+        /*
         if(timer.minute == 0 && timer.second == 0)
         {
             GameOver();
         }
+        */
     }
 
     #region Functions
@@ -178,7 +182,7 @@ public class MemoryBeyondLogic : MonoBehaviour
         logic = true;
         playerLevel = 0;
         level = 2;
-        timer.state = TimeScript.TimeState.Countdown;
+        //timer.state = TimeScript.TimeState.Countdown;
 
         state = StartTheGameState.DoNothing;
     }

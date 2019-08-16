@@ -492,6 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4b99159dfcf52498ee850c89d38bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   currentScore: 0
   currentScoreText: {fileID: 80765136}
   highScoreText: {fileID: 84061481}
@@ -510,42 +511,36 @@ MonoBehaviour:
   scoreValueNames:
   - Name: Test
     HighScore: High Score T
-    CurrentScore: Current Score T
     SecondScore: Second Score T
     ThirdScore: Third Score T
     FourthScore: Fourth Score T
     FifthScore: Fifth Score T
   - Name: Start
     HighScore: High Score S
-    CurrentScore: Current Score S
     SecondScore: Second Score S
     ThirdScore: Third Score S
     FourthScore: Fourth Score S
     FifthScore: Fifth Score S
   - Name: HUB
     HighScore: High Score H
-    CurrentScore: Cureent Score H
     SecondScore: Second Score H
     ThirdScore: Third Score H
     FourthScore: Fourth Score H
     FifthScore: Fifth Score H
   - Name: Battery Defence
     HighScore: High Score BD
-    CurrentScore: Cureent Score BD
     SecondScore: Second Score BD
     ThirdScore: Third Score BD
     FourthScore: Fourth Score BD
     FifthScore: Fifth Score BD
   - Name: ColonyManager
     HighScore: High Score CM
-    CurrentScore: Cureent Score CM
     SecondScore: Second Score CM
     ThirdScore: Third Score CM
     FourthScore: Fourth Score CM
     FifthScore: Fifth Score CM
   - Name: Memory Beyond
     HighScore: High Score MB
-    CurrentScore: Cureent Score MB
     SecondScore: Second Score MB
     ThirdScore: Third Score MB
     FourthScore: Fourth Score MB
@@ -2211,7 +2206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &233552592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4919,7 +4914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &598731994
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16691,7 +16686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &887648429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19637,7 +19632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1429802187
 RectTransform:
   m_ObjectHideFlags: 0
