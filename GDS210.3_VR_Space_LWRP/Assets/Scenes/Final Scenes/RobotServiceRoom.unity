@@ -1453,7 +1453,7 @@ PrefabInstance:
     - target: {fileID: 3726958559738124274, guid: 873634155c2394c439b25b64d1b418f5,
         type: 3}
       propertyPath: m_Name
-      value: SceneManager
+      value: PlayerSceneManager
       objectReference: {fileID: 0}
     - target: {fileID: 7682120165040775526, guid: 873634155c2394c439b25b64d1b418f5,
         type: 3}
