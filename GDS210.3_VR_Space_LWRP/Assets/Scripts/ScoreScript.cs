@@ -87,45 +87,45 @@ public class ScoreScript : MonoBehaviour
         {
             int test = 0;
 
-            if (PlayerPrefs.HasKey(scoreValueNames[0].HighScore))
+            if (PlayerPrefs.HasKey(scoreValueNames[sceneIndex].HighScore))
             {
-                test = scoreIntValuesList[0].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].HighScore);
+                test = scoreIntValuesList[0].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].HighScore);
             }
             else
             {
                 Debug.LogWarning("HighScore not found!!");
             }
 
-            if (PlayerPrefs.HasKey(scoreValueNames[0].SecondScore))
+            if (PlayerPrefs.HasKey(scoreValueNames[sceneIndex].SecondScore))
             {
-                scoreIntValuesList[1].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].SecondScore);
+                scoreIntValuesList[1].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].SecondScore);
             }
             else
             {
                 Debug.LogError("SecondScore not found!!");
             }
 
-            if (PlayerPrefs.HasKey(scoreValueNames[0].ThirdScore))
+            if (PlayerPrefs.HasKey(scoreValueNames[sceneIndex].ThirdScore))
             {
-                scoreIntValuesList[2].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].ThirdScore);
+                scoreIntValuesList[2].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].ThirdScore);
             }
             else
             {
                 Debug.LogError("ThirdScore not found!!");
             }
 
-            if (PlayerPrefs.HasKey(scoreValueNames[0].FourthScore))
+            if (PlayerPrefs.HasKey(scoreValueNames[sceneIndex].FourthScore))
             {
-                test = scoreIntValuesList[3].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].FourthScore);
+                test = scoreIntValuesList[3].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].FourthScore);
             }
             else
             {
                 Debug.LogError("FourthScore not found!!");
             }
 
-            if (PlayerPrefs.HasKey(scoreValueNames[0].FifthScore))
+            if (PlayerPrefs.HasKey(scoreValueNames[sceneIndex].FifthScore))
             {
-                test = scoreIntValuesList[4].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[0].FifthScore);
+                test = scoreIntValuesList[4].currentTopScores = PlayerPrefs.GetInt(scoreValueNames[sceneIndex].FifthScore);
             }
             else
             {
@@ -279,8 +279,8 @@ public class ScoreScript : MonoBehaviour
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
                         scoreIntValuesList[j].currentTopScores = currentScore;
-                        PlayerPrefs.SetInt(scoreValueNames[i].SecondScore, scoreIntValuesList[j].currentTopScores);
-                        print(PlayerPrefs.GetInt(scoreValueNames[i].SecondScore, scoreIntValuesList[j].currentTopScores));
+                        PlayerPrefs.SetInt(scoreValueNames[i].SecondScore, scoreIntValuesList[1].currentTopScores);
+                        print(PlayerPrefs.GetInt(scoreValueNames[i].SecondScore, scoreIntValuesList[1].currentTopScores));
                         currentScore = scoreIntValuesList[j].oldCurrentTopScores;
                         break;
                     }
@@ -305,8 +305,8 @@ public class ScoreScript : MonoBehaviour
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
                         scoreIntValuesList[j].currentTopScores = currentScore;
-                        PlayerPrefs.SetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[j].currentTopScores);
-                        print(PlayerPrefs.GetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[j].currentTopScores));
+                        PlayerPrefs.SetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[2].currentTopScores);
+                        print(PlayerPrefs.GetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[2].currentTopScores));
                         currentScore = scoreIntValuesList[j].oldCurrentTopScores;
                         break;
                     }
@@ -331,8 +331,8 @@ public class ScoreScript : MonoBehaviour
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
                         scoreIntValuesList[j].currentTopScores = currentScore;
-                        PlayerPrefs.SetInt(scoreValueNames[i].FourthScore, scoreIntValuesList[j].currentTopScores);
-                        print(PlayerPrefs.GetInt(scoreValueNames[i].FourthScore, scoreIntValuesList[j].currentTopScores));
+                        PlayerPrefs.SetInt(scoreValueNames[i].FourthScore, scoreIntValuesList[3].currentTopScores);
+                        print(PlayerPrefs.GetInt(scoreValueNames[i].FourthScore, scoreIntValuesList[3].currentTopScores));
                         currentScore = scoreIntValuesList[j].oldCurrentTopScores;
                         break;
                     }
@@ -357,8 +357,8 @@ public class ScoreScript : MonoBehaviour
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
                         scoreIntValuesList[j].currentTopScores = currentScore;
-                        PlayerPrefs.SetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[j].currentTopScores);
-                        print(PlayerPrefs.GetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[j].currentTopScores));
+                        PlayerPrefs.SetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[4].currentTopScores);
+                        print(PlayerPrefs.GetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[4].currentTopScores));
                         currentScore = 0;
                         return;
                     }
