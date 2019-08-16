@@ -3,7 +3,7 @@ using UnityEngine;
 using Valve.VR;
 public class Gun : MonoBehaviour
 {
-    public float range = 100f;
+    public float range = 1000f;
 
     public LineRenderer laser;
 
@@ -28,14 +28,15 @@ public class Gun : MonoBehaviour
     void Update()
     {
         Laser();
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    Shoot();
+        //}
         
-        if(shootAction.GetLastStateUp(handType))
+        if(shootAction.GetLastStateDown(handType))
         {
             Shoot();
+            print("Shot");
         }
         
     }
@@ -53,13 +54,13 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out hit, range))
         {
-
+            Debug.Log("Raycast Going Out" + gameObject.tag);
             if (hit.collider.CompareTag("EnemyShip"))
             {
                 Debug.Log("HIT!!!");
                 hit.collider.GetComponent<EnemyDeath>().Hit();
             }
-            Debug.DrawRay(muzzle.transform.position, muzzle.transform.forward *100, Color.blue, 5);
+            //Debug.DrawRay(muzzle.transform.position, muzzle.transform.forward *100, Color.blue, 5);
 
         }
     }
