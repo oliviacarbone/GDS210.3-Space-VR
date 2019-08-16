@@ -44,7 +44,7 @@ public class Gun : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Vector3 direction = transform.TransformDirection(Vector3.forward) * 10;
+        Vector3 direction = transform.TransformDirection(-Vector3.up) * 10;
         Gizmos.DrawRay(transform.position, direction);
     }
 
@@ -52,7 +52,7 @@ public class Gun : MonoBehaviour
     {
         //Raycast for shooting
         RaycastHit hit;
-        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out hit, range))
+        if (Physics.Raycast(muzzle.transform.position, -muzzle.transform.up, out hit, range))
         {
             Debug.Log("Raycast Going Out" + gameObject.tag);
             if (hit.collider.CompareTag("EnemyShip"))
@@ -69,7 +69,7 @@ public class Gun : MonoBehaviour
     {
         //Raycast for laser sights
         RaycastHit hit;
-        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out hit, range))  
+        if (Physics.Raycast(muzzle.transform.position, -muzzle.transform.up, out hit, range))  
         {
             if (hit.collider.CompareTag("EnemyShip"))
             {
@@ -84,13 +84,13 @@ public class Gun : MonoBehaviour
             //Sets default laser colour to green
             laserColor.color = noTarget;
             laserColor.color = noTarget;
-            laser.SetPosition(1, transform.forward * 5000);
+            laser.SetPosition(1, -transform.up * 5000);
         }
 
         if (!hit.collider || hit.collider.CompareTag("Battery"))
         {
             //Sets laser distance 
-            laser.SetPosition(1, transform.forward * 5000);
+            laser.SetPosition(1, -transform.up * 5000);
             Debug.Log("No Hit");
         }
 
