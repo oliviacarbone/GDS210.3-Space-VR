@@ -122,6 +122,7 @@ MonoBehaviour:
   range: 10
   speed: 10
   nextFire: 0
+  shooting: 0
 --- !u!195 &7678428006093647426
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -155,8 +156,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8291379, y: 0.9547608, z: 0.8112943}
-  m_Center: {x: -0.057710946, y: 1.7357501, z: -0.26320028}
+  m_Size: {x: 0.9965558, y: 0.9547608, z: 0.8530854}
+  m_Center: {x: -0.07373381, y: 1.7357501, z: -0.24230474}
 --- !u!54 &7359868389010403224
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class MemoryBeyondRoundScreen : MonoBehaviour
     {
         if (mBL.roundScreen == true)
         {
-            roundText.text = "Round: " + mBL.round;
+            roundText.text = "round: " + mBL.round;
         }
     }
 }

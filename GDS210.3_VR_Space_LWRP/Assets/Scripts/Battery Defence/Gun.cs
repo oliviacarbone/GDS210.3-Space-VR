@@ -37,7 +37,7 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
-        Debug.DrawRay(muzzle.transform.position, muzzle.transform.forward);
+        
     }
 
     private void OnDrawGizmosSelected()
@@ -59,6 +59,8 @@ public class Gun : MonoBehaviour
                 Debug.Log("HIT!!!");
                 hit.collider.GetComponent<EnemyDeath>().Hit();
             }
+            Debug.DrawRay(muzzle.transform.position, muzzle.transform.forward *100, Color.blue, 5);
+
         }
     }
 
