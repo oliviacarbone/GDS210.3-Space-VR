@@ -20,6 +20,11 @@ public class Gun : MonoBehaviour
     public SteamVR_Behaviour_Pose controllerPose;
     public SteamVR_Action_Boolean shootAction;
 
+
+    void Start()
+    {
+        controllerPose = GetComponentInParent<SteamVR_Behaviour_Pose>();
+    }
     void Update()
     {
         Laser();

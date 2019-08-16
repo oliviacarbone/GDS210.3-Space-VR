@@ -16,6 +16,10 @@ TagManager:
   - SceneChange
   - Battery
   - EnemyShip
+  - LeftGun
+  - RightGun
+  - LeftController
+  - RightController
   layers:
   - Default
   - TransparentFX
