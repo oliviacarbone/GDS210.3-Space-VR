@@ -20,6 +20,7 @@ TagManager:
   - RightGun
   - LeftController
   - RightController
+  - Props
   layers:
   - Default
   - TransparentFX
