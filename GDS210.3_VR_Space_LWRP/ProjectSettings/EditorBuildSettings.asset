@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/AlphaScenes/Hub.unity
     guid: f55622dffb753334a81bc8f206669c0e
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/BatteryDefence.unity
+    path: Assets/THIS IS OUR GAME/BatteryDefence.unity
     guid: 443597256d8277b4c82ee80a16bf088d
   - enabled: 1
-    path: Assets/Scenes/AlphaScenes/ColonyManager.unity
+    path: Assets/THIS IS OUR GAME/ColonyManager.unity
     guid: a18e04362df260b49b2fb118f81c0737
   - enabled: 1
     path: Assets/Scenes/AlphaScenes/Memory Beyond.unity
