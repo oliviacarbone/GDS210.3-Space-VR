@@ -187,6 +187,7 @@ public class ColonyResources : MonoBehaviour
             populationText1.SetActive(false);
             populationText2.SetActive(false);
             timer.state = TimeScript.TimeState.DoNothing;
+            colonyScore.gameIsOver = true;
             startColGame.state = StartColonyGame.ButtonState.Start;
 
         }
@@ -209,6 +210,7 @@ public class ColonyResources : MonoBehaviour
             populationText1.SetActive(false);
             populationText2.SetActive(false);
             timer.state = TimeScript.TimeState.DoNothing;
+            colonyScore.gameIsOver = true;
             startColGame.state = StartColonyGame.ButtonState.Start;
         }
         else
