@@ -52,6 +52,7 @@ MonoBehaviour:
   laserColor: {fileID: 2100000, guid: 048ffa76a8b0f954cadcafa43807d4de, type: 2}
   enemyDeath: {fileID: 4899012445584455100, guid: 0588f69bbc2960d4aa5e869edf4070f4,
     type: 3}
+  playerDamage: 50
   handType: 0
   controllerPose: {fileID: 0}
   shootAction:
@@ -178,13 +179,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4421705548222984675}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5.317, y: 2.407, z: -4.125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.298, y: 2.57, z: -4.308}
   m_LocalScale: {x: 0.14059079, y: 0.14059088, z: 0.14059088}
   m_Children: []
   m_Father: {fileID: 4421705547749666132}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4421705548222984687
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -270,13 +271,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4421705548691973726}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -5.299, y: 2.416924, z: -4.311}
   m_LocalScale: {x: 0.16455361, y: 0.16455361, z: 0.3768959}
   m_Children: []
   m_Father: {fileID: 4421705547749666132}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4421705548691973722
 MeshFilter:
   m_ObjectHideFlags: 0
