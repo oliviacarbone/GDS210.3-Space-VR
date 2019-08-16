@@ -65,6 +65,10 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameIsOver == true)
+        {
+            EndOfGameScores();
+        }
         currentScoreText.text = currentScore.ToString();
         highScoreText.text = scoreIntValuesList[0].currentTopScores.ToString();
         secondPlayerScoreText.text = scoreIntValuesList[1].currentTopScores.ToString();
@@ -244,7 +248,7 @@ public class ScoreScript : MonoBehaviour
             {
                 for (int j = 0; j < scoreIntValuesList.Count; j++)
                 {
-                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    if (currentScore >= scoreIntValuesList[j].currentTopScores)
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
                         scoreIntValuesList[j].currentTopScores = currentScore;
@@ -271,7 +275,7 @@ public class ScoreScript : MonoBehaviour
             {
                 for (int j = 0; j < scoreIntValuesList.Count; j++)
                 {
-                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    if (currentScore >= scoreIntValuesList[j].currentTopScores)
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
                         scoreIntValuesList[j].currentTopScores = currentScore;
@@ -297,7 +301,7 @@ public class ScoreScript : MonoBehaviour
             {
                 for (int j = 0; j < scoreIntValuesList.Count; j++)
                 {
-                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    if (currentScore >= scoreIntValuesList[j].currentTopScores)
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
                         scoreIntValuesList[j].currentTopScores = currentScore;
@@ -323,7 +327,7 @@ public class ScoreScript : MonoBehaviour
             {
                 for (int j = 0; j < scoreIntValuesList.Count; j++)
                 {
-                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    if (currentScore >= scoreIntValuesList[j].currentTopScores)
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
                         scoreIntValuesList[j].currentTopScores = currentScore;
@@ -349,12 +353,13 @@ public class ScoreScript : MonoBehaviour
             {
                 for (int j = 0; j < scoreIntValuesList.Count; j++)
                 {
-                    if (currentScore > scoreIntValuesList[j].currentTopScores)
+                    if (currentScore >= scoreIntValuesList[j].currentTopScores)
                     {
                         scoreIntValuesList[j].oldCurrentTopScores = scoreIntValuesList[j].currentTopScores;
                         scoreIntValuesList[j].currentTopScores = currentScore;
                         PlayerPrefs.SetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[j].currentTopScores);
                         print(PlayerPrefs.GetInt(scoreValueNames[i].FifthScore, scoreIntValuesList[j].currentTopScores));
+                        currentScore = 0;
                         return;
                     }
                 }
