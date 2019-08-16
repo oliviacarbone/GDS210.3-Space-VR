@@ -58,16 +58,17 @@ public class EnemyDeath : MonoBehaviour
         //Destroys the enemy when health reaches 0        
         if(enemyHealth <= 0f)
         {
-            enemyController.agent.enabled = false;
+            //enemyController.agent.enabled = false;
             enemyController.ReturnPoint();
             enemyShooting.shooting = false;
-            Invoke("Death", 5);
+            Debug.Log("Destroyed");
+            Destroy(gameObject);
+            //Invoke("Death", 5);
         }            
     }
 
     void Death()
     {
-        Debug.Log("Destroyed");
-        Destroy(gameObject);
+
     }
 }
