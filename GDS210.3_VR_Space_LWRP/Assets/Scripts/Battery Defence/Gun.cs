@@ -37,14 +37,16 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
+        Debug.DrawRay(muzzle.transform.position, muzzle.transform.forward);
     }
 
     void Shoot()
     {
         //Raycast for shooting
         RaycastHit hit;
-        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))
+        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out hit, range))
         {
+
             if (hit.collider.CompareTag("EnemyShip"))
             {
                 Debug.Log("HIT!!!");
@@ -57,7 +59,7 @@ public class Gun : MonoBehaviour
     {
         //Raycast for laser sights
         RaycastHit hit;
-        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.up, out hit, range))  
+        if (Physics.Raycast(muzzle.transform.position, muzzle.transform.forward, out hit, range))  
         {
             if (hit.collider.CompareTag("EnemyShip"))
             {

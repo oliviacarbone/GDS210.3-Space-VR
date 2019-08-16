@@ -16,6 +16,8 @@ public class StartColonyGame : MonoBehaviour
     public GameObject startGameButton;
     //To start the timer.
     public TimeScript time;
+    //
+    public ScoreScript restartScore;
    
     public bool startGame = false;
     
@@ -45,6 +47,7 @@ public class StartColonyGame : MonoBehaviour
                 {
                     if (startGameButton)
                     {
+                        restartScore.gameIsOver = false;
                         time.StartTheGame();
                         startGame = true;
                         state = ButtonState.DoNothing;
