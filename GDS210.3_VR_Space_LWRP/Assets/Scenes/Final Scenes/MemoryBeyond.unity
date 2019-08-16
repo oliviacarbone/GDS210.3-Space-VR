@@ -199,7 +199,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 42530c6329a7fdc4abbf60e386201d34, type: 2}
   darkMat: {fileID: 2100000, guid: 9792a077400855244baab2d8eae744d9, type: 2}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!1001 &198526878
@@ -286,7 +286,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 4bcaee3b77892dc438bde96edce2d0e9, type: 2}
   darkMat: {fileID: 2100000, guid: c1c7010557205be4193a68d7703d5b6a, type: 2}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &198526882
@@ -378,7 +378,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 0}
   darkMat: {fileID: 0}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &240707303
@@ -479,7 +479,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 0}
   darkMat: {fileID: 0}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &255844833
@@ -580,7 +580,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 0}
   darkMat: {fileID: 0}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &266338986
@@ -740,7 +740,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 0}
   darkMat: {fileID: 0}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &443451820
@@ -868,7 +868,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 9aa360fa0f2c26c44967f52a83c2b57c, type: 2}
   darkMat: {fileID: 2100000, guid: 3a9a96e4e6532804f81d142e6b7b9468, type: 2}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &598951302
@@ -992,7 +992,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: bbb8188697048fc43ae361c28b2d9c4f, type: 2}
   darkMat: {fileID: 2100000, guid: e241e5e5026d6524fad9329d8b3590c2, type: 2}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &841265774
@@ -1714,7 +1714,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 0}
   darkMat: {fileID: 0}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &1452693248
@@ -1842,7 +1842,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: 47cf92b607706f44188ff37901377361, type: 2}
   darkMat: {fileID: 2100000, guid: 8c535bc7517a7d64aaead10b1e62f7ac, type: 2}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!1001 &1936502562
@@ -1929,7 +1929,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 2100000, guid: bdc2d6cc73f44a546997a20dac6e2aaa, type: 2}
   darkMat: {fileID: 2100000, guid: 6a87a9f0625623e4683b5921a07a3ab0, type: 2}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &1936502566
@@ -2021,7 +2021,7 @@ MonoBehaviour:
     needsReinit: 0
   lightMat: {fileID: 0}
   darkMat: {fileID: 0}
-  rend: {fileID: 0}
+  rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
 --- !u!23 &2031790322
