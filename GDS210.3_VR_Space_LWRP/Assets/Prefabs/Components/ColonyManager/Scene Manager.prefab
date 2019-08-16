@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &708887972525810751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708887972525810736}
+  - component: {fileID: 708887972525810737}
+  - component: {fileID: 708887972525810750}
+  m_Layer: 0
+  m_Name: Scene Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &708887972525810736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708887972525810751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.236792, y: 1.9064927, z: 12.016026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708887972525810737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708887972525810751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1956fbc31863ae646ac9ab894ae3d423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colonyScore: {fileID: 0}
+  startColGame: {fileID: 0}
+  restartGame: 0
+  gameOver: 1
+  youLoseText: {fileID: 0}
+  youWinText: {fileID: 0}
+  startGameText: {fileID: 0}
+  energySlider: {fileID: 0}
+  waterSlider: {fileID: 0}
+  oxygenSlider: {fileID: 0}
+  populationCount: {fileID: 0}
+  energyText: {fileID: 0}
+  waterText: {fileID: 0}
+  oxygenText: {fileID: 0}
+  populationText1: {fileID: 0}
+  populationText2: {fileID: 0}
+  timer: {fileID: 0}
+  energyPrivate: 0
+  waterPrivate: 0
+  oxygenPrivate: 0
+  populationPrivate: 0
+  decayRate: 0.015
+  newPop: 0
+--- !u!114 &708887972525810750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708887972525810751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668aa134e7a08594ebd0e905b89a5bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColGame: {fileID: 0}
+  colResSpawner: {fileID: 708887972525810737}
+  waves:
+  - name: 1
+    spawnResource: {fileID: 6912607447115507927, guid: ebed7e11b7697bd4e9a873dd7874b79a,
+      type: 3}
+    count: 1
+    spawnRate: 2
+  resources:
+  - {fileID: 7865955795903947271, guid: f2899358b4795c941b08aa8d9005da38, type: 3}
+  - {fileID: 361525423386016394, guid: df5f0691bb1adbf48bef7fb5f6e34631, type: 3}
+  - {fileID: 6299173162962183427, guid: 374302857dcc63642bbcc7804d0bc97a, type: 3}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  timeBetweenWaves: 0.5
