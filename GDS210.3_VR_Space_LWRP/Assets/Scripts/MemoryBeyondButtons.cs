@@ -20,7 +20,7 @@ public class MemoryBeyondButtons : MonoBehaviour
 
     public MemoryBeyondLogic mBL;
 
-    public int buttonNumber = 99;
+    public int buttonNumber;
 
     public delegate void ClickEv(int number);
     public event ClickEv OnClick;
