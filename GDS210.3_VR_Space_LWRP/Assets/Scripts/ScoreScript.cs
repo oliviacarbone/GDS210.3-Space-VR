@@ -194,7 +194,7 @@ public class ScoreScript : MonoBehaviour
         }
         #endregion
         #region Scene.MemoryBeyond
-        else if (SceneManager.GetActiveScene().name == "MemoryBeyond")
+        else if (SceneManager.GetActiveScene().name == "Memory Beyond")
         {
             if (PlayerPrefs.HasKey(scoreValueNames[sceneIndex].HighScore))
             {
