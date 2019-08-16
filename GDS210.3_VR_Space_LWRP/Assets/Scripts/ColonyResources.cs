@@ -236,23 +236,23 @@ public class ColonyResources : MonoBehaviour
         }
         if (population > 500f)
         {
-            decayRate = 0.02f;
+            decayRate = 0.04f;
         }
         if (population == 101f || population == 499f)
         {
-            decayRate = 0.015f;
+            decayRate = 0.02f;
         }
         if (water < 30f)
         {
-            decayRate = 0.02f;
+            decayRate = 0.04f;
         }
         if (energy < 30f)
         {
-            decayRate = 0.02f;
+            decayRate = 0.04f;
         }
         if (oxygen < 30f)
         {
-            decayRate = 0.02f;
+            decayRate = 0.04f;
         }
 
     }
