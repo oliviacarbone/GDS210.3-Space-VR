@@ -292,6 +292,10 @@ public class ColonyResources : MonoBehaviour
         }
         if (water > 75f && energy > 75f && oxygen > 75f)
         {
+            population += 1f;
+        }
+        if (water > 55f && energy > 55f && oxygen > 55f)
+        {
             population += 0.5f;
         }
     }

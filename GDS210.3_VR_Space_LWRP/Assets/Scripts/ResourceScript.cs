@@ -19,7 +19,7 @@ public class ResourceScript : MonoBehaviour
     void Start()
     {
         countDown = 25f;
-        thrust = 125f;
+        thrust = 250f;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * thrust);
     }
