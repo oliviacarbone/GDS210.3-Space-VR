@@ -10,6 +10,9 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent agent;
     public int waitTime = 10;
     public GameObject battery;
+    public bool dead = false;
+    public bool playerDead = false;
+    private GameObject cam;
 
     public float enemyDamage = 0.01f;
 
@@ -17,6 +20,7 @@ public class EnemyController : MonoBehaviour
     {
         posList = FindObjectOfType<ECList>();
         battery = GameObject.FindGameObjectWithTag("Battery");
+        cam = GameObject.FindGameObjectWithTag("PlayerCamera");
     }
 
     void Start()
@@ -34,7 +38,15 @@ public class EnemyController : MonoBehaviour
     void LookTowards()
     {
         //Makes the enemies always look at the battery
-        transform.LookAt(battery.transform.position);
+        if (dead == false)
+        {
+            transform.LookAt(battery.transform.position);
+        }
+
+        if(playerDead == true)
+        {
+            transform.LookAt(cam.transform.position);
+        }
     }
 
     void RandomPoint()

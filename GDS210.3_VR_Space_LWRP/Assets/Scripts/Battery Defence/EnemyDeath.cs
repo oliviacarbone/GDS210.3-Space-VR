@@ -9,6 +9,8 @@ public class EnemyDeath : MonoBehaviour
     public EnemyController enemyController;
     public EnemyShooting enemyShooting;
     public float enemyHealth;
+    public bool enemyDeathTest = false;
+    public float impact;
 
 
     void Start()
@@ -20,7 +22,7 @@ public class EnemyDeath : MonoBehaviour
 
     void Update()
     {
-        Fall();
+            Fall();
     }
 
     public void Hit()
@@ -37,38 +39,33 @@ public class EnemyDeath : MonoBehaviour
     void ChangeColor()
     {
         //Turns Test drone back to white
-
-        droneColour.color = Color.red;
-
-        //foreach(Material m in )
-    
-        
+        droneColour.color = Color.red;       
     }
 
     void Damage()
     {        
         //Damages enemy 
-        enemyHealth = enemyHealth - 50f; //playerGun.playerDamage;
+        enemyHealth = enemyHealth - 50f; 
         Debug.Log("Target Damaged");
     }
-
 
     void Fall()
     {
         //Destroys the enemy when health reaches 0        
-        if(enemyHealth <= 0f)
+        if(enemyDeathTest == true) //enemyHealth <= 0f)
         {
-            //enemyController.agent.enabled = false;
             enemyController.ReturnPoint();
-            enemyShooting.shooting = false;
-            Debug.Log("Destroyed");
-            Destroy(gameObject);
-            //Invoke("Death", 5);
+            enemyController.agent.enabled = false;
+            GetComponent<Rigidbody>().AddForce();
+            enemyController.dead = true;
+            enemyShooting.shooting = false;            
+            Invoke("Death", 5);
         }            
     }
 
     void Death()
     {
-
+        Debug.Log("Drone Destroyed");
+        Destroy(gameObject);
     }
 }
