@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7482211244031146220}
   - component: {fileID: 1913222546428773082}
   - component: {fileID: 5310210908388867619}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CM_OxygenResource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
