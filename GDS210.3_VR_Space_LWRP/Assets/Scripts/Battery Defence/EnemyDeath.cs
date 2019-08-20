@@ -11,7 +11,14 @@ public class EnemyDeath : MonoBehaviour
     public float enemyHealth;
     public bool enemyDeathTest = true;
     public float force;
+    public float rotForce;
+    private Rigidbody rb;
 
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Start()
     {
@@ -59,7 +66,10 @@ public class EnemyDeath : MonoBehaviour
         {
             enemyController.ReturnPoint();
             enemyController.agent.enabled = false;
-            GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);
+            rb.isKinematic = false;
+            rb.AddForce(transform.forward * force, ForceMode.Impulse);
+            rb.AddTorque(transform.forward * rotForce);
+            rb.AddTorque(transform.up * rotForce);
             enemyController.dead = true;
             enemyShooting.shooting = false;            
             Invoke("Death", 5);
