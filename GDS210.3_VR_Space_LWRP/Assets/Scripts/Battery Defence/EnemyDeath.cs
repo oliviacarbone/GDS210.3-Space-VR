@@ -9,8 +9,8 @@ public class EnemyDeath : MonoBehaviour
     public EnemyController enemyController;
     public EnemyShooting enemyShooting;
     public float enemyHealth;
-    public bool enemyDeathTest = false;
-    public float impact;
+    public bool enemyDeathTest = true;
+    public float force;
 
 
     void Start()
@@ -22,7 +22,10 @@ public class EnemyDeath : MonoBehaviour
 
     void Update()
     {
+        if(enemyHealth <= 100)
+        {
             Fall();
+        }
     }
 
     public void Hit()
@@ -52,14 +55,15 @@ public class EnemyDeath : MonoBehaviour
     void Fall()
     {
         //Destroys the enemy when health reaches 0        
-        if(enemyDeathTest == true) //enemyHealth <= 0f)
+        if(enemyDeathTest == true) //enemyHealth <= 0f)   
         {
             enemyController.ReturnPoint();
             enemyController.agent.enabled = false;
-            GetComponent<Rigidbody>().AddForce();
+            GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);
             enemyController.dead = true;
             enemyShooting.shooting = false;            
             Invoke("Death", 5);
+            enemyDeathTest = false;
         }            
     }
 

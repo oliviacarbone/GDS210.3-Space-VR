@@ -21,6 +21,7 @@ TagManager:
   - LeftController
   - RightController
   - Props
+  - PlayerCamera
   layers:
   - Default
   - TransparentFX

@@ -88,6 +88,7 @@ MonoBehaviour:
   enemyShooting: {fileID: 6301510409353039416}
   enemyHealth: 100
   enemyDeathTest: 0
+  force: 30
 --- !u!114 &7206820612926392037
 MonoBehaviour:
   m_ObjectHideFlags: 0

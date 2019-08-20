@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
 
     public GameObject muzzle;
     public Material laserColor;
+    public Transform hitPos;
 
     Color noTarget = Color.green;
     Color withTarget = Color.red;
@@ -61,7 +62,7 @@ public class Gun : MonoBehaviour
                 hit.collider.GetComponent<EnemyDeath>().Hit();
             }
             //Debug.DrawRay(muzzle.transform.position, muzzle.transform.forward *100, Color.blue, 5);
-
+            //hitPos = hit.transform.position;
         }
     }
 
