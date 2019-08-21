@@ -32,7 +32,7 @@ public class EnemyRandomSpawn : MonoBehaviour
     //This is so that the enem y can spawn in random locations.
     public Transform[] enemyShipSpawnPoint;
 
-    public Text waveText;
+    //public Text waveText;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +75,7 @@ public class EnemyRandomSpawn : MonoBehaviour
             }
         }
 
-        waveText.text = waveNumber.ToString();
+       //waveText.text = waveNumber.ToString();
 
     }
 
