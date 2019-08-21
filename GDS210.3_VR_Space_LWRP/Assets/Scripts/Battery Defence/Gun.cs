@@ -60,8 +60,15 @@ public class Gun : MonoBehaviour
             Debug.Log("Raycast Going Out" + gameObject.tag);
             if (hit.collider.CompareTag("EnemyShip"))
             {
+                enemyDeath = hit.collider.GetComponent<EnemyDeath>();
+
                 Debug.Log("HIT!!!");
-                hit.collider.GetComponent<EnemyDeath>().Hit();
+                enemyDeath.Hit();
+
+                if(enemyDeath.enemyHealth <= 0)
+                {
+                    enemyDeath.Fall();
+                }
             }
             //Debug.DrawRay(muzzle.transform.position, muzzle.transform.forward *100, Color.blue, 5);
             //hitPos = hit.transform.position;
