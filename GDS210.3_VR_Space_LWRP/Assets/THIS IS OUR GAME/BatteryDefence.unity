@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6815a72157ee4499941fb9e954b0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndexSetter: 2
+  sceneIndexSetter: 1
 --- !u!65 &999627954
 BoxCollider:
   m_ObjectHideFlags: 0
