@@ -18529,11 +18529,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[CameraRig] [PlayerController]'
       objectReference: {fileID: 0}
-    - target: {fileID: 4712116564191063205, guid: 530514a4b651b804cad5fd2ef2d533d7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4712116564190821725, guid: 530514a4b651b804cad5fd2ef2d533d7,
         type: 3}
       propertyPath: m_LocalPosition.x
