@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/AlphaScenes/StartingRoom.unity
     guid: 2e0f81f189080a843966cecb661b4c05
   - enabled: 1
-    path: Assets/Scenes/AlphaScenes/Hub.unity
-    guid: f55622dffb753334a81bc8f206669c0e
+    path: Assets/THIS IS OUR GAME/HubWorld.unity
+    guid: 1edab58361f58aa46a832e1d3f35cb8f
   - enabled: 1
     path: Assets/THIS IS OUR GAME/BatteryDefence.unity
     guid: 443597256d8277b4c82ee80a16bf088d

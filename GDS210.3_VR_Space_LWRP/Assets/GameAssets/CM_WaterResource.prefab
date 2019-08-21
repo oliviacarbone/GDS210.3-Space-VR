@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5785337656959501515}
   - component: {fileID: 1283454793600541017}
   - component: {fileID: -1862693719675724548}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: CM_WaterResource
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 557342797278105580}
   - component: {fileID: 5962249512129968728}
   - component: {fileID: 8351314829611511724}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 1487963887486521558}
   - component: {fileID: 1033550885501044888}
   - component: {fileID: 235981495237279014}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
