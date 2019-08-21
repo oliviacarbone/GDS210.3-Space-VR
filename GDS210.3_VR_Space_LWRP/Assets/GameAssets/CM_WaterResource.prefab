@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 3
+  thrust2: 0
   rb: {fileID: 5785337656959501515}
   countDown: 5
   handType: 0
@@ -82,8 +83,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0.012078047, y: -0.0012187958, z: -0.012044787}
+  m_Size: {x: 2, y: 2.6339748, z: 2}
+  m_Center: {x: 0.012078086, y: 0.31576857, z: -0.012044807}
 --- !u!1 &4323985890882544519
 GameObject:
   m_ObjectHideFlags: 0
