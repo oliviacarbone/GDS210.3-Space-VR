@@ -148,7 +148,7 @@ public class ColonyResources : MonoBehaviour
             water = 50f;
             oxygen = 50f;
             population = 0f;
-            decayRate = 0.02f;
+            decayRate = 0.01f;
             restartGame = true;
             startColGame.startGame = false;
             energySlider.gameObject.SetActive(true);
@@ -237,23 +237,23 @@ public class ColonyResources : MonoBehaviour
         }
         if (population == 500f)
         {
-            decayRate = 0.04f;
+            decayRate = 0.02f;
         }
         if (population == 101f || population == 499f)
         {
-            decayRate = 0.02f;
+            decayRate = 0.01f;
         }
         if (water < 30f)
         {
-            decayRate = 0.02f;
+            decayRate = 0.01f;
         }
         if (energy < 30f)
         {
-            decayRate = 0.02f;
+            decayRate = 0.01f;
         }
         if (oxygen < 30f)
         {
-            decayRate = 0.02f;
+            decayRate = 0.01f;
         }
 
     }
