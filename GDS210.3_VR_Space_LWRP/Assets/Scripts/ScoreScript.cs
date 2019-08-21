@@ -144,7 +144,7 @@ public class ScoreScript : MonoBehaviour
         }
         #endregion
         #region Scene.BatteryDefence
-        else if (SceneManager.GetActiveScene().name == "ScoreTest1")
+        else if (SceneManager.GetActiveScene().name == "BatteryDefence")
         {
             if (PlayerPrefs.HasKey(scoreValueNames[sceneIndex].HighScore))
             {
@@ -194,7 +194,7 @@ public class ScoreScript : MonoBehaviour
         }
         #endregion
         #region Scene.MemoryBeyond
-        else if (SceneManager.GetActiveScene().name == "Memory Beyond")
+        else if (SceneManager.GetActiveScene().name == "MemoryBeyond")
         {
             if (PlayerPrefs.HasKey(scoreValueNames[sceneIndex].HighScore))
             {
