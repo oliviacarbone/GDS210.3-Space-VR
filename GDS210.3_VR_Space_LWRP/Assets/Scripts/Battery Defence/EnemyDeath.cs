@@ -62,12 +62,12 @@ public class EnemyDeath : MonoBehaviour
     void Fall()
     {
         //Destroys the enemy when health reaches 0        
-        if(enemyDeathTest == true) //enemyHealth <= 0f)   
+        if(/*enemyDeathTest == true*/ enemyHealth <= 0f)   
         {
             enemyController.ReturnPoint();
             enemyController.agent.enabled = false;
             rb.isKinematic = false;
-            rb.AddForce(transform.forward * force, ForceMode.Impulse);
+            rb.AddForce(playerGun.transform.forward * force, ForceMode.Impulse);
             rb.AddTorque((transform.forward + transform.up) * rotForce);
             enemyController.dead = true;
             enemyShooting.shooting = false;            
