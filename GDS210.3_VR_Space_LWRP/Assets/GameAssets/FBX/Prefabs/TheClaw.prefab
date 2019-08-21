@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 4895475406897334715}
   - component: {fileID: 3276996757633000641}
   - component: {fileID: 471343313484148709}
+  - component: {fileID: 8883246487053117019}
   m_Layer: 0
   m_Name: THECLAW
   m_TagString: Untagged
@@ -392,6 +393,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationName: Claw_Animation
+--- !u!114 &8883246487053117019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8478977552534223784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebdb0bb036e0a141b091e8400e2635a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8702162693000418124
 GameObject:
   m_ObjectHideFlags: 0
