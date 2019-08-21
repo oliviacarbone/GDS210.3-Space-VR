@@ -81,10 +81,10 @@ MonoBehaviour:
   m_Text: 'controls:
 
 
-    2. teleport
+    1. teleport
 
 
-    7. grab/shoot'
+    2. grab/shoot'
 --- !u!1 &1714326477596173491
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,9 +163,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "attention, fleshlings. \n\n\nthere are only three simple steps to this:\n\n1.
-    defend the battery with your life!! \n\n2. destroy the oncoming enemy drones to
-    increase your score\n\n3. get the highest score to brag to your friends "
+  m_Text: "greetings, fleshlings. \n\nThis is about raising a family - give your family
+    the resources to survive. \n\n\nFollow these three easy steps to succeed: \n\n1.
+    Ditch the resources in their corresponding drum\n\n2. Do Not allow the resources
+    to deplete - keep them high\n\n3. You have only two minutes to reach the highest
+    population count"
 --- !u!1 &1714326478305837238
 GameObject:
   m_ObjectHideFlags: 0

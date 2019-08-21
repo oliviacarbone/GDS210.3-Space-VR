@@ -1611,26 +1611,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 514.3
       objectReference: {fileID: 0}
-    - target: {fileID: 1714326477596173489, guid: bd5027f94418f794b887b3383669c055,
-        type: 3}
-      propertyPath: m_Text
-      value: "greetings, fleshlings. \n\nThis is about raising a family - give your
-        family the resources to survive. \n\n\nFollow these three easy steps to succeed:
-        \n\n1. Ditch the resources in their corresponding drum\n\n2. Do Not allow
-        the resources to deplete - keep them high\n\n3. You have only two minutes
-        to reach the highest population count"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1027906177290248393, guid: bd5027f94418f794b887b3383669c055,
-        type: 3}
-      propertyPath: m_Text
-      value: 'controls:
-
-
-        1. teleport
-
-
-        2. grab/throw'
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5027f94418f794b887b3383669c055, type: 3}
 --- !u!43 &272709309
@@ -13127,17 +13107,6 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1027906177290248393, guid: bd5027f94418f794b887b3383669c055,
-        type: 3}
-      propertyPath: m_Text
-      value: 'controls:
-
-
-        1. teleport
-
-
-        2. grab/shoot'
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5027f94418f794b887b3383669c055, type: 3}
 --- !u!43 &1535399071
@@ -14587,16 +14556,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: memory beyond
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714326477596173489, guid: bd5027f94418f794b887b3383669c055,
-        type: 3}
-      propertyPath: m_Text
-      value: "Hello, fleshlings. \n\n\n\n\n1. \n\n2. \n\n3. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 1027906177290248393, guid: bd5027f94418f794b887b3383669c055,
-        type: 3}
-      propertyPath: m_Text
-      value: "controls:\n\n2. \n\n7. "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5027f94418f794b887b3383669c055, type: 3}
