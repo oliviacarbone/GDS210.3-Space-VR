@@ -20,7 +20,7 @@ public class ResourceScript : MonoBehaviour
     {
         controllerPose = FindObjectOfType<SteamVR_Behaviour_Pose>();
         countDown = 25f;
-        thrust = 150f;
+        thrust = 100f;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * thrust);
     }
