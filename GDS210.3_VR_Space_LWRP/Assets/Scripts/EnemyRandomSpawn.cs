@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class EnemyRandomSpawn : MonoBehaviour
 {
     //Setting up the function to control the enemy spawning.
-    public enum SpawnState { Spawning, Waiting, Countdown, GameIsOver };
-    public SpawnState state = SpawnState.Countdown;
+    public enum SpawnState {GameStart, Spawning, Waiting, Countdown, GameIsOver };
+    public SpawnState state = SpawnState.GameStart;
 
     //Setting up how each wave will work and how many we will spawn.
     [System.Serializable]
@@ -152,5 +152,16 @@ public class EnemyRandomSpawn : MonoBehaviour
     void GameIsCompleted()
     {
         state = SpawnState.GameIsOver;
+    }
+
+    public void StartTheGame()
+    {
+        state = SpawnState.Countdown;
+    }
+
+   public void RestartTheGame()
+    {
+        nextWave = 0;
+        state = SpawnState.Countdown;
     }
 }
