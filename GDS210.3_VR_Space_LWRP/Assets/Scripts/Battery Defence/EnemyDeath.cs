@@ -61,7 +61,8 @@ public class EnemyDeath : MonoBehaviour
         rb.AddForce(transform.forward * force, ForceMode.Impulse);
         rb.AddTorque((transform.forward + transform.up) * rotForce);
         enemyController.dead = true;
-        enemyShooting.shooting = false;       
+        enemyShooting.shooting = false;
+        Invoke("Death", 5);
     }
 
     void Death()
