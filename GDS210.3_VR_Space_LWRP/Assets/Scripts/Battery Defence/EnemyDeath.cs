@@ -3,7 +3,7 @@
 public class EnemyDeath : MonoBehaviour
 {
     [SerializeField]
-    //Material droneColour;
+    Material droneColour;
 
     public Gun playerGun;
     public EnemyController enemyController;
@@ -23,13 +23,9 @@ public class EnemyDeath : MonoBehaviour
     void Start()
     {
         enemyHealth = 100;
-        //droneColour.color = Color.white;
-        ChangeColor();             
-    }
-
-    void Update()
-    {
-        Fall();
+        droneColour.color = Color.white;
+        ChangeColor();
+        Invoke("ChangeColor", 5);
     }
 
     public void Hit()
@@ -46,7 +42,7 @@ public class EnemyDeath : MonoBehaviour
     void ChangeColor()
     {
         //Turns Test drone back to white
-        //droneColour.color = Color.red;       
+        droneColour.color = Color.red;       
     }
 
     void Damage()
@@ -56,25 +52,23 @@ public class EnemyDeath : MonoBehaviour
         Debug.Log("Target Damaged");
     }
 
-    void Fall()
+    public void Fall()
     {
-        //Destroys the enemy when health reaches 0    
-        if (enemyDeathTest == true)
-        {
-            enemyController.ReturnPoint();
-            enemyController.agent.enabled = false;
-            rb.isKinematic = false;
-            rb.AddForce(transform.forward * force, ForceMode.Impulse);
-            rb.AddTorque((transform.forward + transform.up) * rotForce);
-            enemyController.dead = true;
-            enemyShooting.shooting = false;
-            Invoke("Death", 5);
-            enemyDeathTest = false;
-        }          
+        //Rag Doll Effect   
+        enemyController.ReturnPoint();
+        enemyController.agent.enabled = false;
+        rb.isKinematic = false;
+        rb.AddForce(transform.forward * force, ForceMode.Impulse);
+        rb.AddTorque((transform.forward + transform.up) * rotForce);
+        enemyController.dead = true;
+        enemyShooting.shooting = false;
+        //Calls destroy function after 5 seconds 
+        Invoke("Death", 5);
     }
 
     void Death()
     {
+        //Destroys enemy
         Debug.Log("Drone Destroyed");
         Destroy(gameObject);
     }
