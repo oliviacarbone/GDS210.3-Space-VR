@@ -67,7 +67,7 @@ public class EnemyDeath : MonoBehaviour
             enemyController.ReturnPoint();
             enemyController.agent.enabled = false;
             rb.isKinematic = false;
-            rb.AddForce(playerGun.transform.forward * force, ForceMode.Impulse);
+            rb.AddForce(-playerGun.muzzle.transform.forward * force, ForceMode.Impulse);
             rb.AddTorque((transform.forward + transform.up) * rotForce);
             enemyController.dead = true;
             enemyShooting.shooting = false;            

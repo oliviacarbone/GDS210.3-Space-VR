@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/THIS IS OUR GAME/ColonyManager.unity
     guid: a18e04362df260b49b2fb118f81c0737
   - enabled: 1
-    path: Assets/Scenes/AlphaScenes/Memory Beyond.unity
-    guid: 166d69dae7a621848bcd88e898315676
+    path: Assets/THIS IS OUR GAME/MemoryBeyond.unity
+    guid: 5e9054f7187ce944db53d5c88d76b7c1
   m_configObjects: {}

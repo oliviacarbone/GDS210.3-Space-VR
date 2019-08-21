@@ -28,6 +28,8 @@ public class MemoryBeyondButtons : MonoBehaviour
     void Awake()
     {
         rend = transform.parent.GetComponentsInChildren<Renderer>();
+
+        controllerPose = FindObjectOfType<SteamVR_Behaviour_Pose>();
     }
 
     void Update()
