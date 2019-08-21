@@ -55,7 +55,11 @@ public class ResourceScript : MonoBehaviour
                 rb.useGravity = true;
                 rb.freezeRotation = false;
             }
-           
+
+        }
+        else if (other.gameObject.tag == ("conveyor"))
+        {
+            rb.velocity = Vector3.left * thrust;
         }
     }
 

@@ -22,6 +22,7 @@ TagManager:
   - RightController
   - Props
   - PlayerCamera
+  - conveyor
   layers:
   - Default
   - TransparentFX
