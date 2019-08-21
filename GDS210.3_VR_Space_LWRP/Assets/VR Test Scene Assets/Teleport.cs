@@ -9,9 +9,12 @@ public class Teleport : MonoBehaviour
     public SteamVR_Behaviour_Pose controllerPose;
     public SteamVR_Action_Boolean teleportAction;
 
-    public GameObject laserPrefab;
-    private GameObject laser;
-    private Transform laserTransform;
+    public GameObject aimLaserPrefab;
+    public GameObject teleLaserPrefab;
+    private GameObject aimLaser;
+    private GameObject teleLaser;
+    private Transform aimLaserTransform;
+    private Transform teleLaserTransform;
     private Vector3 hitPoint;
 
     public Transform cameraRigTransform;
@@ -26,16 +29,21 @@ public class Teleport : MonoBehaviour
     void Start()
     {
         //Spawn the aiming laser.
-        laser = Instantiate(laserPrefab);
+        aimLaser = Instantiate(aimLaserPrefab);
+        teleLaser = Instantiate(teleLaserPrefab);
 
-        laser.transform.parent = gameObject.transform;
+        aimLaser.transform.parent = gameObject.transform;
+        teleLaser.transform.parent = gameObject.transform;
 
-        laserTransform = laser.transform;
+        aimLaserTransform = aimLaser.transform;
+        teleLaserTransform = teleLaser.transform;
 
         reticle = Instantiate(teleportReticlePrefab);
         reticle.transform.parent = gameObject.transform;
 
         teleportReticleTransform = reticle.transform;
+
+        aimLaser.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,6 +51,9 @@ public class Teleport : MonoBehaviour
     {
         if (teleportAction.GetState(handType))
         {
+            aimLaser.SetActive(true);
+            reticle.SetActive(true);
+
             RaycastHit hit;
 
             if (Physics.Raycast(controllerPose.transform.position, transform.forward, out hit, 100, teleportMask))
@@ -58,7 +69,7 @@ public class Teleport : MonoBehaviour
         }
         else
         {
-            laser.SetActive(false);
+            teleLaser.SetActive(false);
             reticle.SetActive(false);
         }
         if(teleportAction.GetStateUp(handType) && shouldTeleport)
@@ -66,16 +77,22 @@ public class Teleport : MonoBehaviour
             TeleportTo();
  
         }
+        else
+        {
+            aimLaser.SetActive(false);
+            reticle.SetActive(false);
+        }
     }
 
     void ShowLaser(RaycastHit hit)
     {
-        laser.SetActive(true);
-        laserTransform.position = Vector3.Lerp(controllerPose.transform.position, hitPoint, 0.5f);
+        teleLaser.SetActive(true);
+        aimLaser.SetActive(false);
+        teleLaserTransform.position = Vector3.Lerp(controllerPose.transform.position, hitPoint, 0.5f);
 
-        laserTransform.LookAt(hitPoint);
+        teleLaserTransform.LookAt(hitPoint);
 
-        laserTransform.localScale = new Vector3(laserTransform.localScale.x, laserTransform.localScale.y, hit.distance);
+        teleLaserTransform.localScale = new Vector3(teleLaserTransform.localScale.x, teleLaserTransform.localScale.y, hit.distance);
     }
 
     void TeleportTo()

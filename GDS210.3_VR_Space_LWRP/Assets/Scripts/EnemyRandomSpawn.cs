@@ -7,7 +7,7 @@ public class EnemyRandomSpawn : MonoBehaviour
 {
     //Setting up the function to control the enemy spawning.
     public enum SpawnState {GameStart, Spawning, Waiting, Countdown, GameIsOver };
-    public SpawnState state = SpawnState.GameStart;
+    public SpawnState state = SpawnState.Countdown;
 
     //Setting up how each wave will work and how many we will spawn.
     [System.Serializable]
@@ -20,7 +20,7 @@ public class EnemyRandomSpawn : MonoBehaviour
     }
 
     public EnemyWave[] waves;
-    private int nextWave = 0;
+    public int nextWave = 0;
     public int waveNumber = 0;
 
     //The time it will take for the wave to end and then go to new wave.
@@ -37,6 +37,8 @@ public class EnemyRandomSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        state = SpawnState.GameStart;
+
         enemySpawnCountDown = enemySpawnDelay;
     }
 

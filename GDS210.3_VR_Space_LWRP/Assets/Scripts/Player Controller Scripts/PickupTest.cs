@@ -38,7 +38,7 @@ public class PickupTest : MonoBehaviour
     //Gets what the colliding object is; checking whether or not it's a Scene Changer.
     public void OnTriggerEnter(Collider other)
     {
-        //SetCollidingObject(other);
+        SetCollidingObject(other);
         if (other.tag == "SceneChange")
         {
             SetSceneChanger(other);
@@ -48,7 +48,7 @@ public class PickupTest : MonoBehaviour
     }
     public void OnTriggerStay(Collider other)
     {
-        //SetCollidingObject(other);
+        SetCollidingObject(other);
         if (other.tag == "SceneChange")
         {
             SetSceneChanger(other);
@@ -68,14 +68,14 @@ public class PickupTest : MonoBehaviour
     //This function sets the colliding object to be the object in the player's hand.
     private void GrabObject()
     {
-        if(collidingObject.tag == "Props")
-        {
+        //if(collidingObject.tag == "Props")
+        //{
             objectInHand = collidingObject;
             collidingObject = null;
 
             var joint = AddFixedJoint();
             joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
-        }
+        //}
         
     }
     //This creates a fixed joint between the controller and the grabbed object to connect them
