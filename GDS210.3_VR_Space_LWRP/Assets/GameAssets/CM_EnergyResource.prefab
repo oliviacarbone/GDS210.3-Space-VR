@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 3
+  thrust2: 0
   rb: {fileID: -6273540646999213284}
   countDown: 5
   handType: 0
@@ -237,5 +238,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 2.7565966, z: 2}
+  m_Center: {x: -0, y: 0.37829858, z: -0}
