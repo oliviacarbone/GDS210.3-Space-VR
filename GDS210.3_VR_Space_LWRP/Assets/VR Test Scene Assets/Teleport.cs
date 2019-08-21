@@ -49,10 +49,16 @@ public class Teleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         if (teleportAction.GetState(handType))
         {
             aimLaser.SetActive(true);
             reticle.SetActive(true);
+
+            aimLaserTransform.position = Vector3.Lerp(controllerPose.transform.position, transform.forward, 0.5f);
+
+            aimLaser.transform.localScale = new Vector3(aimLaserTransform.localScale.x, aimLaserTransform.localScale.y, 20f);
 
             RaycastHit hit;
 
