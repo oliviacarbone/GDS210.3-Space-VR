@@ -13,11 +13,13 @@ public class EnemyDeath : MonoBehaviour
     public float force;
     public float rotForce;
     private Rigidbody rb;
+    public ParticleSystem hitParticle;
 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        hitParticle = hitParticle.GetComponent<ParticleSystem>();
     }
 
     void Start()
@@ -37,6 +39,7 @@ public class EnemyDeath : MonoBehaviour
         Invoke("ChangeColor", 2);
         Debug.Log("Hit Registered");
         Damage();
+        hitParticle.Play(true);
     }
 
     void ChangeColor()
@@ -54,7 +57,7 @@ public class EnemyDeath : MonoBehaviour
 
     public void Fall()
     {
-        //Destroys the enemy when health reaches 0    
+        //Rag Doll Effect   
         enemyController.ReturnPoint();
         enemyController.agent.enabled = false;
         rb.isKinematic = false;
@@ -62,11 +65,13 @@ public class EnemyDeath : MonoBehaviour
         rb.AddTorque((transform.forward + transform.up) * rotForce);
         enemyController.dead = true;
         enemyShooting.shooting = false;
+        //Calls destroy function after 5 seconds 
         Invoke("Death", 5);
     }
 
     void Death()
     {
+        //Destroys enemy
         Debug.Log("Drone Destroyed");
         Destroy(gameObject);
     }

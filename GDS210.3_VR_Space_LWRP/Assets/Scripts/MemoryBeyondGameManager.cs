@@ -28,13 +28,14 @@ public class MemoryBeyondGameManager : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "LeftController" || other.gameObject.tag == "RightController")
         {
             if (grabAction.GetLastStateDown(handType))
             {
                 if (startButton)
                 {
                     Debug.Log("test");
+                    //mBL.state = MemoryBeyondLogic.StartTheGameState.Start;
                     mBL.StartGame();
                 }
             }
