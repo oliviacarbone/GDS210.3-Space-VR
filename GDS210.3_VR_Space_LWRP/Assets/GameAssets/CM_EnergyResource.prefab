@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4926292627611666215}
   - component: {fileID: 2573534035087525977}
   - component: {fileID: 3001886657991477249}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Sphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 7442890455228333432}
   - component: {fileID: 1651323662807432004}
   - component: {fileID: 1519820284030268078}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 4294011373617475729}
   - component: {fileID: -6273540646999213284}
   - component: {fileID: 843970237121545096}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: CM_EnergyResource
   m_TagString: Energy
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8393178955305705124}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}

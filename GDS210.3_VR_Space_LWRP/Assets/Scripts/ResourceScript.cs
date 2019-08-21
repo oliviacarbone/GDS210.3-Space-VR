@@ -18,8 +18,9 @@ public class ResourceScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        controllerPose = FindObjectOfType<SteamVR_Behaviour_Pose>();
         countDown = 25f;
-        thrust = 250f;
+        thrust = 150f;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * thrust);
     }
@@ -47,7 +48,7 @@ public class ResourceScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "LeftController" || other.gameObject.tag == "RightController")
         {
             if (grabAction.GetLastStateDown(handType))
             {

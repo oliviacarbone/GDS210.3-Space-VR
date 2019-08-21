@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8828068381234224057}
   - component: {fileID: 3685961964368413919}
   - component: {fileID: 4269232103156221280}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CM_OxygenResourceP
   m_TagString: Oxygen
   m_Icon: {fileID: 0}
@@ -94,6 +94,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CM_OxygenResource
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876492327492389631, guid: cd7f37e221208094fa1dcb9607b69a24,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7482211244031146220, guid: cd7f37e221208094fa1dcb9607b69a24,
         type: 3}

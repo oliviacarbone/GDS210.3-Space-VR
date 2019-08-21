@@ -40,7 +40,7 @@ public class StartColonyGame : MonoBehaviour
     {
         if (state == ButtonState.Start)
         {
-            if (col.gameObject.tag == "Player")
+            if (col.gameObject.tag == "LeftController" || col.gameObject.tag == "RightController")
             {
 
                 if (grabAction.GetLastStateDown(handType))
