@@ -29,10 +29,7 @@ public class EnemyDeath : MonoBehaviour
 
     void Update()
     {
-        if(enemyHealth <= 100)
-        {
-            Fall();
-        }
+        Fall();
     }
 
     public void Hit()
@@ -61,19 +58,19 @@ public class EnemyDeath : MonoBehaviour
 
     void Fall()
     {
-        //Destroys the enemy when health reaches 0        
-        if(/*enemyDeathTest == true*/ enemyHealth <= 0f)   
+        //Destroys the enemy when health reaches 0    
+        if (enemyDeathTest == true)
         {
             enemyController.ReturnPoint();
             enemyController.agent.enabled = false;
             rb.isKinematic = false;
-            rb.AddForce(-playerGun.muzzle.transform.forward * force, ForceMode.Impulse);
+            rb.AddForce(transform.forward * force, ForceMode.Impulse);
             rb.AddTorque((transform.forward + transform.up) * rotForce);
             enemyController.dead = true;
-            enemyShooting.shooting = false;            
+            enemyShooting.shooting = false;
             Invoke("Death", 5);
             enemyDeathTest = false;
-        }            
+        }          
     }
 
     void Death()
