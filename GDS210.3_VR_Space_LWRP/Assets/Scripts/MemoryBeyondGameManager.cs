@@ -16,6 +16,7 @@ public class MemoryBeyondGameManager : MonoBehaviour
     private void Awake()
     {
         startButton.SetActive(true);
+        controllerPose = FindObjectOfType<SteamVR_Behaviour_Pose>();
     }
 
     private void OnMouseDown()
