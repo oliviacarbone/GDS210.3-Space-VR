@@ -73,6 +73,7 @@ public class MemoryBeyondLogic : MonoBehaviour
         delayTime = 0.75f;
         gameOverScreen.SetActive(false);
         roundScreen.SetActive(false);
+
     }
 
     // Start is called before the first frame update
