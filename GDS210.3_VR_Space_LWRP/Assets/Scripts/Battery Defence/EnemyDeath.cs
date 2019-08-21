@@ -3,7 +3,7 @@
 public class EnemyDeath : MonoBehaviour
 {
     [SerializeField]
-    Material droneColour;
+    //Material droneColour;
 
     public Gun playerGun;
     public EnemyController enemyController;
@@ -49,7 +49,7 @@ public class EnemyDeath : MonoBehaviour
     void ChangeColor()
     {
         //Turns Test drone back to white
-        droneColour.color = Color.red;       
+        //droneColour.color = Color.red;       
     }
 
     void Damage()
@@ -68,8 +68,7 @@ public class EnemyDeath : MonoBehaviour
             enemyController.agent.enabled = false;
             rb.isKinematic = false;
             rb.AddForce(transform.forward * force, ForceMode.Impulse);
-            rb.AddTorque(transform.forward * rotForce);
-            rb.AddTorque(transform.up * rotForce);
+            rb.AddTorque((transform.forward + transform.up) * rotForce);
             enemyController.dead = true;
             enemyShooting.shooting = false;            
             Invoke("Death", 5);
