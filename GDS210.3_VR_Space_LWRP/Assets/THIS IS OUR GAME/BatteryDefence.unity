@@ -870,6 +870,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: RightGun
       objectReference: {fileID: 0}
+    - target: {fileID: 3362869261881301378, guid: 4a8ab0041332fc04a88003a6deada5b4,
+        type: 3}
+      propertyPath: handType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362869261881301378, guid: 4a8ab0041332fc04a88003a6deada5b4,
+        type: 3}
+      propertyPath: shootAction.actionPath
+      value: /actions/default/in/Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 3362869262123273810, guid: 4a8ab0041332fc04a88003a6deada5b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2509,6 +2519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b564356f8fc5df94c9f6b9110dc26d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1001 &1502095197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2588,6 +2599,8 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3a30e8ff35c66294ba3cc09014076a51, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0588f69bbc2960d4aa5e869edf4070f4, type: 3}
+=======
+>>>>>>> 52b0902696fdaa12a121cdcc7a21761d6dc9f733
 --- !u!1 &1517476533
 GameObject:
   m_ObjectHideFlags: 0
