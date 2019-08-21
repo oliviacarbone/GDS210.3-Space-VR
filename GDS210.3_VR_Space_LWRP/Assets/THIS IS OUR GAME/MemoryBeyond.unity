@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -437,7 +437,7 @@ Transform:
   - {fileID: 1257774183}
   - {fileID: 1541396182}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 174.46101, z: 0}
 --- !u!1001 &947250696
 PrefabInstance:
@@ -489,7 +489,7 @@ PrefabInstance:
     - target: {fileID: 6244522281308761940, guid: fc27492eeb7017946bb397de55e92589,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6244522281308761940, guid: fc27492eeb7017946bb397de55e92589,
         type: 3}
@@ -958,7 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handType: 0
-  controllerPose: {fileID: 0}
+  controllerPose: {fileID: 1928056474}
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
@@ -1630,6 +1630,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1782632048}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1928056474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4679749546951197601, guid: 530514a4b651b804cad5fd2ef2d533d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1782632048}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5fb0ca93b55ef4b8d54b512b103341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2018103733 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2031790321, guid: cc580c1240a45694eae20fe0dca3636f,
