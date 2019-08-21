@@ -54,7 +54,7 @@ public class EnemyDeath : MonoBehaviour
 
     public void Fall()
     {
-        //Destroys the enemy when health reaches 0    
+        //Rag Doll Effect   
         enemyController.ReturnPoint();
         enemyController.agent.enabled = false;
         rb.isKinematic = false;
@@ -62,11 +62,13 @@ public class EnemyDeath : MonoBehaviour
         rb.AddTorque((transform.forward + transform.up) * rotForce);
         enemyController.dead = true;
         enemyShooting.shooting = false;
+        //Calls destroy function after 5 seconds 
         Invoke("Death", 5);
     }
 
     void Death()
     {
+        //Destroys enemy
         Debug.Log("Drone Destroyed");
         Destroy(gameObject);
     }
