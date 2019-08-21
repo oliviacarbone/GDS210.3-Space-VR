@@ -7,6 +7,7 @@ public class ResourceScript : MonoBehaviour
 {
     //moves the resource after spawning
     public float thrust;
+    public float thrust2;
     public Rigidbody rb;
     //a count down to ensure the object is deleted if it flies away
     public float countDown = 20f;
@@ -21,6 +22,7 @@ public class ResourceScript : MonoBehaviour
         controllerPose = FindObjectOfType<SteamVR_Behaviour_Pose>();
         countDown = 25f;
         thrust = 100f;
+        thrust2 = 1f;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * thrust);
     }
@@ -59,7 +61,7 @@ public class ResourceScript : MonoBehaviour
         }
         else if (other.gameObject.tag == ("conveyor"))
         {
-            rb.velocity = Vector3.left * thrust;
+            rb.velocity = Vector3.left * thrust2;
         }
     }
 
