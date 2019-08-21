@@ -388,7 +388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -193.02576, y: -710}
+  m_AnchoredPosition: {x: -193.02576, y: -694.4}
   m_SizeDelta: {x: 160, y: 374.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074641423
@@ -424,7 +424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Designers\n\n\nArtists \n\n\n\n\n\n"
+  m_Text: "Designers\n\n\nArtists \n\n\n\nSpecial \nThanks To"
 --- !u!222 &1074641424
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.09972411, g: 0.7696371, b: 0.7830189, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -624,7 +624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27, y: -664}
+  m_AnchoredPosition: {x: 27, y: -688.9}
   m_SizeDelta: {x: 160, y: 350.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411060844
@@ -661,7 +661,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Gian Collica\nDaragh Wallace\n\nBrayden Miller \nBrianna Thornton \nAiden
-    Cunningham"
+    Cunningham\n\n\nKarl Pytte"
 --- !u!222 &1411060845
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -704,7 +704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -193.02576, y: -495}
+  m_AnchoredPosition: {x: -193.02576, y: -497}
   m_SizeDelta: {x: 160, y: 374.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628862642
@@ -740,7 +740,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Project Manager \n\n\nProgrammers \n\n\n\n\n\n"
+  m_Text: "Project Overlord\n\n\nProgrammers \n\n\n\n\n\n"
 --- !u!222 &1628862643
 CanvasRenderer:
   m_ObjectHideFlags: 0
