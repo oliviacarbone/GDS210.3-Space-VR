@@ -13,11 +13,13 @@ public class EnemyDeath : MonoBehaviour
     public float force;
     public float rotForce;
     private Rigidbody rb;
+    public ParticleSystem hitParticle;
 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        hitParticle = hitParticle.GetComponent<ParticleSystem>();
     }
 
     void Start()
@@ -37,6 +39,7 @@ public class EnemyDeath : MonoBehaviour
         Invoke("ChangeColor", 2);
         Debug.Log("Hit Registered");
         Damage();
+        hitParticle.Play(true);
     }
 
     void ChangeColor()
