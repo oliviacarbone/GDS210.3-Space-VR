@@ -68,14 +68,14 @@ public class PickupTest : MonoBehaviour
     //This function sets the colliding object to be the object in the player's hand.
     private void GrabObject()
     {
-        if(collidingObject.tag == "Props")
-        {
+        //if(collidingObject.tag == "Props")
+        //{
             objectInHand = collidingObject;
             collidingObject = null;
 
             var joint = AddFixedJoint();
             joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
-        }
+        //}
         
     }
     //This creates a fixed joint between the controller and the grabbed object to connect them
