@@ -9,6 +9,7 @@ public class SceneManagement : MonoBehaviour
     //So make sure that the build setting is se]t up properly.
     public void ChangeScene(int sceneIndex)
     {
+        Debug.Log("Changing Scene");
         StartCoroutine(LoadAsync(sceneIndex));  
     }
 

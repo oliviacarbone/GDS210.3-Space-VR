@@ -38,7 +38,7 @@ public class PickupTest : MonoBehaviour
     //Gets what the colliding object is; checking whether or not it's a Scene Changer.
     public void OnTriggerEnter(Collider other)
     {
-        SetCollidingObject(other);
+        //SetCollidingObject(other);
         if (other.tag == "SceneChange")
         {
             SetSceneChanger(other);
@@ -48,7 +48,7 @@ public class PickupTest : MonoBehaviour
     }
     public void OnTriggerStay(Collider other)
     {
-        SetCollidingObject(other);
+        //SetCollidingObject(other);
         if (other.tag == "SceneChange")
         {
             SetSceneChanger(other);
