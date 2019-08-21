@@ -11,6 +11,8 @@ public class Gun : MonoBehaviour
     public Material laserColor;
     public Transform hitPos;
 
+    public LayerMask layerMask;
+
     Color noTarget = Color.green;
     Color withTarget = Color.red;
 
@@ -88,7 +90,7 @@ public class Gun : MonoBehaviour
             laser.SetPosition(1, -transform.up * 5000);
         }
 
-        if (!hit.collider || hit.collider.CompareTag("Battery"))
+        if (!hit.collider)
         {
             //Sets laser distance 
             laser.SetPosition(1, -transform.up * 5000);
