@@ -62,8 +62,10 @@ public class Teleport : MonoBehaviour
 
             RaycastHit hit;
 
+            Debug.DrawRay(controllerPose.transform.position, transform.forward * 100, Color.blue);
             if (Physics.Raycast(controllerPose.transform.position, transform.forward, out hit, 100, teleportMask))
             {
+                
                 hitPoint = hit.point;
                 ShowLaser(hit);
                 reticle.SetActive(true);
