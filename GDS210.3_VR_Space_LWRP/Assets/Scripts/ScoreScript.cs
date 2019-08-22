@@ -327,12 +327,12 @@ public class ScoreScript : MonoBehaviour
                             PlayerPrefs.SetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[2].currentTopScores);
                             print(PlayerPrefs.GetInt(scoreValueNames[i].ThirdScore, scoreIntValuesList[2].currentTopScores));
                             //currentScore = scoreIntValuesList[j].oldCurrentTopScores;
-                            state = ScoreState.Done;
+                            ChangeTheState();
                             break;
                         }
                     }
 
-                    state = ScoreState.Done;
+                    ChangeTheState();
                     //FourthScoreSystem();
 
                 }
@@ -401,6 +401,11 @@ public class ScoreScript : MonoBehaviour
         }
     }
     */
+
+    void ChangeTheState()
+    {
+        state = ScoreState.Done;
+    }
     #endregion
     
 
