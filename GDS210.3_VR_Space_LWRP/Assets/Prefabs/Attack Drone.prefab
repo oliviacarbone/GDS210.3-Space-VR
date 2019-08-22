@@ -1677,13 +1677,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198981620030308454, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f,
         type: 3}
-      propertyPath: SizeModule.enabled
+      propertyPath: InitialModule.gravityModifier.scalar
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198981620030308454, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f,
         type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
+      propertyPath: ShapeModule.type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198981620030308454, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 198981620030308454, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198981620030308454, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198981620030308454, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 199687738513180466, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f,
         type: 3}
@@ -1736,15 +1756,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4331441797361294, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.12767394
+      value: 0.06983682
       objectReference: {fileID: 0}
     - target: {fileID: 4331441797361294, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.12767394
+      value: 0.06983682
       objectReference: {fileID: 0}
     - target: {fileID: 4331441797361294, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.12767394
+      value: 0.06983682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a16ccf2b8a7d4b64a6db61ab16a891f, type: 3}
