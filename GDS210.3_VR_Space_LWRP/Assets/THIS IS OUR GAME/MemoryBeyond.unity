@@ -1113,25 +1113,18 @@ MonoBehaviour:
   fifthPlayerScoreText: {fileID: 947250698}
   gameIsOver: 0
   sceneNames:
-  - Test
-  - Start
+  - Robot
   - Hub
   - BatteryDefence
   - ColonyManager
-  - Memory Beyond
+  - MemoryBeyond
   scoreValueNames:
-  - Name: Test
-    HighScore: High Score T
-    SecondScore: Second Score T
-    ThirdScore: Third Score T
-    FourthScore: Fourth Score T
-    FifthScore: Fifth Score T
-  - Name: Start
-    HighScore: High Score S
-    SecondScore: Second Score S
-    ThirdScore: Third Score S
-    FourthScore: Fourth Score S
-    FifthScore: Fifth Score S
+  - Name: Robot
+    HighScore: High Score R
+    SecondScore: Second Score R
+    ThirdScore: Third Score R
+    FourthScore: Fourth Score R
+    FifthScore: Fifth Score R
   - Name: Hub
     HighScore: High Score H
     SecondScore: Second Score H
@@ -1145,13 +1138,13 @@ MonoBehaviour:
     FourthScore: Fourth Score BD
     FifthScore: Fifth Score BD
   - Name: ColonyManager
-    HighScore: HighScore CM
+    HighScore: High Score CM
     SecondScore: Second Score CM
     ThirdScore: Third Score CM
     FourthScore: Fourth Score CM
     FifthScore: Fifth Score CM
-  - Name: Memory Beyond
-    HighScore: High Score MB
+  - Name: MemoryBeyond
+    HighScore: HighScore MB
     SecondScore: Second Score MB
     ThirdScore: Third Score MB
     FourthScore: Fourth Score MB
