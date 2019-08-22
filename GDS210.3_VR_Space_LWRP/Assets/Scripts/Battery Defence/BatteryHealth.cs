@@ -8,6 +8,8 @@ public class BatteryHealth : MonoBehaviour
     public EnemyController enemy;
     public Text healthText;
 
+    public EnemyRandomSpawn spawnState;
+
     public Image healthBar;
 
     void Start()
@@ -36,6 +38,7 @@ public class BatteryHealth : MonoBehaviour
         {
             enemy.playerDead = true;
             enemy.dead = true;
+            spawnState.state = EnemyRandomSpawn.SpawnState.GameIsOver;
             Destroy(gameObject);
         }
     }
