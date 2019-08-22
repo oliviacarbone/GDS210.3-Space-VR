@@ -7,6 +7,7 @@ public class ColonyResources : MonoBehaviour
 {
     public ScoreScript colonyScore;
     public StartColonyGame startColGame;
+
     public bool restartGame = false;
     public bool gameOver = false;
     public GameObject youLoseText;
