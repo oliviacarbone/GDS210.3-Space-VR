@@ -12,19 +12,20 @@ public class EnemyDeath : MonoBehaviour
     private Rigidbody rb;
     public ParticleSystem hitParticle;
     public ParticleSystem deathParticle;
+    public GameObject drone;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        hitParticle = hitParticle.GetComponent<ParticleSystem>();
-        deathParticle = deathParticle.GetComponent<ParticleSystem>();
     }
 
     void Update()
     {
         //For testing puposes only
         if (enemyDeathTest == true)
+        {
             Fall();
+        }
     }
 
     public void Hit()
@@ -56,13 +57,20 @@ public class EnemyDeath : MonoBehaviour
         enemyDeathTest = false;
 
         //Calls destroy function after 5 seconds 
-        Invoke("Death", 5);
+        Invoke("Death", 3);
     }
 
     void Death()
     {
+        //Explosion effect
         deathParticle.Play(true);
-        //Destroys enemy
+        drone.SetActive(false);
+        Invoke("Destroy", 4);
+    }
+
+    void Destroy()
+    {
+        //Destroys enemy drone
         Debug.Log("Drone Destroyed");
         Destroy(gameObject);
     }

@@ -899,16 +899,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1561495857}
     m_Modifications:
-    - target: {fileID: 3362869261881301378, guid: 4a8ab0041332fc04a88003a6deada5b4,
-        type: 3}
-      propertyPath: handType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3362869261881301378, guid: 4a8ab0041332fc04a88003a6deada5b4,
-        type: 3}
-      propertyPath: shootAction.actionPath
-      value: /actions/default/in/Grab
-      objectReference: {fileID: 0}
     - target: {fileID: 3362869261881301436, guid: 4a8ab0041332fc04a88003a6deada5b4,
         type: 3}
       propertyPath: m_Name
@@ -918,6 +908,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: RightGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362869261881301378, guid: 4a8ab0041332fc04a88003a6deada5b4,
+        type: 3}
+      propertyPath: handType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362869261881301378, guid: 4a8ab0041332fc04a88003a6deada5b4,
+        type: 3}
+      propertyPath: shootAction.actionPath
+      value: /actions/default/in/Grab
       objectReference: {fileID: 0}
     - target: {fileID: 3362869262123273810, guid: 4a8ab0041332fc04a88003a6deada5b4,
         type: 3}
@@ -1102,11 +1102,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4899012445584455100, guid: 0588f69bbc2960d4aa5e869edf4070f4,
-        type: 3}
-      propertyPath: enemyHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4899012445584455089, guid: 0588f69bbc2960d4aa5e869edf4070f4,
         type: 3}
       propertyPath: m_Name
@@ -1115,7 +1110,12 @@ PrefabInstance:
     - target: {fileID: 4899012445584455089, guid: 0588f69bbc2960d4aa5e869edf4070f4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899012445584455100, guid: 0588f69bbc2960d4aa5e869edf4070f4,
+        type: 3}
+      propertyPath: enemyHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4899012445584455090, guid: 0588f69bbc2960d4aa5e869edf4070f4,
         type: 3}
@@ -1170,6 +1170,21 @@ PrefabInstance:
     - target: {fileID: 4899012445584455090, guid: 0588f69bbc2960d4aa5e869edf4070f4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678428006093647426, guid: 0588f69bbc2960d4aa5e869edf4070f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090745775286520190, guid: 0588f69bbc2960d4aa5e869edf4070f4,
+        type: 3}
+      propertyPath: OnlyDeactivate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090745775286520190, guid: 0588f69bbc2960d4aa5e869edf4070f4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1479,6 +1494,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1600722761242224948, guid: c60e01ff3570e644198eb4a0d479879d,
+        type: 3}
+      propertyPath: m_Name
+      value: PositionPoints
+      objectReference: {fileID: 0}
     - target: {fileID: 1004022879632473551, guid: c60e01ff3570e644198eb4a0d479879d,
         type: 3}
       propertyPath: m_Name
@@ -1528,11 +1548,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 1600722761242224948, guid: c60e01ff3570e644198eb4a0d479879d,
-        type: 3}
-      propertyPath: m_Name
-      value: PositionPoints
       objectReference: {fileID: 0}
     - target: {fileID: 3544344785362949734, guid: c60e01ff3570e644198eb4a0d479879d,
         type: 3}
