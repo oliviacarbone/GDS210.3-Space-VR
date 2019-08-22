@@ -2,50 +2,36 @@
 
 public class EnemyDeath : MonoBehaviour
 {
-    [SerializeField]
-    Material droneColour;
-
     public Gun playerGun;
     public EnemyController enemyController;
     public EnemyShooting enemyShooting;
-    public float enemyHealth;
-    public bool enemyDeathTest = true;
+    public float enemyHealth = 100;
+    public bool enemyDeathTest;
     public float force;
     public float rotForce;
     private Rigidbody rb;
     public ParticleSystem hitParticle;
-
+    public ParticleSystem deathParticle;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         hitParticle = hitParticle.GetComponent<ParticleSystem>();
+        deathParticle = deathParticle.GetComponent<ParticleSystem>();
     }
 
-    void Start()
+    void Update()
     {
-        enemyHealth = 100;
-        droneColour.color = Color.white;
-        ChangeColor();
-        Invoke("ChangeColor", 5);
+        //For testing puposes only
+        if (enemyDeathTest == true)
+            Fall();
     }
 
     public void Hit()
     {
-        //Turns test drown red if hit 
-        //droneColour.color = Color.red;
-
-        //Calls ChangeColor() after 2 seconds
-        Invoke("ChangeColor", 2);
         Debug.Log("Hit Registered");
         Damage();
         hitParticle.Play(true);
-    }
-
-    void ChangeColor()
-    {
-        //Turns Test drone back to white
-        droneColour.color = Color.red;       
     }
 
     void Damage()
@@ -65,12 +51,17 @@ public class EnemyDeath : MonoBehaviour
         rb.AddTorque((transform.forward + transform.up) * rotForce);
         enemyController.dead = true;
         enemyShooting.shooting = false;
+
+        //For Testing purposes only
+        enemyDeathTest = false;
+
         //Calls destroy function after 5 seconds 
         Invoke("Death", 5);
     }
 
     void Death()
     {
+        deathParticle.Play(true);
         //Destroys enemy
         Debug.Log("Drone Destroyed");
         Destroy(gameObject);
