@@ -252,6 +252,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.006276283
       objectReference: {fileID: 0}
+    - target: {fileID: 1863166956268890559, guid: bd5027f94418f794b887b3383669c055,
+        type: 3}
+      propertyPath: m_Text
+      value: "Attention fleshlings, \n\nThe task of protecting the main battery falls
+        to you. \n\nProtect it with your life! \n\n\nFollow these steps exactly: \n\n1.
+        Destroy the oncoming drones \n\n2. Achieve the highest score \n"
+      objectReference: {fileID: 0}
     - target: {fileID: 1863166957484483053, guid: bd5027f94418f794b887b3383669c055,
         type: 3}
       propertyPath: m_Text
