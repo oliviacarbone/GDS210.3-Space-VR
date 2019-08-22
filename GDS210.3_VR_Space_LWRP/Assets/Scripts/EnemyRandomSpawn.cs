@@ -8,7 +8,7 @@ public class EnemyRandomSpawn : MonoBehaviour
 {
     //Setting up the function to control the enemy spawning.
     public enum SpawnState {GameStart, Spawning, Waiting, Countdown, GameIsOver };
-    public SpawnState state = SpawnState.Countdown;
+    public SpawnState state = SpawnState.GameStart;
 
     public enum StartState { Start, DoNothing};
     public StartState buttonState = StartState.Start;

@@ -29,6 +29,8 @@ public class StartBatteryDefence : MonoBehaviour
 
         restartScore = FindObjectOfType<ScoreScript>();
         time = FindObjectOfType<TimeScript>();
+
+       
     }
 
     // Update is called once per frame
@@ -46,16 +48,17 @@ public class StartBatteryDefence : MonoBehaviour
 
                 if (grabAction.GetLastStateDown(handType))
                 {
-                    if (startGameButton)
-                    {
-                        restartScore.gameIsOver = false;
-                        time.StartTheGame();
+                    // if (startGameButton)
+                    // {
+                    ERS.state = EnemyRandomSpawn.SpawnState.Countdown;
+                    ERS.buttonState = EnemyRandomSpawn.StartState.DoNothing;
 
+                    print("Start Button Pressed");
                         ERS.nextWave = 0;
-                        startGame = true;
-                        ERS.state = EnemyRandomSpawn.SpawnState.Countdown;
-                        ERS.buttonState = EnemyRandomSpawn.StartState.DoNothing;
-                    }
+                        //startGame = true;
+                        //restartScore.gameIsOver = false;
+                        //time.StartTheGame();
+                    //}
                 }
             }
         }
