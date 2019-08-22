@@ -911,7 +911,7 @@ GameObject:
   - component: {fileID: 6420313016162338682}
   - component: {fileID: 7359868389010403224}
   m_Layer: 0
-  m_Name: Test Drone
+  m_Name: Attack Drone
   m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -926,7 +926,7 @@ Transform:
   m_GameObject: {fileID: 4899012445584455089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9227489, y: 0.9227489, z: 0.9227489}
+  m_LocalScale: {x: 1.2663807, y: 1.2663807, z: 1.2663807}
   m_Children:
   - {fileID: 5413744808085496591}
   - {fileID: 1099109159006303569}
