@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public int waitTime = 5;
     public GameObject battery;
     public bool playerDead = false;
+    public bool dead = false;
     private GameObject cam;
 
     public float enemyDamage = 0.01f;
@@ -40,7 +41,8 @@ public class EnemyController : MonoBehaviour
         {
             transform.LookAt(cam.transform.position);
         }
-        else
+        
+        if(dead == false)
         {
             transform.LookAt(battery.transform.position);
         }

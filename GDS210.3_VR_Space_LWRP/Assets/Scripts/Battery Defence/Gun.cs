@@ -11,6 +11,8 @@ public class Gun : MonoBehaviour
     public Material laserColor;
     public Transform hitPos;
 
+    public ParticleSystem muzzleFlash;
+
     public LayerMask layerMask;
 
     Color noTarget = Color.green;
@@ -57,6 +59,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(muzzle.transform.position, -muzzle.transform.up, out hit, range))
         {
+            muzzleFlash.Play(true);
             Debug.Log("Raycast Going Out" + gameObject.tag);
             if (hit.collider.CompareTag("EnemyShip"))
             {

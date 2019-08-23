@@ -19,14 +19,14 @@ public class EnemyDeath : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
-        //For testing puposes only
-        if (enemyDeathTest == true)
-        {
-            Fall();
-        }
-    }
+    //void Update()
+    //{
+    //    //For testing puposes only
+    //    if (enemyDeathTest == true)
+    //    {
+    //        Fall();
+    //    }
+    //}
 
     public void Hit()
     {
@@ -45,15 +45,16 @@ public class EnemyDeath : MonoBehaviour
     public void Fall()
     {
         //Rag Doll Effect   
-
         enemyController.ReturnPoint();
+        enemyShooting.shooting = false;
+        enemyController.dead = true;
         enemyController.agent.enabled = false;
         rb.isKinematic = false;
         rb.AddForce(playerGun.muzzle.transform.right * force, ForceMode.Impulse);
         rb.AddTorque((transform.forward + transform.up) * rotForce);      
 
         //For Testing purposes only
-        enemyDeathTest = false;
+        //enemyDeathTest = false;
 
         //Calls destroy function after 5 seconds 
         Invoke("Death", 3);
