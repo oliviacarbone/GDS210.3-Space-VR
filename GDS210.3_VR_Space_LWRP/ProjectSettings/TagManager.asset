@@ -23,6 +23,8 @@ TagManager:
   - Props
   - PlayerCamera
   - conveyor
+  - LeftClaw
+  - RightClaw
   layers:
   - Default
   - TransparentFX

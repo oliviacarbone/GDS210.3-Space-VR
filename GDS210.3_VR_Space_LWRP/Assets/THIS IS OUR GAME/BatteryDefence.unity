@@ -1984,7 +1984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7d9cfca324b21439118b239b3fc0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 2
+  state: 3
   buttonState: 0
   waves:
   - name: Wave 1
