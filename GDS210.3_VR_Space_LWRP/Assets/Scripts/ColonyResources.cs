@@ -110,7 +110,7 @@ public class ColonyResources : MonoBehaviour
         get { return populationPrivate; }
     }
     //the rate at which the resource variables decay
-    public float decayRate = 0.015f;
+    public float decayRate = 0.013f;
     // Start is called before the first frame update
     void Start()
     {
@@ -149,7 +149,7 @@ public class ColonyResources : MonoBehaviour
             water = 50f;
             oxygen = 50f;
             population = 0f;
-            decayRate = 0.015f;
+            decayRate = 0.013f;
             restartGame = true;
             startColGame.startGame = false;
             energySlider.gameObject.SetActive(true);
@@ -234,27 +234,27 @@ public class ColonyResources : MonoBehaviour
     {
         if (population == 100f)
         {
-            decayRate = 0.015f;
+            decayRate = 0.013f;
         }
         if (population == 500f)
         {
-            decayRate = 0.02f;
+            decayRate = 0.018f;
         }
         if (population == 101f || population == 499f)
         {
-            decayRate = 0.015f;
+            decayRate = 0.013f;
         }
         if (water < 30f)
         {
-            decayRate = 0.015f;
+            decayRate = 0.013f;
         }
         if (energy < 30f)
         {
-            decayRate = 0.015f;
+            decayRate = 0.013f;
         }
         if (oxygen < 30f)
         {
-            decayRate = 0.015f;
+            decayRate = 0.013f;
         }
 
     }
