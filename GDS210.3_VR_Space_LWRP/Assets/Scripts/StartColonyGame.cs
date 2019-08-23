@@ -47,6 +47,7 @@ public class StartColonyGame : MonoBehaviour
                 {
                     if (startGameButton)
                     {
+                        //FindObjectOfType<AudioManager>().Play("CM_Theme");
                         restartScore.gameIsOver = false;
                         time.StartTheGame();
                         startGame = true;

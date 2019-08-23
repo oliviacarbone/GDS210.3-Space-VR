@@ -74,9 +74,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: BD_BatteryDeath
-    clip: {fileID: 8300000, guid: 48a59171b57d3c94ba16d6ca914c4a69, type: 3}
-    volume: 2
+  - name: CM_Theme
+    clip: {fileID: 8300000, guid: b907e83057e9a464393b22946c201a0c, type: 3}
+    volume: 1
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}

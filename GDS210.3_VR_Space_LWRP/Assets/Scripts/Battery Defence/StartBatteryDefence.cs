@@ -52,7 +52,7 @@ public class StartBatteryDefence : MonoBehaviour
                     ERS.buttonState = EnemyRandomSpawn.StartState.DoNothing;
 
                     print("Start Button Pressed");
-                    FindObjectOfType<AudioManager>().Play("BD_Theme");
+                    //FindObjectOfType<AudioManager>().Play("BD_Theme");
                         ERS.nextWave = 0;
                         //startGame = true;
                         //restartScore.gameIsOver = false;
