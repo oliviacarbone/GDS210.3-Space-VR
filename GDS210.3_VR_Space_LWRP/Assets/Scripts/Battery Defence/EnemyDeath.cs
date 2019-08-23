@@ -45,13 +45,12 @@ public class EnemyDeath : MonoBehaviour
     public void Fall()
     {
         //Rag Doll Effect   
+
         enemyController.ReturnPoint();
         enemyController.agent.enabled = false;
         rb.isKinematic = false;
         rb.AddForce(playerGun.muzzle.transform.right * force, ForceMode.Impulse);
-        rb.AddTorque((transform.forward + transform.up) * rotForce);
-        enemyController.dead = true;
-        enemyShooting.shooting = false;
+        rb.AddTorque((transform.forward + transform.up) * rotForce);      
 
         //For Testing purposes only
         enemyDeathTest = false;

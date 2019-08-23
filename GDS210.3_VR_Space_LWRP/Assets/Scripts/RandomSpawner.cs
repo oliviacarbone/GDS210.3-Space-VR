@@ -25,20 +25,24 @@ public class RandomSpawner : MonoBehaviour
     public Transform[] resources;
     public Transform[] spawnPoints;
 
-    public float timeBetweenWaves = 0.5f;
+    public float timeBetweenWaves = 10f;
     private float waveCountDown = 0f;
 
     private float searchCountDown = 1f;
 
-    private float failSafeCountDownEnergy = 2f;
-    private float failSafeCountDownOxygen = 2f;
-    private float failSafeCountDownWater = 2f;
+    private float failSafeCountDownEnergy = 15f;
+    private float failSafeCountDownOxygen = 15f;
+    private float failSafeCountDownWater = 15f;
 
 
     private SpawnState state = SpawnState.COUNTING;
 
      void Start()
     {
+        timeBetweenWaves = 2f;
+        failSafeCountDownEnergy = 5f;
+        failSafeCountDownOxygen = 5f;
+        failSafeCountDownWater = 5f;
         waveCountDown = timeBetweenWaves;
     }
 
@@ -85,14 +89,14 @@ public class RandomSpawner : MonoBehaviour
     {
         Transform spawnPointFailSafeEnergy = spawnPoints[1];
         if (failSafeCountDownEnergy <= 0f) {
-            if (colResSpawner.energy < 25f)
+            if (colResSpawner.energy < 30f)
             {
                 
 
 
                 Instantiate(resources[2], spawnPointFailSafeEnergy.position, spawnPointFailSafeEnergy.rotation);
             }
-            failSafeCountDownEnergy = 2f;
+            failSafeCountDownEnergy = 5f;
         }
         
     }
@@ -101,12 +105,12 @@ public class RandomSpawner : MonoBehaviour
         Transform spawnPointFailSafeOxygen = spawnPoints[2];
         if (failSafeCountDownOxygen <= 0f)
         {
-            if (colResSpawner.oxygen < 25f)
+            if (colResSpawner.oxygen < 30f)
             {
                 
                 Instantiate(resources[1], spawnPointFailSafeOxygen.position, spawnPointFailSafeOxygen.rotation);
             }
-            failSafeCountDownOxygen = 2f;
+            failSafeCountDownOxygen = 5f;
         }
     }
     public void FailSafeSpawnWater()
@@ -114,12 +118,12 @@ public class RandomSpawner : MonoBehaviour
         Transform spawnPointFailSafeWater = spawnPoints[3];
         if (failSafeCountDownWater <= 0f)
         {
-            if (colResSpawner.water < 25f)
+            if (colResSpawner.water < 30f)
             {
                 
                 Instantiate(resources[0], spawnPointFailSafeWater.position, spawnPointFailSafeWater.rotation);
             }
-            failSafeCountDownWater = 2f;
+            failSafeCountDownWater = 5f;
         }
     }
 
