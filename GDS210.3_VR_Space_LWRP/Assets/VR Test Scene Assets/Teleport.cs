@@ -103,7 +103,7 @@ public class Teleport : MonoBehaviour
         aimLaser.SetActive(true);
         teleLaser.SetActive(false);
 
-        aimLaserTransform.position = Vector3.Lerp(controllerPose.transform.position, transform.forward, 0.5f);
+        aimLaserTransform.position = Vector3.Lerp(controllerPose.transform.position, hitPoint, 0.5f);
 
         aimLaserTransform.LookAt(hitPoint);
 

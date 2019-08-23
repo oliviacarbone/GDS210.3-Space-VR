@@ -12,8 +12,8 @@ public class MemoryBeyondButtons : MonoBehaviour
     private GameObject collidingObject;
     private GameObject objectInHand;
 
-    public Material lightMat;
-    public Material darkMat;
+    public Material changedMat;
+    public Material normalMat;
 
     [SerializeField]
     private Renderer[] rend;
@@ -71,7 +71,7 @@ public class MemoryBeyondButtons : MonoBehaviour
         foreach (Renderer r in rend)
         {
             r.enabled = true;
-            r.sharedMaterial = lightMat;
+            r.sharedMaterial = changedMat;
         }
     }
 
@@ -80,7 +80,7 @@ public class MemoryBeyondButtons : MonoBehaviour
         foreach (Renderer r in rend)
         {
             r.enabled = true;
-            r.sharedMaterial = darkMat;
+            r.sharedMaterial = normalMat;
         }
     }
 

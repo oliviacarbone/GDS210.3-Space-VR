@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240707300}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9792a077400855244baab2d8eae744d9, type: 2}
+  - {fileID: 2100000, guid: 42530c6329a7fdc4abbf60e386201d34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,8 +97,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: 42530c6329a7fdc4abbf60e386201d34, type: 2}
-  darkMat: {fileID: 2100000, guid: 9792a077400855244baab2d8eae744d9, type: 2}
+  changedMat: {fileID: 2100000, guid: 42530c6329a7fdc4abbf60e386201d34, type: 2}
+  normalMat: {fileID: 2100000, guid: 9792a077400855244baab2d8eae744d9, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -182,7 +182,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255844830}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -228,8 +228,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: 4bcaee3b77892dc438bde96edce2d0e9, type: 2}
-  darkMat: {fileID: 2100000, guid: c1c7010557205be4193a68d7703d5b6a, type: 2}
+  changedMat: {fileID: 2100000, guid: 4bcaee3b77892dc438bde96edce2d0e9, type: 2}
+  normalMat: {fileID: 2100000, guid: c1c7010557205be4193a68d7703d5b6a, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -313,7 +313,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266338983}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -359,8 +359,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: 47cf92b607706f44188ff37901377361, type: 2}
-  darkMat: {fileID: 2100000, guid: 8c535bc7517a7d64aaead10b1e62f7ac, type: 2}
+  changedMat: {fileID: 2100000, guid: 47cf92b607706f44188ff37901377361, type: 2}
+  normalMat: {fileID: 2100000, guid: 8c535bc7517a7d64aaead10b1e62f7ac, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -444,7 +444,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443451817}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -490,8 +490,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: bdc2d6cc73f44a546997a20dac6e2aaa, type: 2}
-  darkMat: {fileID: 2100000, guid: 6a87a9f0625623e4683b5921a07a3ab0, type: 2}
+  changedMat: {fileID: 2100000, guid: bdc2d6cc73f44a546997a20dac6e2aaa, type: 2}
+  normalMat: {fileID: 2100000, guid: 6a87a9f0625623e4683b5921a07a3ab0, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -575,7 +575,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452693245}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -621,8 +621,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: bbb8188697048fc43ae361c28b2d9c4f, type: 2}
-  darkMat: {fileID: 2100000, guid: e241e5e5026d6524fad9329d8b3590c2, type: 2}
+  changedMat: {fileID: 2100000, guid: bbb8188697048fc43ae361c28b2d9c4f, type: 2}
+  normalMat: {fileID: 2100000, guid: e241e5e5026d6524fad9329d8b3590c2, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -706,7 +706,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031790319}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -752,8 +752,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: 9aa360fa0f2c26c44967f52a83c2b57c, type: 2}
-  darkMat: {fileID: 2100000, guid: 3a9a96e4e6532804f81d142e6b7b9468, type: 2}
+  changedMat: {fileID: 2100000, guid: 9aa360fa0f2c26c44967f52a83c2b57c, type: 2}
+  normalMat: {fileID: 2100000, guid: 3a9a96e4e6532804f81d142e6b7b9468, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -803,8 +803,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: 47cf92b607706f44188ff37901377361, type: 2}
-  darkMat: {fileID: 2100000, guid: 8c535bc7517a7d64aaead10b1e62f7ac, type: 2}
+  changedMat: {fileID: 2100000, guid: 47cf92b607706f44188ff37901377361, type: 2}
+  normalMat: {fileID: 2100000, guid: 8c535bc7517a7d64aaead10b1e62f7ac, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -862,8 +862,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: bdc2d6cc73f44a546997a20dac6e2aaa, type: 2}
-  darkMat: {fileID: 2100000, guid: 6a87a9f0625623e4683b5921a07a3ab0, type: 2}
+  changedMat: {fileID: 2100000, guid: bdc2d6cc73f44a546997a20dac6e2aaa, type: 2}
+  normalMat: {fileID: 2100000, guid: 6a87a9f0625623e4683b5921a07a3ab0, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -884,8 +884,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: 42530c6329a7fdc4abbf60e386201d34, type: 2}
-  darkMat: {fileID: 2100000, guid: 9792a077400855244baab2d8eae744d9, type: 2}
+  changedMat: {fileID: 2100000, guid: 42530c6329a7fdc4abbf60e386201d34, type: 2}
+  normalMat: {fileID: 2100000, guid: 9792a077400855244baab2d8eae744d9, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -943,8 +943,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: 4bcaee3b77892dc438bde96edce2d0e9, type: 2}
-  darkMat: {fileID: 2100000, guid: c1c7010557205be4193a68d7703d5b6a, type: 2}
+  changedMat: {fileID: 2100000, guid: 4bcaee3b77892dc438bde96edce2d0e9, type: 2}
+  normalMat: {fileID: 2100000, guid: c1c7010557205be4193a68d7703d5b6a, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -1002,8 +1002,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: 9aa360fa0f2c26c44967f52a83c2b57c, type: 2}
-  darkMat: {fileID: 2100000, guid: 3a9a96e4e6532804f81d142e6b7b9468, type: 2}
+  changedMat: {fileID: 2100000, guid: 9aa360fa0f2c26c44967f52a83c2b57c, type: 2}
+  normalMat: {fileID: 2100000, guid: 3a9a96e4e6532804f81d142e6b7b9468, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -1061,8 +1061,8 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/Grab
     needsReinit: 0
-  lightMat: {fileID: 2100000, guid: bbb8188697048fc43ae361c28b2d9c4f, type: 2}
-  darkMat: {fileID: 2100000, guid: e241e5e5026d6524fad9329d8b3590c2, type: 2}
+  changedMat: {fileID: 2100000, guid: bbb8188697048fc43ae361c28b2d9c4f, type: 2}
+  normalMat: {fileID: 2100000, guid: e241e5e5026d6524fad9329d8b3590c2, type: 2}
   rend: []
   mBL: {fileID: 8800982168974938357}
   buttonNumber: 0
@@ -1392,12 +1392,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2111831059043373818, guid: 129092480e2949247b5760b7ccf642b3,
+    - target: {fileID: -3815348637671979988, guid: 129092480e2949247b5760b7ccf642b3,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3a9a96e4e6532804f81d142e6b7b9468, type: 2}
-    - target: {fileID: -3815348637671979988, guid: 129092480e2949247b5760b7ccf642b3,
+    - target: {fileID: 2111831059043373818, guid: 129092480e2949247b5760b7ccf642b3,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1483,7 +1483,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8249115927918959592, guid: 03b1604ab0de2db4eb32ce4cfb5a2267,
+    - target: {fileID: -4216859302048453862, guid: 03b1604ab0de2db4eb32ce4cfb5a2267,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6690739
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 03b1604ab0de2db4eb32ce4cfb5a2267,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6690739
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 03b1604ab0de2db4eb32ce4cfb5a2267,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6690739
+      objectReference: {fileID: 0}
+    - target: {fileID: -3815348637671979988, guid: 03b1604ab0de2db4eb32ce4cfb5a2267,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1493,7 +1508,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e241e5e5026d6524fad9329d8b3590c2, type: 2}
-    - target: {fileID: -3815348637671979988, guid: 03b1604ab0de2db4eb32ce4cfb5a2267,
+    - target: {fileID: 8249115927918959592, guid: 03b1604ab0de2db4eb32ce4cfb5a2267,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1579,12 +1594,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6200443131042155592, guid: 81aeeb5518b7ea84a8dec6c2752472e2,
+    - target: {fileID: -4216859302048453862, guid: 81aeeb5518b7ea84a8dec6c2752472e2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2624
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 81aeeb5518b7ea84a8dec6c2752472e2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2624
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 81aeeb5518b7ea84a8dec6c2752472e2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2624
+      objectReference: {fileID: 0}
+    - target: {fileID: -3815348637671979988, guid: 81aeeb5518b7ea84a8dec6c2752472e2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1c7010557205be4193a68d7703d5b6a, type: 2}
-    - target: {fileID: -3815348637671979988, guid: 81aeeb5518b7ea84a8dec6c2752472e2,
+    - target: {fileID: 6200443131042155592, guid: 81aeeb5518b7ea84a8dec6c2752472e2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1724,7 +1754,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4993bc0b111afe1478508e40689eee66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 3.39
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4993bc0b111afe1478508e40689eee66,
         type: 3}
@@ -1774,17 +1804,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4993bc0b111afe1478508e40689eee66,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.53743
+      value: 0.60949934
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4993bc0b111afe1478508e40689eee66,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.53743
+      value: 0.60949934
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4993bc0b111afe1478508e40689eee66,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.53743
+      value: 0.60949934
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 4993bc0b111afe1478508e40689eee66,
         type: 3}
@@ -1872,7 +1902,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2111831059043373818, guid: cd9cff6d2cc5dd04e8734be19ab46100,
+    - target: {fileID: -3815348637671979988, guid: cd9cff6d2cc5dd04e8734be19ab46100,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1882,7 +1912,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6a87a9f0625623e4683b5921a07a3ab0, type: 2}
-    - target: {fileID: -3815348637671979988, guid: cd9cff6d2cc5dd04e8734be19ab46100,
+    - target: {fileID: 2111831059043373818, guid: cd9cff6d2cc5dd04e8734be19ab46100,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
