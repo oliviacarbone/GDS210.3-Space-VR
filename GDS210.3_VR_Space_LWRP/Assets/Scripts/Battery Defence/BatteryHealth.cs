@@ -37,7 +37,7 @@ public class BatteryHealth : MonoBehaviour
         if (batteryHealth <= 0f)
         {
             enemy.playerDead = true;
-            enemy.dead = true;
+            //enemy.dead = true;
             spawnState.state = EnemyRandomSpawn.SpawnState.GameIsOver;
             Destroy(gameObject);
         }
