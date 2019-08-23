@@ -23,7 +23,6 @@ public class MemoryBeyondGameManager : MonoBehaviour
     {
         mBL.StartGame();
         gameObject.SetActive(false);
-        Debug.Log("Deleted");
     }
 
     private void OnTriggerStay(Collider other)
@@ -34,8 +33,6 @@ public class MemoryBeyondGameManager : MonoBehaviour
             {
                 if (startButton)
                 {
-                    Debug.Log("test");
-                    //mBL.state = MemoryBeyondLogic.StartTheGameState.Start;
                     mBL.StartGame();
                 }
             }
