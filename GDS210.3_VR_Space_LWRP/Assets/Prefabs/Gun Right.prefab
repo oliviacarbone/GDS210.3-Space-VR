@@ -92,6 +92,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5496547847128350093}
+  - {fileID: 1626054458516390724}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,6 +112,10 @@ MonoBehaviour:
   laser: {fileID: 3362869261881301379}
   muzzle: {fileID: 451594066567057796}
   laserColor: {fileID: 2100000, guid: 3af528ca391bbe64d82f6b8a322f0a7e, type: 2}
+  hitPos: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   enemyDeath: {fileID: 4899012445584455100, guid: 0588f69bbc2960d4aa5e869edf4070f4,
     type: 3}
   playerDamage: 50
@@ -214,6 +219,69 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!1001 &1626054458516003266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3362869262123273810}
+    m_Modifications:
+    - target: {fileID: 100006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_Name
+      value: WFX_MF FPS RIFLE1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.8154607
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.4714167
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.23858595
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 8.792485e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000029802354
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.000000295028
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
+--- !u!4 &1626054458516390724 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400006, guid: 30b4cc2728d8cec499fad63ba93785a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1626054458516003266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6343771214600739635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,11 +289,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5496547847128350093}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 1247e3211fb480f4bacebd018f7dc40c,
-        type: 3}
-      propertyPath: m_Name
-      value: GunFiring
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1247e3211fb480f4bacebd018f7dc40c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -295,6 +358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 13.596
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1247e3211fb480f4bacebd018f7dc40c,
+        type: 3}
+      propertyPath: m_Name
+      value: GunFiring
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1247e3211fb480f4bacebd018f7dc40c, type: 3}

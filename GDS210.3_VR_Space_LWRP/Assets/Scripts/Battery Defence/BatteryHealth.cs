@@ -11,17 +11,23 @@ public class BatteryHealth : MonoBehaviour
     public EnemyRandomSpawn spawnState;
 
     public Image healthBar;
+    public ParticleSystem loseExpl;
+    public GameObject battery;
+    private bool batteryDead;
 
     void Start()
     {
         batteryHealth = 100f;
         health = batteryHealth;
+        batteryDead = false;
     }
 
     void Update()
     {
-        Lose();
         HealthColor();
+        if (batteryDead == true)
+            return;
+        Lose();
     }
 
     public void Damage()
@@ -36,11 +42,18 @@ public class BatteryHealth : MonoBehaviour
     {
         if (batteryHealth <= 0f)
         {
+            battery.SetActive(false);
+            loseExpl.Play(true);
             enemy.playerDead = true;
             //enemy.dead = true;
             spawnState.state = EnemyRandomSpawn.SpawnState.GameIsOver;
-            Destroy(gameObject);
+            batteryDead = true;
         }
+    }
+
+    void DestroyBattery()
+    {
+        Destroy(gameObject);
     }
 
     void HealthColor()
