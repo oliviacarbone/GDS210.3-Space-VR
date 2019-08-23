@@ -24,42 +24,64 @@ public class Teleport : MonoBehaviour
     public Transform headTransform;
     public Vector3 teleportReticleOffset;
     public LayerMask teleportMask;
+<<<<<<< HEAD
     public bool shouldTeleport;
 
     public LineRenderer lineR;
 
     bool showLine;
+=======
+    private bool shouldTeleport;
+>>>>>>> d29c5b1c41890510b48e8a0516cf30e6a957ac7b
     // Start is called before the first frame update
     void Start()
     {
         //Spawn the aiming laser.
+<<<<<<< HEAD
         //aimLaser = Instantiate(aimLaserPrefab);
        //teleLaser = Instantiate(teleLaserPrefab);
+=======
+        aimLaser = Instantiate(aimLaserPrefab);
+        teleLaser = Instantiate(teleLaserPrefab);
+>>>>>>> d29c5b1c41890510b48e8a0516cf30e6a957ac7b
 
-       // aimLaser.transform.parent = gameObject.transform;
-        //teleLaser.transform.parent = gameObject.transform;
+        aimLaser.transform.parent = gameObject.transform;
+        teleLaser.transform.parent = gameObject.transform;
 
-        //aimLaserTransform = aimLaser.transform;
-        //teleLaserTransform = teleLaser.transform;
+        aimLaserTransform = aimLaser.transform;
+        teleLaserTransform = teleLaser.transform;
 
+<<<<<<< HEAD
        // reticle = Instantiate(teleportReticlePrefab);
        // reticle.transform.parent = gameObject.transform;
 
        // teleportReticleTransform = reticle.transform;
+=======
+        reticle = Instantiate(teleportReticlePrefab);
+        reticle.transform.parent = gameObject.transform;
 
-       // aimLaser.SetActive(false);
+        teleportReticleTransform = reticle.transform;
+>>>>>>> d29c5b1c41890510b48e8a0516cf30e6a957ac7b
+
+        aimLaser.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        ShowLine();
 
+<<<<<<< HEAD
        
         if (teleportAction.GetStateDown(handType))
         {
 
             showLine = true;
+=======
+        
+        if (teleportAction.GetState(handType))
+        {
+            
+>>>>>>> d29c5b1c41890510b48e8a0516cf30e6a957ac7b
 
             RaycastHit hit;
 
@@ -68,8 +90,13 @@ public class Teleport : MonoBehaviour
             {
                 
                 hitPoint = hit.point;
+<<<<<<< HEAD
                 //ShowTeleLaser(hit);
                 //reticle.SetActive(true);
+=======
+                ShowTeleLaser(hit);
+                reticle.SetActive(true);
+>>>>>>> d29c5b1c41890510b48e8a0516cf30e6a957ac7b
 
                 //teleportReticleTransform.position = hitPoint + teleportReticleOffset;
 
@@ -79,10 +106,10 @@ public class Teleport : MonoBehaviour
             }
             else
             {
-                //hitPoint = hit.point;
-                //ShowAimLaser();
-                //reticle.SetActive(true);
-                //teleportReticleTransform.position = hitPoint + teleportReticleOffset;
+                hitPoint = hit.point;
+                ShowAimLaser(hit);
+                reticle.SetActive(true);
+                teleportReticleTransform.position = hitPoint + teleportReticleOffset;
 
                 
             }
@@ -97,34 +124,37 @@ public class Teleport : MonoBehaviour
             TeleportTo();
  
         }
+<<<<<<< HEAD
        /* else if (teleportAction.GetStateUp(handType))
         {
             showLine = false;
         }*/
         /*
+=======
+>>>>>>> d29c5b1c41890510b48e8a0516cf30e6a957ac7b
         else
         {
             aimLaser.SetActive(false);
             reticle.SetActive(false);
-        }*/
+        }
     }
 
-   /* void ShowAimLaser()
+    void ShowAimLaser(RaycastHit hit)
     {
         aimLaser.SetActive(true);
         teleLaser.SetActive(false);
 
-        aimLaserTransform.position = Vector3.MoveTowards(transform.position, transform.position + transform.forward * 100, 0.5f);
+        aimLaserTransform.position = Vector3.Lerp(controllerPose.transform.position, hitPoint, 0.5f);
 
-        aimLaserTransform.LookAt(transform.position + transform.forward * 100);
+        aimLaserTransform.LookAt(hitPoint);
 
-        aimLaser.transform.localScale = new Vector3(aimLaserTransform.localScale.x, aimLaserTransform.localScale.y, 100);
+        aimLaser.transform.localScale = new Vector3(aimLaserTransform.localScale.x, aimLaserTransform.localScale.y, hit.distance);
 
-    }*/
+    }
     void ShowTeleLaser(RaycastHit hit)
     {
         teleLaser.SetActive(true);
-        //aimLaser.SetActive(false);
+        aimLaser.SetActive(false);
         teleLaserTransform.position = Vector3.Lerp(controllerPose.transform.position, hitPoint, 0.5f);
 
         teleLaserTransform.LookAt(hitPoint);
@@ -132,6 +162,7 @@ public class Teleport : MonoBehaviour
         teleLaserTransform.localScale = new Vector3(teleLaserTransform.localScale.x, teleLaserTransform.localScale.y, hit.distance);
     }
 
+<<<<<<< HEAD
     void ShowLine()
     {
 
@@ -153,6 +184,8 @@ public class Teleport : MonoBehaviour
         }
     }
 
+=======
+>>>>>>> d29c5b1c41890510b48e8a0516cf30e6a957ac7b
     void TeleportTo()
     {
         cameraRigTransform.position = hitPoint;
