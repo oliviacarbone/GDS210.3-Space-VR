@@ -2988,7 +2988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4efb9082aa80c4ca481ade48c35d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOutUIImage: {fileID: 0}
+  fadeOutUIImage: {fileID: 527530504}
   fadeSpeed: 0.8
 --- !u!4 &1426515701
 Transform:
