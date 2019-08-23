@@ -45,8 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Ambient Sound
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+    clip: {fileID: 8300000, guid: 1f4d425b22794ae48bf98a1202a84cef, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
