@@ -10,7 +10,7 @@ public class SceneFader : MonoBehaviour
     public float fadeSpeed = 0.8f;
     public enum FadeDirection {In, Out}
 
-    public SceneManagement sceneManagement;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +58,13 @@ public class SceneFader : MonoBehaviour
     {
         yield return Fade(fadeDirection);
 
+        
+    }
 
+    private void SetColorImage(ref float alpha, FadeDirection fadeDirection)
+    {
+        fadeOutUIImage.color = new Color
+            (fadeOutUIImage.color.r, fadeOutUIImage.color.g, fadeOutUIImage.color.b, alpha);
+        alpha += Time.deltaTime * (1.0f / fadeSpeed) * ((fadeDirection == FadeDirection.Out) ? -1 : 1);
     }
 }
