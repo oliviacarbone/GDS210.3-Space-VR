@@ -11,11 +11,13 @@ public class VRControlSwitcher : MonoBehaviour
     public GameObject leftController;
     public GameObject rightController;
 
+    public GameObject leftClaw;
+    public GameObject rightClaw;
     public SteamVR_Input_Sources handType;
     public SteamVR_Behaviour_Pose controllerPose;
     public SteamVR_Action_Boolean handheldSwitch;
 
-    bool gunsActive;
+    bool gunsNotActive;
     
      
     void Awake()
@@ -24,11 +26,13 @@ public class VRControlSwitcher : MonoBehaviour
         rightGun = GameObject.FindWithTag("RightGun");
         leftController = GameObject.FindWithTag("LeftController");
         rightController = GameObject.FindWithTag("RightController");
-
+        leftClaw = GameObject.FindWithTag("LeftClaw");
+        rightClaw = GameObject.FindWithTag("RightClaw");
+        
 
         leftGun.SetActive(false);
         rightGun.SetActive(false);
-        gunsActive = false;
+        gunsNotActive = false;
     }
   
 
@@ -43,11 +47,14 @@ public class VRControlSwitcher : MonoBehaviour
 
     void EquipSwitch()
     {
-        if(gunsActive == false)
+        if(gunsNotActive == false)
         {
 
             leftGun.SetActive(false);
             rightGun.SetActive(false);
+
+            leftClaw.SetActive(true);
+            rightClaw.SetActive(true);
 
             leftController.GetComponent<PickupTest>().enabled = true;
             leftController.GetComponent<Teleport>().enabled = true;
@@ -55,20 +62,22 @@ public class VRControlSwitcher : MonoBehaviour
             rightController.GetComponent<PickupTest>().enabled = true;
             rightController.GetComponent<Teleport>().enabled = true;
 
-            gunsActive = true;
+            gunsNotActive = true;
         }
-        else if(gunsActive == true)
+        else if(gunsNotActive == true)
         {
             leftGun.SetActive(true);
             rightGun.SetActive(true);
 
+            leftClaw.SetActive(false);
+            rightClaw.SetActive(false);
             leftController.GetComponent<PickupTest>().enabled = false;
             leftController.GetComponent<Teleport>().enabled = false;
 
             rightController.GetComponent<PickupTest>().enabled = false;
             rightController.GetComponent<Teleport>().enabled = false;
 
-            gunsActive = false;
+            gunsNotActive = false;
         }
     }
 }
