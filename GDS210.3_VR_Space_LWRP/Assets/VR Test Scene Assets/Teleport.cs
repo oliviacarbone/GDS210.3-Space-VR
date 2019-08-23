@@ -24,7 +24,7 @@ public class Teleport : MonoBehaviour
     public Transform headTransform;
     public Vector3 teleportReticleOffset;
     public LayerMask teleportMask;
-    private bool shouldTeleport;
+    public bool shouldTeleport;
 
     public LineRenderer lineR;
 
@@ -34,7 +34,7 @@ public class Teleport : MonoBehaviour
     {
         //Spawn the aiming laser.
         //aimLaser = Instantiate(aimLaserPrefab);
-        //teleLaser = Instantiate(teleLaserPrefab);
+       //teleLaser = Instantiate(teleLaserPrefab);
 
        // aimLaser.transform.parent = gameObject.transform;
         //teleLaser.transform.parent = gameObject.transform;
@@ -42,10 +42,10 @@ public class Teleport : MonoBehaviour
         //aimLaserTransform = aimLaser.transform;
         //teleLaserTransform = teleLaser.transform;
 
-        //reticle = Instantiate(teleportReticlePrefab);
-        //reticle.transform.parent = gameObject.transform;
+       // reticle = Instantiate(teleportReticlePrefab);
+       // reticle.transform.parent = gameObject.transform;
 
-        //teleportReticleTransform = reticle.transform;
+       // teleportReticleTransform = reticle.transform;
 
        // aimLaser.SetActive(false);
     }
@@ -55,11 +55,11 @@ public class Teleport : MonoBehaviour
     {
         ShowLine();
 
-        if (teleportAction.GetState(handType))
+       
+        if (teleportAction.GetStateDown(handType))
         {
 
             showLine = true;
-
 
             RaycastHit hit;
 
@@ -69,12 +69,12 @@ public class Teleport : MonoBehaviour
                 
                 hitPoint = hit.point;
                 //ShowTeleLaser(hit);
-                reticle.SetActive(true);
+                //reticle.SetActive(true);
 
-                teleportReticleTransform.position = hitPoint + teleportReticleOffset;
+                //teleportReticleTransform.position = hitPoint + teleportReticleOffset;
 
                 shouldTeleport = true;
-
+                
                 
             }
             else
@@ -97,10 +97,10 @@ public class Teleport : MonoBehaviour
             TeleportTo();
  
         }
-        else if (teleportAction.GetStateUp(handType))
+       /* else if (teleportAction.GetStateUp(handType))
         {
             showLine = false;
-        }
+        }*/
         /*
         else
         {
@@ -134,8 +134,11 @@ public class Teleport : MonoBehaviour
 
     void ShowLine()
     {
+
         if (showLine == true)
         {
+            Debug.Log("Line On");
+            lineR.enabled = true;
             //set the start position of the line renderer
             lineR.SetPosition(0, transform.position);
             //set the end position of the line renderer
@@ -143,19 +146,29 @@ public class Teleport : MonoBehaviour
             //set the color of the line renderer
             lineR.GetComponent<Renderer>().material.color = Color.red;
         }
-        else
-            return;
+        else if (showLine == false)
+        {
+            Debug.Log("Line Off");
+            lineR.enabled = false;
+        }
     }
 
     void TeleportTo()
     {
+        cameraRigTransform.position = hitPoint;
         shouldTeleport = false;
-        reticle.SetActive(false);
+        showLine = false;
+        // Vector3 difference = cameraRigTransform.position - headTransform.position;
+        // cameraRigTransform.position = hitPoint + difference;
 
-        Vector3 difference = cameraRigTransform.position - headTransform.position;
 
-        difference.y = 0;
+        //reticle.SetActive(false);
 
-        cameraRigTransform.position = hitPoint + difference;
+
+
+
+        //difference.y = 0;
+
+
     }
 }
