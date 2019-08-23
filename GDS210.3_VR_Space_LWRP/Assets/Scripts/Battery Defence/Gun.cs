@@ -100,7 +100,7 @@ public class Gun : MonoBehaviour
             laser.SetPosition(1, -transform.up * 5000);
         }
 
-        if (!hit.collider)
+        if (!hit.collider && hit.collider.CompareTag("Battery"))
         {
             //Sets laser distance 
             laser.SetPosition(1, -transform.up * 5000);
