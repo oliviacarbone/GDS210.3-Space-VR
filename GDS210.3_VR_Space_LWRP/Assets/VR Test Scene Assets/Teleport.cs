@@ -25,35 +25,41 @@ public class Teleport : MonoBehaviour
     public Vector3 teleportReticleOffset;
     public LayerMask teleportMask;
     private bool shouldTeleport;
+
+    public LineRenderer lineR;
+
+    bool showLine;
     // Start is called before the first frame update
     void Start()
     {
         //Spawn the aiming laser.
-        aimLaser = Instantiate(aimLaserPrefab);
-        teleLaser = Instantiate(teleLaserPrefab);
+        //aimLaser = Instantiate(aimLaserPrefab);
+        //teleLaser = Instantiate(teleLaserPrefab);
 
-        aimLaser.transform.parent = gameObject.transform;
-        teleLaser.transform.parent = gameObject.transform;
+       // aimLaser.transform.parent = gameObject.transform;
+        //teleLaser.transform.parent = gameObject.transform;
 
-        aimLaserTransform = aimLaser.transform;
-        teleLaserTransform = teleLaser.transform;
+        //aimLaserTransform = aimLaser.transform;
+        //teleLaserTransform = teleLaser.transform;
 
-        reticle = Instantiate(teleportReticlePrefab);
-        reticle.transform.parent = gameObject.transform;
+        //reticle = Instantiate(teleportReticlePrefab);
+        //reticle.transform.parent = gameObject.transform;
 
-        teleportReticleTransform = reticle.transform;
+        //teleportReticleTransform = reticle.transform;
 
-        aimLaser.SetActive(false);
+       // aimLaser.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        ShowLine();
 
-        
         if (teleportAction.GetState(handType))
         {
-            
+
+            showLine = true;
+
 
             RaycastHit hit;
 
@@ -62,7 +68,7 @@ public class Teleport : MonoBehaviour
             {
                 
                 hitPoint = hit.point;
-                ShowTeleLaser(hit);
+                //ShowTeleLaser(hit);
                 reticle.SetActive(true);
 
                 teleportReticleTransform.position = hitPoint + teleportReticleOffset;
@@ -73,10 +79,10 @@ public class Teleport : MonoBehaviour
             }
             else
             {
-                hitPoint = hit.point;
-                ShowAimLaser(hit);
-                reticle.SetActive(true);
-                teleportReticleTransform.position = hitPoint + teleportReticleOffset;
+                //hitPoint = hit.point;
+                //ShowAimLaser();
+                //reticle.SetActive(true);
+                //teleportReticleTransform.position = hitPoint + teleportReticleOffset;
 
                 
             }
@@ -91,34 +97,54 @@ public class Teleport : MonoBehaviour
             TeleportTo();
  
         }
+        else if (teleportAction.GetStateUp(handType))
+        {
+            showLine = false;
+        }
+        /*
         else
         {
             aimLaser.SetActive(false);
             reticle.SetActive(false);
-        }
+        }*/
     }
 
-    void ShowAimLaser(RaycastHit hit)
+   /* void ShowAimLaser()
     {
         aimLaser.SetActive(true);
         teleLaser.SetActive(false);
 
-        aimLaserTransform.position = Vector3.Lerp(controllerPose.transform.position, hitPoint, 0.5f);
+        aimLaserTransform.position = Vector3.MoveTowards(transform.position, transform.position + transform.forward * 100, 0.5f);
 
-        aimLaserTransform.LookAt(hitPoint);
+        aimLaserTransform.LookAt(transform.position + transform.forward * 100);
 
-        aimLaser.transform.localScale = new Vector3(aimLaserTransform.localScale.x, aimLaserTransform.localScale.y, hit.distance);
+        aimLaser.transform.localScale = new Vector3(aimLaserTransform.localScale.x, aimLaserTransform.localScale.y, 100);
 
-    }
+    }*/
     void ShowTeleLaser(RaycastHit hit)
     {
         teleLaser.SetActive(true);
-        aimLaser.SetActive(false);
+        //aimLaser.SetActive(false);
         teleLaserTransform.position = Vector3.Lerp(controllerPose.transform.position, hitPoint, 0.5f);
 
         teleLaserTransform.LookAt(hitPoint);
 
         teleLaserTransform.localScale = new Vector3(teleLaserTransform.localScale.x, teleLaserTransform.localScale.y, hit.distance);
+    }
+
+    void ShowLine()
+    {
+        if (showLine == true)
+        {
+            //set the start position of the line renderer
+            lineR.SetPosition(0, transform.position);
+            //set the end position of the line renderer
+            lineR.SetPosition(1, transform.position + transform.forward * 100);
+            //set the color of the line renderer
+            lineR.GetComponent<Renderer>().material.color = Color.red;
+        }
+        else
+            return;
     }
 
     void TeleportTo()
