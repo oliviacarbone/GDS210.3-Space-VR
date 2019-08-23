@@ -98,6 +98,7 @@ public class PickupTest : MonoBehaviour
             objectInHand.GetComponent<Rigidbody>().angularVelocity = controllerPose.GetAngularVelocity();
         }
         objectInHand = null;
+        collidingObject = null;
     }
 
     // Update is called once per frame
