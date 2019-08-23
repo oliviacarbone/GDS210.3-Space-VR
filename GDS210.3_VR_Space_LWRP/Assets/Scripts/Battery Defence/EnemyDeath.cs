@@ -64,6 +64,7 @@ public class EnemyDeath : MonoBehaviour
     {
         //Explosion effect
         deathParticle.Play(true);
+        FindObjectOfType<AudioManager>().Play("BD_EnemyDeath");
         drone.SetActive(false);
         Invoke("Destroy", 4);
     }

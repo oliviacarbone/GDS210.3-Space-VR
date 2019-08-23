@@ -44,9 +44,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Ambient Sound
+  - name: Ambient
     clip: {fileID: 8300000, guid: 1f4d425b22794ae48bf98a1202a84cef, type: 3}
     volume: 1
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: BD_Theme
+    clip: {fileID: 8300000, guid: f7d6a5ea664168141b2642f28a254a79, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BD_PlayerShoot
+    clip: {fileID: 8300000, guid: d83f4886022137a4c98f57210b1b4aed, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BD_EnemyDeath
+    clip: {fileID: 8300000, guid: 7e20506db5b9c8142a1084a32c6ebc77, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BD_BatteryDeath
+    clip: {fileID: 8300000, guid: 48a59171b57d3c94ba16d6ca914c4a69, type: 3}
+    volume: 2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BD_BatteryDeath
+    clip: {fileID: 8300000, guid: 48a59171b57d3c94ba16d6ca914c4a69, type: 3}
+    volume: 2
+    pitch: 1
+    loop: 0
     source: {fileID: 0}

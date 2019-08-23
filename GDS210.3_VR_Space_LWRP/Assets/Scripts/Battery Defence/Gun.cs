@@ -58,11 +58,12 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        FindObjectOfType<AudioManager>().Play("BD_PlayerShoot");
+        muzzleFlash.Play(true);
         //Raycast for shooting
         RaycastHit hit;
         if (Physics.Raycast(muzzle.transform.position, -muzzle.transform.up, out hit, range))
         {
-            muzzleFlash.Play(true);
             Debug.Log("Raycast Going Out" + gameObject.tag);
             if (hit.collider.CompareTag("EnemyShip"))
             {

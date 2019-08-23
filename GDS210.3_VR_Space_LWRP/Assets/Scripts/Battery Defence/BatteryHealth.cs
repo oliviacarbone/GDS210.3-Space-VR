@@ -46,6 +46,7 @@ public class BatteryHealth : MonoBehaviour
             //enemy.dead = true;
             spawnState.state = EnemyRandomSpawn.SpawnState.GameIsOver;
             battery.SetActive(false);
+            FindObjectOfType<AudioManager>().Play("BD_BatteryDeath");
             loseExpl.Play(true);
             enemy.playerDead = true;
             enemy.dead = true;

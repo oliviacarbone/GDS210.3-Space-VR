@@ -17,7 +17,7 @@ public class VRControlSwitcher : MonoBehaviour
     public SteamVR_Behaviour_Pose controllerPose;
     public SteamVR_Action_Boolean handheldSwitch;
 
-    bool gunsNotActive;
+    public bool gunsNotActive;
     
      
     void Awake()
