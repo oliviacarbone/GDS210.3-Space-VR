@@ -25,6 +25,7 @@ TagManager:
   - conveyor
   - LeftClaw
   - RightClaw
+  - IgnoreRaycast
   layers:
   - Default
   - TransparentFX

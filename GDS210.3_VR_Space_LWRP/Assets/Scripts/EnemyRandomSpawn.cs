@@ -56,30 +56,33 @@ public class EnemyRandomSpawn : MonoBehaviour
             GameIsCompleted();
         }
 
-        if (state == SpawnState.Waiting)
+        if (state != SpawnState.GameIsOver)
         {
-            if (!EnemyIsAlive())
+            if (state == SpawnState.Waiting)
             {
-                NewWave();
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        if (state == SpawnState.Countdown)
-        {
-            if (enemySpawnCountDown <= 0)
-            {
-                if (state != SpawnState.Spawning)
+                if (!EnemyIsAlive())
                 {
-                    StartCoroutine(SpawningEnemyShip(waves[nextWave]));
+                    NewWave();
+                }
+                else
+                {
+                    return;
                 }
             }
-            else
+
+            if (state == SpawnState.Countdown)
             {
-                enemySpawnCountDown -= Time.deltaTime;
+                if (enemySpawnCountDown <= 0)
+                {
+                    if (state != SpawnState.Spawning)
+                    {
+                        StartCoroutine(SpawningEnemyShip(waves[nextWave]));
+                    }
+                }
+                else
+                {
+                    enemySpawnCountDown -= Time.deltaTime;
+                }
             }
         }
 
@@ -145,7 +148,10 @@ public class EnemyRandomSpawn : MonoBehaviour
 
         Debug.Log("Done Spawning");
 
-        state = SpawnState.Waiting;
+        if (state != SpawnState.GameIsOver)
+        {
+            state = SpawnState.Waiting;
+        }
 
         yield break;
     }

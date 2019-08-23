@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     public GameObject battery;
     public bool playerDead = false;
     public bool dead = false;
-    private GameObject cam;
+    public GameObject cam;
 
     public float enemyDamage = 0.01f;
 

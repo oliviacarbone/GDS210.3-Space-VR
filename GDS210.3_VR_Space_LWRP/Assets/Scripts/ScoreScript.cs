@@ -405,6 +405,7 @@ public class ScoreScript : MonoBehaviour
     void ChangeTheState()
     {
         state = ScoreState.Done;
+        gameIsOver = false;
     }
     #endregion
     

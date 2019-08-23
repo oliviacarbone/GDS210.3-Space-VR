@@ -25,10 +25,13 @@ public class Gun : MonoBehaviour
     public SteamVR_Behaviour_Pose controllerPose;
     public SteamVR_Action_Boolean shootAction;
 
+    public ScoreScript scorePoint;
+
 
     void Start()
     {
         controllerPose = GetComponentInParent<SteamVR_Behaviour_Pose>();
+        scorePoint = FindObjectOfType<ScoreScript>();
     }
     void Update()
     {
@@ -68,7 +71,13 @@ public class Gun : MonoBehaviour
                 Debug.Log("HIT!!!");
                 enemyDeath.Hit();
 
-                if(enemyDeath.enemyHealth <= 0)
+                if(enemyDeath.enemyHealth == 0)
+                {
+                    //Add a point for score
+                    scorePoint.currentScore += 1;
+                    enemyDeath.Fall();
+                }
+                else if(enemyDeath.enemyHealth < 0)
                 {
                     enemyDeath.Fall();
                 }
@@ -100,7 +109,7 @@ public class Gun : MonoBehaviour
             laser.SetPosition(1, -transform.up * 5000);
         }
 
-        if (!hit.collider && hit.collider.CompareTag("Battery"))
+        if (!hit.collider /*&& hit.collider.CompareTag("IgnoreRaycast")*/)
         {
             //Sets laser distance 
             laser.SetPosition(1, -transform.up * 5000);

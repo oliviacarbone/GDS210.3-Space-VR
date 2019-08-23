@@ -104,17 +104,17 @@ public class Teleport : MonoBehaviour
 
 
                 }*/
-            }
+        }
             /*else
             {
                 teleLaser.SetActive(false);
                 reticle.SetActive(false);
             }*/
-            if (teleportAction.GetStateUp(handType) && shouldTeleport)
-            {
-                TeleportTo();
+        if (teleportAction.GetStateUp(handType) && shouldTeleport)
+        {
+            TeleportTo();
 
-            }
+        }
 
             /* else if (teleportAction.GetStateUp(handType))
              {
@@ -127,7 +127,7 @@ public class Teleport : MonoBehaviour
                 aimLaser.SetActive(false);
                 reticle.SetActive(false);
             }*/
-        }
+    }
 
         /*void ShowAimLaser(RaycastHit hit)
         {
@@ -153,49 +153,49 @@ public class Teleport : MonoBehaviour
         }*/
 
 
-        void ShowLine()
-        {
+    void ShowLine()
+    {
 
-            if (showLine == true)
-            {
-                Debug.Log("Line On");
-                lineR.enabled = true;
-                //set the start position of the line renderer
-                lineR.SetPosition(0, transform.position);
-                //set the end position of the line renderer
-                lineR.SetPosition(1, transform.position + transform.forward * 100);
-                //set the color of the line renderer
-                lineR.GetComponent<Renderer>().material.color = Color.red;
-            }
-            else if (showLine == false)
-            {
-                Debug.Log("Line Off");
-                lineR.enabled = false;
-            }
+        if (showLine == true)
+        {
+            Debug.Log("Line On");
+            lineR.enabled = true;
+            //set the start position of the line renderer
+            lineR.SetPosition(0, transform.position);
+            //set the end position of the line renderer
+            lineR.SetPosition(1, transform.position + transform.forward * 100);
+            //set the color of the line renderer
+            lineR.GetComponent<Renderer>().material.color = Color.red;
         }
-
-
-
-        void TeleportTo()
+        else 
         {
-            cameraRigTransform.position = hitPoint;
-            shouldTeleport = false;
-            showLine = false;
-            // Vector3 difference = cameraRigTransform.position - headTransform.position;
-            // cameraRigTransform.position = hitPoint + difference;
-
-
-            //reticle.SetActive(false);
-
-
-
-
-            //difference.y = 0;
-
-
+            Debug.Log("Line Off");
+            lineR.enabled = false;
         }
     }
 
+
+
+    void TeleportTo()
+    {
+        cameraRigTransform.position = hitPoint;
+        shouldTeleport = false;
+        showLine = false;
+        // Vector3 difference = cameraRigTransform.position - headTransform.position;
+        // cameraRigTransform.position = hitPoint + difference;
+
+
+        //reticle.SetActive(false);
+
+
+
+
+        //difference.y = 0;
+
+
+    }
+    
+}
 
 
 

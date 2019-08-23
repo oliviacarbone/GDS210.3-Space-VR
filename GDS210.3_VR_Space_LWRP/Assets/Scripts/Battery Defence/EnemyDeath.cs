@@ -51,8 +51,8 @@ public class EnemyDeath : MonoBehaviour
         enemyController.agent.enabled = false;
         rb.isKinematic = false;
         rb.AddForce(playerGun.muzzle.transform.right * force, ForceMode.Impulse);
-        rb.AddTorque((transform.forward + transform.up) * rotForce);      
-
+        rb.AddTorque((transform.forward + transform.up) * rotForce);
+        
         //For Testing purposes only
         //enemyDeathTest = false;
 
@@ -70,6 +70,7 @@ public class EnemyDeath : MonoBehaviour
 
     void Destroy()
     {
+       
         //Destroys enemy drone
         Debug.Log("Drone Destroyed");
         Destroy(gameObject);
