@@ -8,7 +8,7 @@ public class SceneManagement : MonoBehaviour
 
     void Start()
     {
-        
+        sceneFader = FindObjectOfType<SceneFader>();
     }
     //The way this work is when you want to call a certain scene,
     //you will need to give it a number in the inspector to change scenes.
