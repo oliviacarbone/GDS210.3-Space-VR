@@ -8,9 +8,8 @@ public class EnemyController : MonoBehaviour
     private GameObject currentPoint;
     private int index;
     public NavMeshAgent agent;
-    public int waitTime = 10;
+    public int waitTime = 5;
     public GameObject battery;
-    public bool dead = false;
     public bool playerDead = false;
     private GameObject cam;
 
@@ -37,15 +36,13 @@ public class EnemyController : MonoBehaviour
 
     void LookTowards()
     {
-        //Makes the enemies always look at the battery
-        if (dead == false)
-        {
-            transform.LookAt(battery.transform.position);
-        }
-
         if(playerDead == true)
         {
             transform.LookAt(cam.transform.position);
+        }
+        else
+        {
+            transform.LookAt(battery.transform.position);
         }
     }
 
