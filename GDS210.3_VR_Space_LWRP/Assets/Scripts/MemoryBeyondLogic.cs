@@ -15,7 +15,6 @@ public class MemoryBeyondLogic : MonoBehaviour
     public GameObject roundScreen;
     public GameObject startButton;
 
-    //public TimeScript timer;
     public ScoreScript score;
 
     #region HLT
@@ -91,12 +90,6 @@ public class MemoryBeyondLogic : MonoBehaviour
     {
         LogicCheck();
         score.currentScore = round;
-        /*
-        if(timer.minute == 0 && timer.second == 0)
-        {
-            GameOver();
-        }
-        */
     }
 
     #region Functions
@@ -184,7 +177,6 @@ public class MemoryBeyondLogic : MonoBehaviour
         logic = true;
         playerLevel = 0;
         level = 2;
-        //timer.state = TimeScript.TimeState.Countdown;
 
         state = StartTheGameState.DoNothing;
     }
@@ -211,6 +203,7 @@ public class MemoryBeyondLogic : MonoBehaviour
             {
                 randomInt = Random.Range(0, buttons.Length);
                 colorList.Add(randomInt);
+                print(randomInt);
             }
 
             buttons[colorList[i]].ClickedColor();
