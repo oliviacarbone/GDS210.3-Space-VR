@@ -9,14 +9,26 @@ public class RestartBatteryDefence : MonoBehaviour
     public SteamVR_Action_Boolean grabAction;
     public GameObject startGameButton;
 
+    public GameObject battery;
+    public EnemyRandomSpawn ERS;
+
+    private void Start()
+    {
+        ERS = FindObjectOfType<EnemyRandomSpawn>();
+    }
+
     private void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.tag == "LeftController" || col.gameObject.tag == "RightController")
+        if (ERS.buttonState == EnemyRandomSpawn.StartState.DoNothing)
         {
-
-            if (grabAction.GetLastStateDown(handType))
+            if (col.gameObject.tag == "LeftController" || col.gameObject.tag == "RightController")
             {
-                SceneManager.LoadScene("BatteryDefence");
+
+                if (grabAction.GetLastStateDown(handType))
+                {
+                    ERS.buttonState = EnemyRandomSpawn.StartState.Start;
+                    Instantiate(battery);
+                }
             }
         }
     }    

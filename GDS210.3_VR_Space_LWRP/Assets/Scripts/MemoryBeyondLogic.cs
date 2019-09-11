@@ -15,7 +15,7 @@ public class MemoryBeyondLogic : MonoBehaviour
     public GameObject roundScreen;
     public GameObject startButton;
 
-    public ScoreScript score;
+    public ScoreScript1 score;
 
     #region HLT
     private float hLTime; //highLightTime, the time a block stays on the secondary material

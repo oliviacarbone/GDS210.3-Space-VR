@@ -85,6 +85,8 @@ public class TimeScript : MonoBehaviour
     void GameIsOver()
     {
         Debug.Log("Game is done.");
+        minute = 2;
+        second = 0;
         state = TimeState.DoNothing;
     }
 }

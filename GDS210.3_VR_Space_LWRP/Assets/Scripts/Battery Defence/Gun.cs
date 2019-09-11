@@ -25,16 +25,17 @@ public class Gun : MonoBehaviour
     public SteamVR_Behaviour_Pose controllerPose;
     public SteamVR_Action_Boolean shootAction;
 
-    public ScoreScript scorePoint;
-
+    public ScoreScript1 scorePoint;
 
     void Start()
     {
         controllerPose = GetComponentInParent<SteamVR_Behaviour_Pose>();
-        scorePoint = FindObjectOfType<ScoreScript>();
+        scorePoint = FindObjectOfType<ScoreScript1>();
     }
     void Update()
     {
+        scorePoint = FindObjectOfType<ScoreScript1>(); 
+
         Laser();
         //if (Input.GetButtonDown("Fire1"))
         //{
