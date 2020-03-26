@@ -9,18 +9,12 @@ public class BatteryHealth : MonoBehaviour
     public Text healthText;
 
     public EnemyRandomSpawn spawnState;
-    public ScoreScript1 endTheGame;
+    public ScoreScript endTheGame;
 
     public Image healthBar;
     public ParticleSystem loseExpl;
     public GameObject battery;
     private bool batteryDead;
-
-    private void Awake()
-    {
-        spawnState = FindObjectOfType<EnemyRandomSpawn>();
-        endTheGame = FindObjectOfType<ScoreScript1>();
-    }
 
     void Start()
     {
@@ -31,8 +25,6 @@ public class BatteryHealth : MonoBehaviour
 
     void Update()
     {
-        enemy = FindObjectOfType<EnemyController>(); 
-
         HealthColor();
         if (batteryDead == true)
             return;

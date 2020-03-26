@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.gds210.3_vr_space_lwrp.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\guill\\Downloads\\GDS210.3-Space-VR\\GDS210.3_VR_Space_LWRP\\actions.json",
+      "action_manifest_path": "C:\\Users\\SAE\\Documents\\GitHub\\GDS210.3-Space-VR\\GDS210.3_VR_Space_LWRP\\actions.json",
       "strings": {
         "en_us": {
           "name": "GDS210.3_VR_Space_LWRP [Testing]"

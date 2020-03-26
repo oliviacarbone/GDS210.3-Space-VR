@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ColonyResources : MonoBehaviour
 {
-    public ScoreScript1 colonyScore;
+    public ScoreScript colonyScore;
     public StartColonyGame startColGame;
 
     public bool restartGame = false;
@@ -211,7 +211,7 @@ public class ColonyResources : MonoBehaviour
             oxygenText.SetActive(false);
             populationText1.SetActive(false);
             populationText2.SetActive(false);
-            timer.state = TimeScript.TimeState.TimeIsUp;
+            timer.state = TimeScript.TimeState.DoNothing;
             colonyScore.gameIsOver = true;
             startColGame.state = StartColonyGame.ButtonState.Start;
         }
