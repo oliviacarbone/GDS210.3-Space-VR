@@ -14,19 +14,29 @@ public class EnemyDeath : MonoBehaviour
     public ParticleSystem deathParticle;
     public GameObject drone;
 
+    public BatteryHealth health;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        health = FindObjectOfType<BatteryHealth>();
     }
 
-    //void Update()
-    //{
-    //    //For testing puposes only
-    //    if (enemyDeathTest == true)
-    //    {
-    //        Fall();
-    //    }
-    //}
+    void Update()
+    {
+        /*
+        For testing puposes only
+        if (enemyDeathTest == true)
+        {
+            Fall();
+        }
+        */
+
+        if(health.batteryHealth <= 0)
+        {
+            Fall();
+        }
+    }
 
     public void Hit()
     {
